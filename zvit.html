@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        h1 {
+            padding: 10px;
+            text-align: center;
+            font-family: 'Century Gothic';
+            font-weight: bold;
+            margin-bottom: 10px;
+            font-size: 36px;
+        }
+
+        button {
+            font-family: 'Century Gothic';
+            font-weight: bold;
+            padding: 20px 10px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 20px 2px;
+            transition-duration: 0.4s;
+            cursor: pointer;
+            background-color: white;
+            color: black;
+            border: 2px solid #555555;
+            width: 100%;
+        }
+
+        button[id=activeButton] {
+            width: 10%;
+        }
+
+        button[id=inactiveButton] {
+            color: rgb(208, 208, 208);
+            border: 2px solid rgb(208, 208, 208);
+            width: 10%;
+        }
+
+        button[id=activeButton]:hover {
+            background-color: #555555;
+            color: white;
+        }
+
+        div[id=leftButtons] {
+            padding: 20px;
+            background-color: #555555;
+            width: 30%;
+            height: 1000px;
+            float: left;
+        }
+
+        div[id=mainContent] {
+            font-size: 45pt;
+            width: 60%;
+            float: left;
+        }
+    </style>
+    <div>
+        <p>
+        <h1>ЗВІТИ З ЛАБОРАТОРНИХ РОБІТ</h1>
+        <p>
+        <h1>З ДИСЦИПЛІНИ « РОЗРОБЛЕННЯ WEB-ЗАСТОСУВАННЬ»</h1>
+        <p>
+        <h1>Студенти групи ІА-91 Овчинніков Сергій Дмитрович, Ліновицький Нікіта Олександрович</h1>
+    </div>
+    <div>
+        <button onclick="lab1()" id="activeButton">Лабораторна робота №1</button>
+        <button id="inactiveButton">Лабораторна робота №2</button>
+        <button id="inactiveButton">Лабораторна робота №3</button>
+        <button id="inactiveButton">Лабораторна робота №4</button>
+        <button id="inactiveButton">Лабораторна робота №5</button>
+        <button id="inactiveButton">Лабораторна робота №6</button>
+        <button id="inactiveButton">Лабораторна робота №7</button>
+        <button id="inactiveButton">Лабораторна робота №8</button>
+        <button id="inactiveButton">Лабораторна робота №9</button>
+    </div>
+    <div id="leftButtons">
+    </div>
+    <div id="mainContent">
+    </div>
+
+    <script>
+        function lab1() {
+            document.getElementById("leftButtons").innerHTML = "";
+            createBtn("Опис предметного середовища", setMainContent, "HUY 1");
+            createBtn("Загальна постановка задачі програми", setMainContent, "HUY 2");
+        }
+        function createBtn(buttonText, onclick, mainContentText) {
+            let btn1 = document.createElement("button");
+            btn1.style = "width: 100%";
+            btn1.textContent = buttonText;
+            btn1.onclick = () => { setMainContent(mainContentText) };
+            document.getElementById("leftButtons").appendChild(btn1);
+        }
+        function setMainContent(mainText) {
+            document.getElementById("mainContent").innerHTML = mainText;
+        }
+    </script>
+</body>
+
+</html>
