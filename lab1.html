@@ -110,7 +110,8 @@
 <script>
     function note(){
         let content = document.getElementById('content').value
-        document.getElementById('noteContent').innerHTML += `<p>${content}</p>`
+        var date = new Date();
+        document.getElementById('noteContent').innerHTML += `<p>[${date.toDateString()}] ${content}</p>`
     }
 </script>
 </body>
