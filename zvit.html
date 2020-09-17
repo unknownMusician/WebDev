@@ -195,7 +195,7 @@
             "<p>&lt;/table&gt;";
 
         const lab1HtmlForm = "&lt;div style=&quot;text-align: center;float: left&quot;&gt;<p>" +
-            "        &lt;form action=&quot;index.html&quot;&gt;<p>" +
+            "        &lt;form action=&quot;subject.html&quot;&gt;<p>" +
             "        &lt;button style=&quot;width: 400px;height: 100px&quot;&gt;Предметна область<p>" +
             "        &lt;/button&gt;<p>" +
             "        &lt;/form&gt;<p>" +
@@ -205,12 +205,238 @@
             "    &lt;img src=&quot;https://kpi.ua/files/images/kpi.png&quot; alt=&quot;KPI&quot; style=&quot;width: 200px;height: 200px;margin-bottom: 20px&quot;&gt;<p>" +
             "&lt;/div&gt;"
         
+        const lab1HtmlCode = "&lt;!DOCTYPE html&gt;<p>" +
+            "&lt;html lang=&quot;en&quot;&gt;<p>" +
+            "<p>" +
+            "&lt;head&gt;<p>" +
+            "    &lt;meta charset=&quot;UTF-8&quot;&gt;<p>" +
+            "    &lt;title&gt;Інтерактивний календар&lt;/title&gt;<p>" +
+            "&lt;/head&gt;<p>" +
+            "<p>" +
+            "&lt;body&gt;<p>" +
+            "&lt;style&gt;<p>" +
+            "    button {<p>" +
+            "        font-family: 'Century Gothic';<p>" +
+            "        font-weight: bold;<p>" +
+            "        padding: 16px 32px;<p>" +
+            "        text-align: center;<p>" +
+            "        text-decoration: none;<p>" +
+            "        display: inline-block;<p>" +
+            "        font-size: 16px;<p>" +
+            "        margin: 20px 2px;<p>" +
+            "        transition-duration: 0.4s;<p>" +
+            "        cursor: pointer;<p>" +
+            "        background-color: white;<p>" +
+            "        color: black;<p>" +
+            "        border: 2px solid #555555;<p>" +
+            "        width: 40%;<p>" +
+            "<p>" +
+            "<p>" +
+            "    }<p>" +
+            "<p>" +
+            "    button:hover {<p>" +
+            "        background-color: #555555;<p>" +
+            "        color: white;<p>" +
+            "    }<p>" +
+            "<p>" +
+            "    table {<p>" +
+            "        width: 100%;<p>" +
+            "    }<p>" +
+            "<p>" +
+            "    th {<p>" +
+            "        text-align: center;<p>" +
+            "        padding: 15px;<p>" +
+            "        font-family: &quot;Century Gothic&quot;;<p>" +
+            "        font-weight: normal;<p>" +
+            "<p>" +
+            "    }<p>" +
+            "<p>" +
+            "    td {<p>" +
+            "        text-align: center;<p>" +
+            "        padding: 25px;<p>" +
+            "        font-family: 'Century Gothic';<p>" +
+            "        font-weight: bold;<p>" +
+            "    }<p>" +
+            "<p>" +
+            "    caption {<p>" +
+            "        padding: 10px;<p>" +
+            "        font-family: 'Century Gothic';<p>" +
+            "        font-weight: bold;<p>" +
+            "        margin-bottom: 10px;<p>" +
+            "        font-size: 36px;<p>" +
+            "    }<p>" +
+            "<p>" +
+            "    p {<p>" +
+            "        font-family: 'Century Gothic';<p>" +
+            "        font-weight: initial;<p>" +
+            "        font-size: 20px;<p>" +
+            "        font-weight: bold;<p>" +
+            "    }<p>" +
+            "<p>" +
+            "    input[type=text],<p>" +
+            "    [id=content] {<p>" +
+            "        width: 100%;<p>" +
+            "        padding: 12px 20px;<p>" +
+            "        margin: 8px 0;<p>" +
+            "        box-sizing: border-box;<p>" +
+            "        border: 3px solid #ccc;<p>" +
+            "        -webkit-transition: 0.5s;<p>" +
+            "        transition: 0.5s;<p>" +
+            "        outline: none;<p>" +
+            "        font-family: &quot;Century Gothic&quot;;<p>" +
+            "        font-weight: bold;<p>" +
+            "        font-size: 20px;<p>" +
+            "    }<p>" +
+            "<p>" +
+            "    button[id=btnSearchSchedule] {<p>" +
+            "        width: 150px;<p>" +
+            "        height: 60px;<p>" +
+            "        float: bottom;<p>" +
+            "<p>" +
+            "    }<p>" +
+            "<p>" +
+            "    input[id=inputSearchSchedule] {<p>" +
+            "        padding: 12px 20px;<p>" +
+            "        margin: 8px 0;<p>" +
+            "        box-sizing: border-box;<p>" +
+            "        border: 3px solid #ccc;<p>" +
+            "        -webkit-transition: 0.5s;<p>" +
+            "        transition: 0.5s;<p>" +
+            "        outline: none;<p>" +
+            "        font-family: &quot;Century Gothic&quot;;<p>" +
+            "        font-weight: bold;<p>" +
+            "<p>" +
+            "<p>" +
+            "    }<p>" +
+            "<p>" +
+            "    input[type=text],<p>" +
+            "    [id=content],<p>" +
+            "    [id=inputSearchSchedule]:focus {<p>" +
+            "        border: 3px solid #555;<p>" +
+            "    }<p>" +
+            "&lt;/style&gt;<p>" +
+            "&lt;div style=&quot;text-align: center&quot;&gt;<p>" +
+            "    &lt;img src=&quot;https://kpi.ua/files/images/kpi.png&quot; alt=&quot;KPI&quot; style=&quot;width: 200px;height: 200px;margin-bottom: 20px&quot;&gt;<p>" +
+            "&lt;/div&gt;<p>" +
+            "&lt;div style=&quot;height: 100px;width: 100%&quot;&gt;<p>" +
+            "    &lt;div style=&quot;text-align: center;float: left&quot;&gt;<p>" +
+            "        &lt;form action=&quot;subject.html&quot;&gt;<p>" +
+            "        &lt;button style=&quot;width: 400px;height: 100px&quot;&gt;Предметна<p>" +
+            "            область<p>" +
+            "        &lt;/button&gt;<p>" +
+            "        &lt;/form&gt;<p>" +
+            "    &lt;/div&gt;<p>" +
+            "    &lt;div style=&quot;float: right;text-align: center;font-family: 'Century Gothic';font-weight: bold&quot;&gt;Розклад групи<p>" +
+            "        &lt;div&gt;<p>" +
+            "            &lt;input id=&quot;inputSearchSchedule&quot;&gt;<p>" +
+            "        &lt;/div&gt;<p>" +
+            "        &lt;div style=&quot;float: bottom&quot;&gt;<p>" +
+            "            &lt;button id=&quot;btnSearchSchedule&quot; style=&quot;text-align: center&quot; onclick=&quot;search()&quot;&gt;Знайти&lt;/button&gt;<p>" +
+            "        &lt;/div&gt;<p>" +
+            "    &lt;/div&gt;<p>" +
+            "&lt;/div&gt;<p>" +
+            "<p>" +
+            "&lt;table border=&quot;1&quot;&gt;<p>" +
+            "    &lt;caption&gt;Наш розклад&lt;/caption&gt;<p>" +
+            "    &lt;tr&gt;<p>" +
+            "        &lt;th&gt;&lt;/th&gt;<p>" +
+            "        &lt;th&gt;Понеділок&lt;/th&gt;<p>" +
+            "        &lt;th&gt;Вівторок&lt;/th&gt;<p>" +
+            "        &lt;th&gt;Середа&lt;/th&gt;<p>" +
+            "        &lt;th&gt;Четвер&lt;/th&gt;<p>" +
+            "        &lt;th&gt;П'ятниця&lt;/th&gt;<p>" +
+            "    &lt;/tr&gt;<p>" +
+            "    &lt;tr&gt;<p>" +
+            "        &lt;td&gt;1. 8:30&lt;/td&gt;<p>" +
+            "        &lt;td&gt;&lt;/td&gt;<p>" +
+            "        &lt;td&gt;Розробка веб-застосувань&lt;/td&gt;<p>" +
+            "        &lt;td&gt;Основи клієнтської розробки&lt;/td&gt;<p>" +
+            "        &lt;td&gt;&lt;/td&gt;<p>" +
+            "        &lt;td&gt;Вступ до філософії&lt;/td&gt;<p>" +
+            "    &lt;/tr&gt;<p>" +
+            "    &lt;tr&gt;<p>" +
+            "        &lt;td&gt;2. 10:25&lt;/td&gt;<p>" +
+            "        &lt;td&gt;Комп. мережі&lt;/td&gt;<p>" +
+            "        &lt;td&gt;Комп. мережі&lt;/td&gt;<p>" +
+            "        &lt;td&gt;Основи клієнтської розробки&lt;/td&gt;<p>" +
+            "        &lt;td&gt;&lt;/td&gt;<p>" +
+            "        &lt;td&gt;&lt;/td&gt;<p>" +
+            "    &lt;/tr&gt;<p>" +
+            "    &lt;tr&gt;<p>" +
+            "        &lt;td&gt;3. 12:20&lt;/td&gt;<p>" +
+            "        &lt;td&gt;ВМ-3&lt;/td&gt;<p>" +
+            "        &lt;td&gt;Англ&lt;/td&gt;<p>" +
+            "        &lt;td&gt;ВМ-3&lt;/td&gt;<p>" +
+            "        &lt;td&gt;Бази даних&lt;/td&gt;<p>" +
+            "        &lt;td&gt;&lt;/td&gt;<p>" +
+            "    &lt;/tr&gt;<p>" +
+            "    &lt;tr&gt;<p>" +
+            "        &lt;td&gt;4. 14:15&lt;/td&gt;<p>" +
+            "        &lt;td&gt;ФВ&lt;/td&gt;<p>" +
+            "        &lt;td&gt;Бази даних&lt;/td&gt;<p>" +
+            "        &lt;td&gt;&lt;/td&gt;<p>" +
+            "        &lt;td&gt;Розроблення веб-застосувань&lt;/td&gt;<p>" +
+            "        &lt;td&gt;&lt;/td&gt;<p>" +
+            "    &lt;/tr&gt;<p>" +
+            "    &lt;tr&gt;<p>" +
+            "        &lt;td&gt;5. 16:10&lt;/td&gt;<p>" +
+            "        &lt;td&gt;&lt;/td&gt;<p>" +
+            "        &lt;td&gt;&lt;/td&gt;<p>" +
+            "        &lt;td&gt;&lt;/td&gt;<p>" +
+            "        &lt;td&gt;&lt;/td&gt;<p>" +
+            "        &lt;td&gt;Психологія конфлікту&lt;/td&gt;<p>" +
+            "    &lt;/tr&gt;<p>" +
+            "<p>" +
+            "&lt;/table&gt;<p>" +
+            "&lt;h1 style=&quot;text-align: center&quot;&gt;Нотатки&lt;/h1&gt;<p>" +
+            "<p>" +
+            "&lt;input id=&quot;content&quot;&gt;<p>" +
+            "&lt;div style=&quot;text-align: center&quot;&gt;<p>" +
+            "    &lt;button onclick=&quot;note()&quot;&gt;Занотувати&lt;/button&gt;<p>" +
+            "&lt;/div&gt;<p>" +
+            "<p>" +
+            "&lt;p id=&quot;noteContent&quot;&gt;Третої пари у понеділок не буде&lt;/p&gt;<p>" +
+            "&lt;script&gt;<p>" +
+            "    function note() {<p>" +
+            "        let content = document.getElementById('content').value<p>" +
+            "        var date = new Date();<p>" +
+            "        document.getElementById('noteContent').innerHTML += `&lt;p&gt;[${date.toDateString()}] ${content}&lt;/p&gt;`<p>" +
+            "<p>" +
+            "    }<p>" +
+            "<p>" +
+            "    function search() {<p>" +
+            "        let group = document.getElementById(&quot;inputSearchSchedule&quot;).value<p>" +
+            "        let ref = findURL(group);<p>" +
+            "        if (ref != null)<p>" +
+            "            window.location.href = ref;<p>" +
+            "    }<p>" +
+            "<p>" +
+            "    function findURL(text) {<p>" +
+            "        let xmlHttp = new XMLHttpRequest();<p>" +
+            "        xmlHttp.open(&quot;GET&quot;, &quot;https://api.rozklad.org.ua/v2/groups/&quot; + text, false); // false for synchronous request<p>" +
+            "        xmlHttp.send(null);<p>" +
+            "        let url = xmlHttp.response;<p>" +
+            "<p>" +
+            "        let startIndex = url.indexOf('http');<p>" +
+            "        if (startIndex == -1) {<p>" +
+            "            return null;<p>" +
+            "        }<p>" +
+            "        let lastIndex = url.indexOf(&quot;\\&quot;&quot;, startIndex);<p>" +
+            "        return url.substring(startIndex, lastIndex);<p>" +
+            "    }<p>" +
+            "&lt;/script&gt;<p>" +
+            "&lt;/body&gt;<p>" +
+            "<p>" +
+            "&lt;/html&gt;<p>" +
+            "&lt;/body&gt;<p>" +
+            "<p>" +
+            "&lt;/html&gt;"
         
         function lab1() {
             let leftButtons = document.getElementById("leftButtons");
             leftButtons.innerHTML = "";
 
-            createBtnWithRedirect(leftButtons, "Опис предментої області", "index.html")
+            createBtnWithRedirect(leftButtons, "Опис предментої області", "subject.html")
             createLeftInfoBtn(leftButtons, "Постановка задачі Лабораторної роботи №1", lab1DescTextContent);
             createLeftInfoBtn(leftButtons, "Загальна постановка задачі програми", lab1WorkTaskTextContent);
             createLeftGroupBtn(leftButtons, "Структура документа");
@@ -222,6 +448,7 @@
             createLeftInfoBtn(div, "HTML-код таблиць", lab1HtmlTable,fontSizeHeightLineHTML);
             createLeftInfoBtn(div, "HTML-код форми", lab1HtmlForm,fontSizeHeightLineHTML);
             createLeftInfoBtn(div, "HTML-код зображень", lab1HtmlImg,fontSizeHeightLineHTML);
+            createLeftInfoBtn(div, "HTML-код Лаб-1", lab1HtmlCode,fontSizeHeightLineHTML);
             parent.appendChild(div);
         }
 
