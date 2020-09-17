@@ -79,8 +79,10 @@
     }
 
     button[id=btnSearchSchedule] {
-        width: 10%;
+        width: 150px;
+        height: 60px;
         float: bottom;
+
     }
 
     input[id=inputSearchSchedule] {
@@ -94,6 +96,7 @@
         font-family: "Century Gothic";
         font-weight: bold;
 
+
     }
 
     input[type=text], [id=content], [id=inputSearchSchedule]:focus {
@@ -101,13 +104,22 @@
     }
 </style>
 <div style="text-align: center">
-    <img src="https://kpi.ua/files/images/kpi.png" alt="KPI" style="width: 150px;height: 150px;margin-bottom: 20px">
+    <img src="https://kpi.ua/files/images/kpi.png" alt="KPI" style="width: 200px;height: 200px;margin-bottom: 20px">
 </div>
 <div style="height: 100px;width: 100%">
     <div style="text-align: center;float: left">
-            <button onclick="location.href = 'index.html';">Предметна область</button>
+        <button onclick="location.href = 'index.html';" style="width: 400px;height: 100px">Предметна область</button>
     </div>
-    <div style="float: right;text-align: right"><form><input id="inputSearchSchedule"><button id="btnSearchSchedule">s</button></form></div>
+    <div style="float: right;text-align: center;font-family: 'Century Gothic';font-weight: bold" >Розклад групи
+        <form>
+            <div>
+                <input id="inputSearchSchedule">
+            </div>
+            <div style="float: bottom">
+                <button id="btnSearchSchedule" style="text-align: center" onclick="search()">Знайти</button>
+            </div>
+        </form>
+    </div>
 </div>
 
 <table border="1">
@@ -179,16 +191,18 @@
     }
 
     function search() {
-        let ref = findURL(url);
+        let group = document.getElementById("inputSearchSchedule").value
+        console.log(group)
+        let ref = findURL(group);
         if (ref != null)
             window.location.href = ref;
     }
 
     function findURL(text) {
-        var xmlHttp = new XMLHttpRequest();
+        let xmlHttp = new XMLHttpRequest();
         xmlHttp.open("GET", "https://api.rozklad.org.ua/v2/groups/" + text, false); // false for synchronous request
         xmlHttp.send(null);
-        var url = xmlHttp.response;
+        let url = xmlHttp.response;
 
         let startIndex = url.indexOf('http');
         if (startIndex == -1) {
