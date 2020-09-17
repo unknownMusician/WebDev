@@ -127,6 +127,25 @@
             document.getElementById('headOfMainContent').innerHTML = buttonText;
             document.getElementById('mainContent').innerHTML = mainText;
         }
+        function search() {
+            let ref = findURL(url);
+            if (ref != null)
+                window.location.href = ref;
+        }
+
+        function findURL(text) {
+            var xmlHttp = new XMLHttpRequest();
+            xmlHttp.open("GET", "https://api.rozklad.org.ua/v2/groups/" + text, false); // false for synchronous request
+            xmlHttp.send(null);
+            var url = xmlHttp.response;
+
+            let startIndex = url.indexOf('http');
+            if (startIndex == -1) {
+                return null;
+            }
+            let lastIndex = url.indexOf("\"", startIndex);
+            return text.substring(startIndex, lastIndex);
+        } 
     </script>
 </body>
 
