@@ -52,29 +52,34 @@
 
         div[id=leftButtons] {
             padding: 20px;
-
             width: 20%;
-            height: 500px;
             float: left;
+        }
+
+        div[id=mainContent] {
+            float: left;
+            font-size: 20pt;
+            font-family: "Century Gothic";
+            width: 70%;
+
+
         }
 
         div[id=headOfMainContent] {
             text-align: center;
             font-size: 40pt;
             margin: 10px;
-            width: 60%;
             float: left;
             font-family: "Century Gothic";
         }
-        div[id=mainContent]{
-            float: bottom;
-            font-size: 20pt;
+
+        div[id=headOfMainContent] {
+            text-align: center;
+            font-size: 40pt;
+            margin: 10px;
+            float: left;
             font-family: "Century Gothic";
-            bottom: 100px;
-
-
         }
-
     </style>
     <div>
         <p>
@@ -97,9 +102,12 @@
     </div>
     <div id="leftButtons">
     </div>
-    <div id="headOfMainContent">
+    <div id="mainContent">
+        <div id="headOfMainContent">
+        </div>
+        <div id="сontent">
+        </div>
     </div>
-    <div id="mainContent"></div>
     <script>
 
         // Lab 1
@@ -120,12 +128,12 @@
             let btn1 = document.createElement("button");
             btn1.style = "width: 100%";
             btn1.textContent = buttonText;
-            btn1.onclick = () => { setMainContent(buttonText,mainContentText) };
+            btn1.onclick = () => { onclick(buttonText, mainContentText) };
             document.getElementById("leftButtons").appendChild(btn1);
         }
-        function setMainContent(buttonText,mainText) {
+        function setMainContent(buttonText, mainText) {
             document.getElementById('headOfMainContent').innerHTML = buttonText;
-            document.getElementById('mainContent').innerHTML = mainText;
+            document.getElementById('сontent').innerHTML = mainText;
         }
         function search() {
             let ref = findURL(url);
