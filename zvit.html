@@ -56,30 +56,23 @@
             float: left;
         }
 
-        div[id=mainContent] {
+        div[id=content] {
             float: left;
             font-size: 20pt;
             font-family: "Century Gothic";
-            width: 70%;
-
-
+            width: 75%;
         }
-
+        div[id=mainContent]{
+            
+        }
         div[id=headOfMainContent] {
             text-align: center;
-            font-size: 40pt;
+            font-size: 45pt;
             margin: 10px;
             float: left;
             font-family: "Century Gothic";
         }
 
-        div[id=headOfMainContent] {
-            text-align: center;
-            font-size: 40pt;
-            margin: 10px;
-            float: left;
-            font-family: "Century Gothic";
-        }
     </style>
     <div>
         <p>
@@ -102,10 +95,10 @@
     </div>
     <div id="leftButtons">
     </div>
-    <div id="mainContent">
+    <div id="content">
         <div id="headOfMainContent">
         </div>
-        <div id="сontent">
+        <div id="mainContent">
         </div>
     </div>
     <script>
@@ -133,7 +126,7 @@
         }
         function setMainContent(buttonText, mainText) {
             document.getElementById('headOfMainContent').innerHTML = buttonText;
-            document.getElementById('сontent').innerHTML = mainText;
+            document.getElementById('mainContent').innerHTML = mainText;
         }
         function search() {
             let ref = findURL(url);
