@@ -115,25 +115,39 @@
         //const lab1Btn1TextContent =
 
         function lab1() {
-            document.getElementById("leftButtons").innerHTML = "";
-            createBtn("Постановка задачі Лабораторної роботи №1", setMainContent, "HUY 1");
-            createBtn("Загальна постановка задачі програми", setMainContent, "HUY 2");
+            var leftButtons = document.getElementById("leftButtons");
+            leftButtons.innerHTML = "";
+
+            createLeftInfoBtn(leftButtons, "Постановка задачі Лабораторної роботи №1", "HUY 1");
+            createLeftInfoBtn(leftButtons, "Загальна постановка задачі програми", "HUY 2");
+            var div = createLeftGroupBtn(leftButtons, "Структура документа");
         }
-
-
+        function showSmallButtons(parent) {
+            var div = document.createElement("div");
+            div.style = "padding-left: 70px";
+            createLeftInfoBtn(div, "HTML-код таблиць", "HUY 3");
+            createLeftInfoBtn(div, "HTML-код форми", "HUY 4");
+            createLeftInfoBtn(div, "HTML-код зображень", "HUY 5");
+            parent.appendChild(div);
+        }
 
         // Functions for creating btns and setting them a content
 
-        function createBtn(buttonText, onclick, mainContentText) {
+        function createLeftInfoBtn(parent, buttonText, mainContentText) {
+            parent.appendChild(createBtn(buttonText, "activeButton", () => { setMainContent(buttonText, mainContentText) }));
+        }
+        function createLeftGroupBtn(parent, buttonText) {
+            var btn = createBtn(buttonText, "activeButton", () => showSmallButtons(parent));
+            parent.appendChild(btn);
+            return div;
+        }
+        function createBtn(buttonText, id, onclick) {
             let btn1 = document.createElement("button");
+            btn1.id = id;
             btn1.style = "width: 100%";
             btn1.textContent = buttonText;
-            btn1.onclick = () => { onclick(buttonText, mainContentText) };
-            document.getElementById("leftButtons").appendChild(btn1);
-        }
-        function setMainContent(buttonText, mainText) {
-            document.getElementById('headOfMainContent').innerHTML = buttonText;
-            document.getElementById('сontent').innerHTML = mainText;
+            btn1.onclick = onclick;
+            return btn1;
         }
         function search() {
             let ref = findURL(url);
@@ -153,7 +167,12 @@
             }
             let lastIndex = url.indexOf("\"", startIndex);
             return text.substring(startIndex, lastIndex);
-        } 
+        }
+        function setMainContent(buttonText, mainText) {
+            document.getElementById('headOfMainContent').innerHTML = buttonText;
+            document.getElementById('mainContent').innerHTML = mainText;
+            document.getElementById("content").style = "background-color: #f5f5f5";
+        }
     </script>
 </body>
 
