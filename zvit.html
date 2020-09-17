@@ -114,6 +114,8 @@
 
         // Lab 1
 
+        const fontSizeHeightLineHTML = "font-size: 15pt;line-height: 0px";
+
         const lab1DescTextContent =
             "На першій лабораторній роботі наша задача була ознайомитись з основами HTML та треба було обрати" +
             "певну предметну галузь, якої буде розроблятися веб-застосунок. Створити " +
@@ -139,7 +141,7 @@
 
         const lab1WorkTaskTextContent =
             "Програма слугує для полегшення процессу організації робочого процесу користувача.";
-        const lab1HtmlForm =
+        const lab1HtmlTable =
             "<p>&lt;table border=\"1\"&gt;" +
             "<p>&lt;caption&gt;Наш розклад&lt;/caption&gt;" +
             "<p>&lt;tr&gt;" +
@@ -191,28 +193,42 @@
             "<p>&lt;td&gt;Психологія конфлікту&lt;/td&gt;" +
             "<p>&lt;/tr&gt;" +
             "<p>&lt;/table&gt;";
+
+        const lab1HtmlForm = "&lt;div style=&quot;text-align: center;float: left&quot;&gt;<p>" +
+            "        &lt;form action=&quot;index.html&quot;&gt;<p>" +
+            "        &lt;button style=&quot;width: 400px;height: 100px&quot;&gt;Предметна область<p>" +
+            "        &lt;/button&gt;<p>" +
+            "        &lt;/form&gt;<p>" +
+            "    &lt;/div&gt;";
+        
+        const lab1HtmlImg = "&lt;div style=&quot;text-align: center&quot;&gt;<p>" +
+            "    &lt;img src=&quot;https://kpi.ua/files/images/kpi.png&quot; alt=&quot;KPI&quot; style=&quot;width: 200px;height: 200px;margin-bottom: 20px&quot;&gt;<p>" +
+            "&lt;/div&gt;"
+        
+        
         function lab1() {
-            var leftButtons = document.getElementById("leftButtons");
+            let leftButtons = document.getElementById("leftButtons");
             leftButtons.innerHTML = "";
 
             createBtnWithRedirect(leftButtons, "Опис предментої області", "index.html")
-            createLeftInfoBtn(leftButtons, "Постановка задачі Лабораторної роботи №1", lab1LabTaskTextContent);
+            createLeftInfoBtn(leftButtons, "Постановка задачі Лабораторної роботи №1", lab1DescTextContent);
             createLeftInfoBtn(leftButtons, "Загальна постановка задачі програми", lab1WorkTaskTextContent);
             createLeftGroupBtn(leftButtons, "Структура документа");
         }
+
         function showSmallButtons(parent) {
-            var div = document.createElement("div");
+            let div = document.createElement("div");
             div.style = "padding-left: 70px";
-            createLeftInfoBtn(div, "HTML-код таблиць", lab1HtmlForm);
-            createLeftInfoBtn(div, "HTML-код форми", "4");
-            createLeftInfoBtn(div, "HTML-код зображень", "5");
+            createLeftInfoBtn(div, "HTML-код таблиць", lab1HtmlTable,fontSizeHeightLineHTML);
+            createLeftInfoBtn(div, "HTML-код форми", lab1HtmlForm,fontSizeHeightLineHTML);
+            createLeftInfoBtn(div, "HTML-код зображень", lab1HtmlImg,fontSizeHeightLineHTML);
             parent.appendChild(div);
         }
 
         // Functions for creating buttons and setting them a content
 
-        function createLeftInfoBtn(parent, buttonText, mainContentText) {
-            parent.appendChild(createBtn(buttonText, "activeButton", () => { setMainContent(buttonText, mainContentText) }));
+        function createLeftInfoBtn(parent, buttonText, mainContentText,style) {
+            parent.appendChild(createBtn(buttonText, "activeButton", () => { setMainContent(buttonText, mainContentText,style) }));
         }
         function createLeftGroupBtn(parent, buttonText) {
             parent.appendChild(createBtn(buttonText, "activeButton", () => showSmallButtons(parent)));
@@ -228,11 +244,14 @@
             btn1.onclick = onclick;
             return btn1;
         }
-        function setMainContent(buttonText, mainText) {
+        function setMainContent(buttonText, mainText, style) {
             document.getElementById('headOfMainContent').innerHTML = buttonText;
             document.getElementById('mainContent').innerHTML = mainText;
             document.getElementById("content").style = "background-color: #f5f5f5";
+            document.getElementById("mainContent").style = style;
+
         }
+
 
     </script>
 </body>
