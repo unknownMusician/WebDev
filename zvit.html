@@ -62,13 +62,15 @@
             width: 70%;
             font-weight: bold;
         }
-        div[id=mainContent]{
+
+        div[id=mainContent] {
             margin: 50px;
             font-weight: normal;
             font-size: 35pt;
             line-height: 100px;
 
         }
+
         div[id=headOfMainContent] {
             text-align: center;
             font-size: 45pt;
@@ -78,7 +80,6 @@
             width: 100%;
             height: 180px;
         }
-
     </style>
     <div>
         <p>
@@ -120,31 +121,60 @@
             " У третьому HTML документі потрібно було зробити сторінку зі звітами з лабораторних робіт. "
 
         function lab1() {
-            document.getElementById("leftButtons").innerHTML = "";
-            createBtnWithContent("Постановка задачі Лабораторної роботи №1", setMainContent, lab1Btn1TextContent);
-            createBtnWithRedirect("Опис предментої області","index.html")
+            var leftButtons = document.getElementById("leftButtons");
+            leftButtons.innerHTML = "";
+
+            createBtnWithRedirect(leftButtons, "Опис предментої області", "index.html")
+            createLeftInfoBtn(leftButtons, "Постановка задачі Лабораторної роботи №1", "HUY 1");
+            createLeftInfoBtn(leftButtons, "Загальна постановка задачі програми", "HUY 2");
+            createLeftGroupBtn(leftButtons, "Структура документа");
         }
-
-        // Lab 2
-
-
+        function showSmallButtons(parent) {
+            var div = document.createElement("div");
+            div.style = "padding-left: 70px";
+            createLeftInfoBtn(div, "HTML-код таблиць", "HUY 3");
+            createLeftInfoBtn(div, "HTML-код форми", "HUY 4");
+            createLeftInfoBtn(div, "HTML-код зображень", "HUY 5");
+            parent.appendChild(div);
+        }
 
         // Functions for creating buttons and setting them a content
 
-        function createBtnWithRedirect(buttonText,locationOfRedirect){
-            let btn = document.createElement("button");
-            btn.style = "width: 100%";
-            btn.textContent = buttonText;
-            btn.onclick = () => {location.href = locationOfRedirect}
-            document.getElementById("leftButtons").appendChild(btn);
+        function createLeftInfoBtn(parent, buttonText, mainContentText) {
+            parent.appendChild(createBtn(buttonText, "activeButton", () => { setMainContent(buttonText, mainContentText) }));
+        }
+        function createLeftGroupBtn(parent, buttonText) {
+            parent.appendChild(createBtn(buttonText, "activeButton", () => showSmallButtons(parent)));
+        }
+        function createBtnWithRedirect(parent, buttonText, locationOfRedirect) {
+            parent.appendChild(createBtn(buttonText, "activeButton", () => { window.location.href = locationOfRedirect }));
+        }
+        function createBtn(buttonText, id, onclick) {
+            let btn1 = document.createElement("button");
+            btn1.id = id;
+            btn1.style = "width: 100%";
+            btn1.textContent = buttonText;
+            btn1.onclick = onclick;
+            return btn1;
         }
 
-        function createBtnWithContent(buttonText, onclick, mainContentText) {
-            let btn = document.createElement("button");
-            btn.style = "width: 100%";
-            btn.textContent = buttonText;
-            btn.onclick = () => { onclick(buttonText, mainContentText) };
-            document.getElementById("leftButtons").appendChild(btn);
+        function search() {
+            let ref = findURL(url);
+            if (ref != null)
+                window.location.href = ref;
+        }
+        function findURL(text) {
+            var xmlHttp = new XMLHttpRequest();
+            xmlHttp.open("GET", "https://api.rozklad.org.ua/v2/groups/" + text, false); // false for synchronous request
+            xmlHttp.send(null);
+            var url = xmlHttp.response;
+
+            let startIndex = url.indexOf('http');
+            if (startIndex == -1) {
+                return null;
+            }
+            let lastIndex = url.indexOf("\"", startIndex);
+            return text.substring(startIndex, lastIndex);
         }
         function setMainContent(buttonText, mainText) {
             document.getElementById('headOfMainContent').innerHTML = buttonText;
