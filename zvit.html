@@ -52,23 +52,35 @@
 
         div[id=leftButtons] {
             padding: 20px;
-            background-color: #555555;
-            width: 30%;
-            height: 1000px;
+
+            width: 20%;
+            height: 500px;
             float: left;
         }
 
-        div[id=mainContent] {
-            font-size: 45pt;
+        div[id=headOfMainContent] {
+            text-align: center;
+            font-size: 40pt;
+            margin: 10px;
             width: 60%;
             float: left;
+            font-family: "Century Gothic";
         }
+        div[id=mainContent]{
+            float: bottom;
+            font-size: 20pt;
+            font-family: "Century Gothic";
+            bottom: 100px;
+
+
+        }
+
     </style>
     <div>
         <p>
         <h1>ЗВІТИ З ЛАБОРАТОРНИХ РОБІТ</h1>
         <p>
-        <h1>З ДИСЦИПЛІНИ « РОЗРОБЛЕННЯ WEB-ЗАСТОСУВАННЬ»</h1>
+        <h1>З ДИСЦИПЛІНИ «РОЗРОБЛЕННЯ WEB-ЗАСТОСУВАННЬ»</h1>
         <p>
         <h1>Студенти групи ІА-91 Овчинніков Сергій Дмитрович, Ліновицький Нікіта Олександрович</h1>
     </div>
@@ -85,24 +97,35 @@
     </div>
     <div id="leftButtons">
     </div>
-    <div id="mainContent">
+    <div id="headOfMainContent">
     </div>
-
+    <div id="mainContent"></div>
     <script>
+
+        // Lab 1
+
+        //const lab1Btn1TextContent =
+
         function lab1() {
             document.getElementById("leftButtons").innerHTML = "";
-            createBtn("Опис предметного середовища", setMainContent, "HUY 1");
+            createBtn("Постановка задачі Лабораторної роботи №1", setMainContent, "HUY 1");
             createBtn("Загальна постановка задачі програми", setMainContent, "HUY 2");
         }
+
+
+
+        // Functions for creating btns and setting them a content
+
         function createBtn(buttonText, onclick, mainContentText) {
             let btn1 = document.createElement("button");
             btn1.style = "width: 100%";
             btn1.textContent = buttonText;
-            btn1.onclick = () => { setMainContent(mainContentText) };
+            btn1.onclick = () => { setMainContent(buttonText,mainContentText) };
             document.getElementById("leftButtons").appendChild(btn1);
         }
-        function setMainContent(mainText) {
-            document.getElementById("mainContent").innerHTML = mainText;
+        function setMainContent(buttonText,mainText) {
+            document.getElementById('headOfMainContent').innerHTML = buttonText;
+            document.getElementById('mainContent').innerHTML = mainText;
         }
     </script>
 </body>
