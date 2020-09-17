@@ -476,7 +476,7 @@
             "&lt;script&gt;<p>" +
             "    function note() {<p>" +
             "        let content = document.getElementById('content').value<p>" +
-            "        var date = new Date();<p>" +
+            "        let date = new Date();<p>" +
             "        document.getElementById('noteContent').innerHTML += `&lt;p&gt;[${date.toDateString()}] ${content}&lt;/p&gt;`<p>" +
             "<p>" +
             "    }<p>" +
@@ -514,6 +514,7 @@
             leftButtons.innerHTML = "";
 
             createBtnWithRedirect(leftButtons, "Опис предментої області", "subject.html")
+            createBtnWithRedirect(leftButtons,"Лабораторна №1","lab1.html")
             createLeftInfoBtn(leftButtons, "Постановка задачі Лабораторної роботи №1", lab1DescTextContent);
             createLeftInfoBtn(leftButtons, "Загальна постановка задачі програми", lab1WorkTaskTextContent);
             createLeftGroupBtn(leftButtons, "Структура документа");
@@ -526,7 +527,7 @@
             createLeftInfoBtn(div, "HTML-код форми", lab1HtmlForm,fontSizeHeightLineHTML);
             createLeftInfoBtn(div, "HTML-код зображень", lab1HtmlImg,fontSizeHeightLineHTML);
             createLeftInfoBtn(div, "HTML-код Лаб-1", lab1HtmlCode,fontSizeHeightLineHTML);
-            createLeftInfoBtn(div, "index.html", lab1HtmlIndex, fontSizeHeightLineHTML);
+            createLeftInfoBtn(div, "subject.html", lab1HtmlIndex, fontSizeHeightLineHTML);
             parent.appendChild(div);
         }
 
