@@ -19,6 +19,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="editing.templates" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -32,11 +33,40 @@
       <workItem from="1600291700330" duration="418000" />
       <workItem from="1600294998445" duration="207000" />
       <workItem from="1600326680396" duration="2241000" />
-      <workItem from="1600332687580" duration="7688000" />
+      <workItem from="1600332687580" duration="8934000" />
+      <workItem from="1600357821275" duration="1859000" />
+      <workItem from="1600375272039" duration="835000" />
+      <workItem from="1600420841684" duration="1455000" />
+      <workItem from="1600440915944" duration="603000" />
+      <workItem from="1600622943605" duration="12000" />
+      <workItem from="1600623007122" duration="230000" />
+      <workItem from="1600945678024" duration="960000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="245" y="215" key="FileChooserDialogImpl" timestamp="1600623235414">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="245" y="215" key="FileChooserDialogImpl/0.0.1920.1040/-1440.176.1440.860@0.0.1920.1040" timestamp="1600623235414" />
+    <state x="351" y="78" key="SettingsEditor" timestamp="1600420955350">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="351" y="78" key="SettingsEditor/0.0.1920.1040/-1440.176.1440.860@0.0.1920.1040" timestamp="1600420955350" />
+    <state width="623" height="498" key="SwitcherDM" timestamp="1600358694647">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="623" height="498" key="SwitcherDM/0.0.1920.1040/-1440.176.1440.860@0.0.1920.1040" timestamp="1600358694647" />
+    <state x="-1485" y="177" width="1456" height="961" key="dock-window-1" timestamp="1600423051006">
+      <screen x="-1440" y="176" width="1440" height="860" />
+    </state>
+    <state x="-1485" y="177" width="1456" height="961" key="dock-window-1/0.0.1920.1040/-1440.176.1440.860@0.0.1920.1040" timestamp="1600423051006" />
+    <state x="1046" y="14" width="765" height="1008" key="dock-window-2" timestamp="1600423051006">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1046" y="14" width="765" height="1008" key="dock-window-2/0.0.1920.1040/-1440.176.1440.860@0.0.1920.1040" timestamp="1600423051006" />
   </component>
 </project>
