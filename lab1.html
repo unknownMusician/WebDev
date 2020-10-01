@@ -7,218 +7,212 @@
 </head>
 
 <body>
-<style>
-    button {
-        font-family: 'Century Gothic';
-        font-weight: bold;
-        padding: 16px 32px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 16px;
-        margin: 20px 2px;
-        transition-duration: 0.4s;
-        cursor: pointer;
-        background-color: white;
-        color: black;
-        border: 2px solid #555555;
-        width: 40%;
-
-
-    }
-
-    button:hover {
-        background-color: #555555;
-        color: white;
-    }
-
-    table {
-        width: 100%;
-    }
-
-    th {
-        text-align: center;
-        padding: 15px;
-        font-family: "Century Gothic";
-        font-weight: normal;
-
-    }
-
-    td {
-        text-align: center;
-        padding: 25px;
-        font-family: 'Century Gothic';
-        font-weight: bold;
-    }
-
-    caption {
-        padding: 10px;
-        font-family: 'Century Gothic';
-        font-weight: bold;
-        margin-bottom: 10px;
-        font-size: 36px;
-    }
-
-    p {
-        font-family: 'Century Gothic';
-        font-weight: initial;
-        font-size: 20px;
-        font-weight: bold;
-    }
-
-    input[type=text],
-    [id=content] {
-        width: 100%;
-        padding: 12px 20px;
-        margin: 8px 0;
-        box-sizing: border-box;
-        border: 3px solid #ccc;
-        -webkit-transition: 0.5s;
-        transition: 0.5s;
-        outline: none;
-        font-family: "Century Gothic";
-        font-weight: bold;
-        font-size: 20px;
-    }
-
-    button[id=btnSearchSchedule] {
-        width: 150px;
-        height: 60px;
-        float: bottom;
-
-    }
-
-    input[id=inputSearchSchedule] {
-        padding: 12px 20px;
-        margin: 8px 0;
-        box-sizing: border-box;
-        border: 3px solid #ccc;
-        -webkit-transition: 0.5s;
-        transition: 0.5s;
-        outline: none;
-        font-family: "Century Gothic";
-        font-weight: bold;
-
-
-    }
-
-    input[type=text],
-    [id=content],
-    [id=inputSearchSchedule]:focus {
-        border: 3px solid #555;
-    }
-</style>
-<div style="text-align: center">
-    <img src="https://kpi.ua/files/images/kpi.png" alt="KPI" style="width: 200px;height: 200px;margin-bottom: 20px">
-</div>
-<div style="height: 100px;width: 100%">
-    <div style="text-align: center;float: left">
-        <form action="subject.html">
-        <button style="width: 400px;height: 100px">Предметна
+    <style>
+        button {
+            font-family: 'Century Gothic';
+            font-weight: bold;
+            padding: 16px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 20px 2px;
+            transition-duration: 0.4s;
+            cursor: pointer;
+            background-color: white;
+            color: black;
+            border: 2px solid #555555;
+            width: 40%;
+        }
+        
+        button:hover {
+            background-color: #555555;
+            color: white;
+        }
+        
+        table {
+            width: 100%;
+        }
+        
+        th {
+            text-align: center;
+            padding: 15px;
+            font-family: "Century Gothic";
+            font-weight: normal;
+        }
+        
+        td {
+            text-align: center;
+            padding: 25px;
+            font-family: 'Century Gothic';
+            font-weight: bold;
+        }
+        
+        caption {
+            padding: 10px;
+            font-family: 'Century Gothic';
+            font-weight: bold;
+            margin-bottom: 10px;
+            font-size: 36px;
+        }
+        
+        p {
+            font-family: 'Century Gothic';
+            font-weight: initial;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        
+        input[type=text],
+        [id=content] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            border: 3px solid #ccc;
+            -webkit-transition: 0.5s;
+            transition: 0.5s;
+            outline: none;
+            font-family: "Century Gothic";
+            font-weight: bold;
+            font-size: 20px;
+        }
+        
+        button[id=btnSearchSchedule] {
+            width: 150px;
+            height: 60px;
+            float: bottom;
+        }
+        
+        input[id=inputSearchSchedule] {
+            padding: 12px 20px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            border: 3px solid #ccc;
+            -webkit-transition: 0.5s;
+            transition: 0.5s;
+            outline: none;
+            font-family: "Century Gothic";
+            font-weight: bold;
+        }
+        
+        input[type=text],
+        [id=content],
+        [id=inputSearchSchedule]:focus {
+            border: 3px solid #555;
+        }
+    </style>
+    <div style="text-align: center">
+        <img src="https://kpi.ua/files/images/kpi.png" alt="KPI" style="width: 200px;height: 200px;margin-bottom: 20px">
+    </div>
+    <div style="height: 100px;width: 100%">
+        <div style="text-align: center;float: left">
+            <form action="subject.html">
+                <button style="width: 400px;height: 100px">Предметна
             область
         </button>
-        </form>
-    </div>
-    <div style="float: right;text-align: center;font-family: 'Century Gothic';font-weight: bold">Розклад групи
-        <div>
-            <input id="inputSearchSchedule">
+            </form>
         </div>
-        <div style="float: bottom">
-            <button id="btnSearchSchedule" style="text-align: center" onclick="search()">Знайти</button>
+        <div style="float: right;text-align: center;font-family: 'Century Gothic';font-weight: bold">Розклад групи
+            <div>
+                <input id="inputSearchSchedule">
+            </div>
+            <div style="float: bottom">
+                <button id="btnSearchSchedule" style="text-align: center" onclick="search()">Знайти</button>
+            </div>
         </div>
     </div>
-</div>
 
-<table border="1">
-    <caption>Наш розклад</caption>
-    <tr>
-        <th></th>
-        <th>Понеділок</th>
-        <th>Вівторок</th>
-        <th>Середа</th>
-        <th>Четвер</th>
-        <th>П'ятниця</th>
-    </tr>
-    <tr>
-        <td>1. 8:30</td>
-        <td></td>
-        <td>Розробка веб-застосувань</td>
-        <td>Основи клієнтської розробки</td>
-        <td></td>
-        <td>Вступ до філософії</td>
-    </tr>
-    <tr>
-        <td>2. 10:25</td>
-        <td>Комп. мережі</td>
-        <td>Комп. мережі</td>
-        <td>Основи клієнтської розробки</td>
-        <td></td>
-        <td></td>
-    </tr>
-    <tr>
-        <td>3. 12:20</td>
-        <td>ВМ-3</td>
-        <td>Англ</td>
-        <td>ВМ-3</td>
-        <td>Бази даних</td>
-        <td></td>
-    </tr>
-    <tr>
-        <td>4. 14:15</td>
-        <td>ФВ</td>
-        <td>Бази даних</td>
-        <td></td>
-        <td>Розроблення веб-застосувань</td>
-        <td></td>
-    </tr>
-    <tr>
-        <td>5. 16:10</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td>Психологія конфлікту</td>
-    </tr>
+    <table border="1">
+        <caption>Наш розклад</caption>
+        <tr>
+            <th></th>
+            <th>Понеділок</th>
+            <th>Вівторок</th>
+            <th>Середа</th>
+            <th>Четвер</th>
+            <th>П'ятниця</th>
+        </tr>
+        <tr>
+            <td>1. 8:30</td>
+            <td></td>
+            <td>Розробка веб-застосувань</td>
+            <td>Основи клієнтської розробки</td>
+            <td></td>
+            <td>Вступ до філософії</td>
+        </tr>
+        <tr>
+            <td>2. 10:25</td>
+            <td>Комп. мережі</td>
+            <td>Комп. мережі</td>
+            <td>Основи клієнтської розробки</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>3. 12:20</td>
+            <td>ВМ-3</td>
+            <td>Англ</td>
+            <td>ВМ-3</td>
+            <td>Бази даних</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>4. 14:15</td>
+            <td>ФВ</td>
+            <td>Бази даних</td>
+            <td></td>
+            <td>Розроблення веб-застосувань</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>5. 16:10</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Психологія конфлікту</td>
+        </tr>
 
-</table>
-<h1 style="text-align: center">Нотатки</h1>
+    </table>
+    <h1 style="text-align: center">Нотатки</h1>
 
 
-<input id="content">
-<div style="text-align: center">
-    <button onclick="note()">Занотувати</button>
-</div>
+    <input id="content">
+    <div style="text-align: center">
+        <button onclick="note()">Занотувати</button>
+    </div>
 
-<p id="noteContent">Третої пари у понеділок не буде</p>
-<script>
-    function note() {
-        let content = document.getElementById('content').value
-        var date = new Date();
-        document.getElementById('noteContent').innerHTML += `<p>[${date.toDateString()}] ${content}</p>`
+    <p id="noteContent">Третої пари у понеділок не буде</p>
+    <script>
+        function note() {
+            let content = document.getElementById('content').value
+            var date = new Date();
+            document.getElementById('noteContent').innerHTML += `<p>[${date.toDateString()}] ${content}</p>`
 
-    }
-
-    function search() {
-        let group = document.getElementById("inputSearchSchedule").value
-        let ref = findURL(group);
-        if (ref != null)
-            window.location.href = ref;
-    }
-
-    function findURL(text) {
-        let xmlHttp = new XMLHttpRequest();
-        xmlHttp.open("GET", "https://api.rozklad.org.ua/v2/groups/" + text, false); // false for synchronous request
-        xmlHttp.send(null);
-        let url = xmlHttp.response;
-
-        let startIndex = url.indexOf('http');
-        if (startIndex == -1) {
-            return null;
         }
-        let lastIndex = url.indexOf("\"", startIndex);
-        return url.substring(startIndex, lastIndex);
-    }
-</script>
+
+        function search() {
+            let group = document.getElementById("inputSearchSchedule").value
+            let ref = findURL(group);
+            if (ref != null)
+                window.location.href = ref;
+        }
+
+        function findURL(text) {
+            let xmlHttp = new XMLHttpRequest();
+            xmlHttp.open("GET", "https://api.rozklad.org.ua/v2/groups/" + text, false); // false for synchronous request
+            xmlHttp.send(null);
+            let url = xmlHttp.response;
+
+            let startIndex = url.indexOf('http');
+            if (startIndex == -1) {
+                return null;
+            }
+            let lastIndex = url.indexOf("\"", startIndex);
+            return url.substring(startIndex, lastIndex);
+        }
+    </script>
 </body>
 
 </html>
