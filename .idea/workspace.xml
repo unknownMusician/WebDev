@@ -18,7 +18,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../labsJS/lab2" />
     <property name="settings.editor.selected.configurable" value="editing.templates" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -40,7 +40,12 @@
       <workItem from="1600440915944" duration="603000" />
       <workItem from="1600622943605" duration="12000" />
       <workItem from="1600623007122" duration="230000" />
-      <workItem from="1600945678024" duration="2314000" />
+      <workItem from="1600945678024" duration="2371000" />
+      <workItem from="1600948925777" duration="601000" />
+      <workItem from="1600956743373" duration="64000" />
+      <workItem from="1601549971340" duration="983000" />
+      <workItem from="1601550965761" duration="690000" />
+      <workItem from="1601551689423" duration="484000" />
     </task>
     <servers />
   </component>
@@ -48,10 +53,10 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="245" y="215" key="FileChooserDialogImpl" timestamp="1600623235414">
+    <state x="245" y="215" key="FileChooserDialogImpl" timestamp="1601551738832">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="245" y="215" key="FileChooserDialogImpl/0.0.1920.1040/-1440.176.1440.860@0.0.1920.1040" timestamp="1600623235414" />
+    <state x="245" y="215" key="FileChooserDialogImpl/0.0.1920.1040/-1440.176.1440.860@0.0.1920.1040" timestamp="1601551738832" />
     <state x="351" y="78" key="SettingsEditor" timestamp="1600420955350">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

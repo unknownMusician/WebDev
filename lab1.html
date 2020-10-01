@@ -8,6 +8,10 @@
 
 <body>
     <style>
+        * {
+            margin: 10px;
+            padding: 0px; /* Убираем отступы и поля для всех элементов */
+        }
         button {
             font-family: 'Century Gothic';
             font-weight: bold;
@@ -81,7 +85,7 @@
         button[id=btnSearchSchedule] {
             width: 150px;
             height: 60px;
-            float: bottom;
+            float: left;
         }
         
         input[id=inputSearchSchedule] {
@@ -95,6 +99,40 @@
             font-family: "Century Gothic";
             font-weight: bold;
         }
+
+        .practice{
+            color: red;
+        }
+        .lecture{
+            color: blue;
+        }
+
+        #note_block{
+            text-align: center;
+        }
+        #note_block > button{
+            font-weight: bold;
+            font-family: Arial;
+            font-size: 15pt;
+        }
+
+        #noteContent > li{
+            font-family: "Century Gothic";
+            font-size: 20pt;
+            font-weight: bold;
+        }
+
+        h2{
+            text-align: center
+        }
+        span + b{
+            color: red;
+            margin: 0;
+        }
+        table{
+            background: linear-gradient(to bottom,  #feffff 0%,#ddf1f9 35%,#a0d8ef 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+
+        }
         
         input[type=text],
         [id=content],
@@ -102,6 +140,7 @@
             border: 3px solid #555;
         }
     </style>
+    <div id="container">
     <div style="text-align: center">
         <img src="https://kpi.ua/files/images/kpi.png" alt="KPI" style="width: 200px;height: 200px;margin-bottom: 20px">
     </div>
@@ -136,33 +175,33 @@
         <tr>
             <td>1. 8:30</td>
             <td></td>
-            <td>Розробка веб-застосувань</td>
-            <td>Основи клієнтської розробки</td>
+            <td class="lecture">Розробка веб-застосувань</td>
+            <td class="practice">Основи клієнтської розробки</td>
             <td></td>
-            <td>Вступ до філософії</td>
+            <td class="lecture">Вступ до філософії</td>
         </tr>
         <tr>
             <td>2. 10:25</td>
-            <td>Комп. мережі</td>
-            <td>Комп. мережі</td>
-            <td>Основи клієнтської розробки</td>
+            <td class="practice">Комп. мережі</td>
+            <td class="lecture">Комп. мережі</td>
+            <td class="lecture">Основи клієнтської розробки</td>
             <td></td>
             <td></td>
         </tr>
         <tr>
             <td>3. 12:20</td>
-            <td>ВМ-3</td>
-            <td>Англ</td>
-            <td>ВМ-3</td>
-            <td>Бази даних</td>
+            <td class="lecture">ВМ-3</td>
+            <td class="practice">Англ</td>
+            <td class="practice">ВМ-3</td>
+            <td class="lecture">Бази даних</td>
             <td></td>
         </tr>
         <tr>
             <td>4. 14:15</td>
-            <td>ФВ</td>
-            <td>Бази даних</td>
+            <td class="practice">ФВ</td>
+            <td class="practice">Бази даних</td>
             <td></td>
-            <td>Розроблення веб-застосувань</td>
+            <td class="practice">Розроблення веб-застосувань</td>
             <td></td>
         </tr>
         <tr>
@@ -171,24 +210,30 @@
             <td></td>
             <td></td>
             <td></td>
-            <td>Психологія конфлікту</td>
+            <td class="lecture">Психологія конфлікту</td>
         </tr>
 
     </table>
-    <h1 style="text-align: center">Нотатки</h1>
+    <h2 style="text-align: center"><span>Запис своїх </span><b>нотаток</b></h2>
 
 
     <input id="content">
-    <div style="text-align: center">
+    <div id="note_block">
         <button onclick="note()">Занотувати</button>
+        <button onclick="clearNotes()">Очистити</button>
     </div>
+        <div>
+        <ul id="noteContent">
+            <li>Третьої пари у понеділок не буде</li>
+        </ul>
+        </div>
 
-    <p id="noteContent">Третої пари у понеділок не буде</p>
+    </div>
     <script>
         function note() {
             let content = document.getElementById('content').value
             var date = new Date();
-            document.getElementById('noteContent').innerHTML += `<p>[${date.toDateString()}] ${content}</p>`
+            document.getElementById('noteContent').innerHTML += `<li>${content}</li>`
 
         }
 
@@ -211,6 +256,9 @@
             }
             let lastIndex = url.indexOf("\"", startIndex);
             return url.substring(startIndex, lastIndex);
+        }
+        function clearNotes(){
+           document.getElementById('noteContent').innerHTML = ""
         }
     </script>
 </body>
