@@ -532,7 +532,7 @@
             createBtnWithRedirect(leftButtons, "Лабораторна робота", "lab1.html")
             createLeftInfoBtn(leftButtons, "Постановка задачі Лабораторної роботи №2", lab1DescTextContent);
             createLeftInfoBtn(leftButtons, "Загальна постановка задачі програми", lab1WorkTaskTextContent);
-            createLeftGroupBtn(leftButtons, "Структура документа", () => showSmallButtons1(parent));
+            createLeftGroupBtn(leftButtons, "Структура документа", () => showSmallButtons1(leftButtons));
         }
 
         function showLab2() {
@@ -545,7 +545,7 @@
             createLeftInfoBtn(leftButtons, "Ідентифікатори", lab2identificators);
             createLeftInfoBtn(leftButtons, "Відступи", lab2tabs);
             createLeftInfoBtn(leftButtons, "Плаваючі елементи", lab2floats);
-            createLeftGroupBtn(leftButtons, "Структура документа", () => showSmallButtons2(parent));
+            createLeftGroupBtn(leftButtons, "Структура документа", () => showSmallButtons2(leftButtons));
         }
 
         function showSmallButtons1(parent) {
@@ -579,9 +579,7 @@
         // Functions for creating buttons and setting them a content
 
         function createLeftInfoBtn(parent, buttonText, mainContentText, style) {
-            parent.appendChild(createBtn(buttonText, "activeButton", () => {
-                setMainContent(buttonText, mainContentText, style)
-            }));
+            parent.appendChild(createBtn(buttonText, "activeButton", () => setMainContent(buttonText, mainContentText, style)));
         }
 
         function createLeftGroupBtn(parent, buttonText, onclick) {
