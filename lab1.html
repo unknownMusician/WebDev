@@ -95,6 +95,29 @@
             font-family: "Century Gothic";
             font-weight: bold;
         }
+
+        .practice{
+            color: red;
+        }
+        .lecture{
+            color: blue;
+        }
+
+        #note_block{
+            text-align: center;
+        }
+        #note_block > button{
+            font-weight: bold;
+            font-family: Arial;
+            font-size: 15pt;
+        }
+
+        h2{
+            text-align: center
+        }
+        span + b{
+            color: red;
+        }
         
         input[type=text],
         [id=content],
@@ -136,33 +159,33 @@
         <tr>
             <td>1. 8:30</td>
             <td></td>
-            <td>Розробка веб-застосувань</td>
-            <td>Основи клієнтської розробки</td>
+            <td class="lecture">Розробка веб-застосувань</td>
+            <td class="practice">Основи клієнтської розробки</td>
             <td></td>
-            <td>Вступ до філософії</td>
+            <td class="lecture">Вступ до філософії</td>
         </tr>
         <tr>
             <td>2. 10:25</td>
-            <td>Комп. мережі</td>
-            <td>Комп. мережі</td>
-            <td>Основи клієнтської розробки</td>
+            <td class="practice">Комп. мережі</td>
+            <td class="lecture">Комп. мережі</td>
+            <td class="lecture">Основи клієнтської розробки</td>
             <td></td>
             <td></td>
         </tr>
         <tr>
             <td>3. 12:20</td>
-            <td>ВМ-3</td>
-            <td>Англ</td>
-            <td>ВМ-3</td>
-            <td>Бази даних</td>
+            <td class="lecture">ВМ-3</td>
+            <td class="practice">Англ</td>
+            <td class="practice">ВМ-3</td>
+            <td class="lecture">Бази даних</td>
             <td></td>
         </tr>
         <tr>
             <td>4. 14:15</td>
-            <td>ФВ</td>
-            <td>Бази даних</td>
+            <td class="practice">ФВ</td>
+            <td class="practice">Бази даних</td>
             <td></td>
-            <td>Розроблення веб-застосувань</td>
+            <td class="practice">Розроблення веб-застосувань</td>
             <td></td>
         </tr>
         <tr>
@@ -171,19 +194,22 @@
             <td></td>
             <td></td>
             <td></td>
-            <td>Психологія конфлікту</td>
+            <td class="lecture">Психологія конфлікту</td>
         </tr>
 
     </table>
-    <h1 style="text-align: center">Нотатки</h1>
+    <h2 style="text-align: center"><span>Запис своїх </span><b>нотаток</b></h2>
 
 
     <input id="content">
-    <div style="text-align: center">
+    <div id="note_block">
         <button onclick="note()">Занотувати</button>
+        <button onclick="clearNotes()">Очистити</button>
     </div>
 
-    <p id="noteContent">Третої пари у понеділок не буде</p>
+    <div id="noteContent">
+    <p>Третої пари у понеділок не буде</p>
+    </div>
     <script>
         function note() {
             let content = document.getElementById('content').value
@@ -211,6 +237,9 @@
             }
             let lastIndex = url.indexOf("\"", startIndex);
             return url.substring(startIndex, lastIndex);
+        }
+        function clearNotes(){
+           document.getElementById('noteContent').innerHTML = ""
         }
     </script>
 </body>
