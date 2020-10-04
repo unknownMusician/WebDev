@@ -1,6 +1,6 @@
-* {
+* { /* Універсальний селектор */
     margin: 10px;
-    padding: 0px; /* Убираем отступы и поля для всех элементов */
+    padding: 0px;
 }
 button {
     font-family: 'Century Gothic';
@@ -28,25 +28,26 @@ table {
     width: 100%;
 }
 
-th {
+th, td { /* Групування */
     text-align: center;
-    padding: 15px;
     font-family: "Century Gothic";
+}
+
+th {
+    padding: 15px;
     font-weight: normal;
 }
 
 td {
-    text-align: center;
     padding: 25px;
-    font-family: 'Century Gothic';
     font-weight: bold;
 }
 
 caption {
-    padding: 10px;
+    padding: 10px; /* Внутрішній відступ з усіх сторін на 10px */
     font-family: 'Century Gothic';
     font-weight: bold;
-    margin-bottom: 10px;
+    margin-bottom: 10px; /* Зовнішній відступ знизу на 10px */
     font-size: 36px;
 }
 
@@ -57,7 +58,7 @@ p {
     font-weight: bold;
 }
 
-input[type=text],
+input[type=text], /* Селектор атрибуту */
 [id=content] {
     width: 100%;
     padding: 12px 20px;
@@ -70,6 +71,13 @@ input[type=text],
     font-family: "Century Gothic";
     font-weight: bold;
     font-size: 20px;
+}
+
+#findGroup{
+    float: right; /* Прив'язка до правої сторони */
+    text-align: center;
+    font-family: 'Century Gothic';
+    font-weight: bold
 }
 
 button[id=btnSearchSchedule] {
@@ -100,13 +108,14 @@ input[id=inputSearchSchedule] {
 #note_block{
     text-align: center;
 }
+
 #note_block > button{
     font-weight: bold;
     font-family: Arial;
     font-size: 15pt;
 }
 
-#noteContent > li{
+#noteContent > li{ /* Дочірній селектор */
     font-family: "Century Gothic";
     font-size: 20pt;
     font-weight: bold;
@@ -115,7 +124,7 @@ input[id=inputSearchSchedule] {
 h2{
     text-align: center
 }
-span + b{
+span + b{ /* Сусідній селектор */
     color: red;
     margin: 0;
 }
