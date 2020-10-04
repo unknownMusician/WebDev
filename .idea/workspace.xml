@@ -25,7 +25,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../labsJS" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="settings.editor.selected.configurable" value="editing.templates" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -59,6 +59,7 @@
       <workItem from="1601554313542" duration="600000" />
       <workItem from="1601571594530" duration="71000" />
       <workItem from="1601826542486" duration="6393000" />
+      <workItem from="1601833708422" duration="7000" />
     </task>
     <servers />
   </component>
@@ -66,10 +67,10 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="245" y="215" key="FileChooserDialogImpl" timestamp="1601571663661">
+    <state x="245" y="215" key="FileChooserDialogImpl" timestamp="1601833713320">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="245" y="215" key="FileChooserDialogImpl/0.0.1920.1040/-1440.176.1440.860@0.0.1920.1040" timestamp="1601571663661" />
+    <state x="245" y="215" key="FileChooserDialogImpl/0.0.1920.1040/-1440.176.1440.860@0.0.1920.1040" timestamp="1601833713320" />
     <state x="351" y="78" key="SettingsEditor" timestamp="1600420955350">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -78,10 +79,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="623" height="498" key="SwitcherDM/0.0.1920.1040/-1440.176.1440.860@0.0.1920.1040" timestamp="1600358694647" />
-    <state x="-1440" y="176" width="1456" height="961" key="dock-window-1" timestamp="1601826829161">
+    <state x="-1440" y="176" width="1456" height="961" key="dock-window-1" timestamp="1601833714435">
       <screen x="-1440" y="176" width="1440" height="860" />
     </state>
-    <state x="-1440" y="176" width="1456" height="961" key="dock-window-1/0.0.1920.1040/-1440.176.1440.860@0.0.1920.1040" timestamp="1601826829161" />
+    <state x="-1440" y="176" width="1456" height="961" key="dock-window-1/0.0.1920.1040/-1440.176.1440.860@0.0.1920.1040" timestamp="1601833714435" />
     <state x="1046" y="14" width="765" height="1008" key="dock-window-2" timestamp="1600423051006">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
