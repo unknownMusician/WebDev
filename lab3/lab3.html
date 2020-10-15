@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        body {
+            display: grid;
+            grid-template-columns: 1fr 600px 1fr;
+        }
+        
+        div.main {
+            width: 600px;
+            height: 800px;
+            border: 1px solid black;
+            display: grid;
+            grid-template-columns: 300px 300px;
+            grid-template-rows: 400px 400px;
+        }
+        
+        div.variant {
+            border: 1px solid black;
+            text-align: center;
+            font-size: 25px;
+        }
+        
+        div.innerVariant {
+            width: 250px;
+            height: 350px;
+            margin: 10px 10px 10px 20px;
+            box-shadow: 7px 7px 0px #969696;
+            border: 1px solid black;
+        }
+        /* v2 grid */
+        
+        div.innerVariant#gv2 {
+            display: grid;
+            grid-template-rows: 15% 1fr 15%;
+        }
+        
+        div#g21 {
+            background-color: #ffcc00;
+            border: 1px solid black;
+            display: grid;
+            grid-template-columns: 50% 1fr;
+        }
+        
+        div#g22 {
+            background-color: #3366ff;
+            border: 1px solid black;
+        }
+        
+        div#g23 {
+            background-color: #ffffff;
+            border: 1px solid #c0c0c0;
+            margin-right: 10px;
+        }
+        
+        div#g24 {
+            background-color: #3366ff;
+            border: 1px solid black;
+        }
+        
+        div#g25 {
+            background-color: #ffcc00;
+            border: 1px solid black;
+        }
+        
+        div#g2r {
+            background-color: #ff5050;
+            border: 1px solid black;
+            margin-bottom: 10px;
+        }
+        
+        div#g2wh {
+            margin: 10px;
+            height: 50%;
+            width: 90%;
+            background-color: #ffffff;
+            border: 1px solid black;
+            margin-bottom: 10px;
+        }
+        
+        div.g2b234 {
+            display: grid;
+            grid-template-columns: 30% 1fr;
+        }
+        
+        div.g2b34Nr {
+            display: grid;
+            margin: 10px;
+            grid-template-rows: 15% 1fr;
+        }
+        
+        div.g2b34r {
+            display: grid;
+            grid-template-columns: 60% 1fr;
+        }
+        /* v7 grid */
+        
+        div.innerVariant#gv7 {
+            display: grid;
+            grid-template-columns: 10% 1fr 10%;
+            border: 1px solid black;
+        }
+        
+        div#g70 {
+            display: grid;
+            grid-template-rows: 15% 1fr 15%;
+        }
+        
+        div#g71 {
+            background-color: #3366ff;
+            border: 1px solid black;
+            color: #ffffff;
+        }
+        
+        div#g72 {
+            display: grid;
+            grid-template-columns: 25% 1fr 25%;
+        }
+        
+        div#g74 {
+            background-color: #ffcc00;
+            border: 1px solid black;
+        }
+        
+        div#g75 {
+            background-color: #ffffff;
+            border: 1px solid black;
+        }
+        
+        div#g76 {
+            background-color: #ffcc00;
+            border: 1px solid black;
+        }
+        /* v2 float */
+        
+        div#f20 {
+            background-color: #ffcc00;
+            width: 99%;
+            height: 15%;
+            border: 1px solid black
+        }
+        
+        div#f21 {
+            width: 100%;
+            height: 70%;
+        }
+        
+        div#f22 {
+            background-color: #ffcc00;
+            width: 99%;
+            height: 14%;
+            border: 1px solid black;
+        }
+        
+        div#f23 {
+            background-color: #3366ff;
+            width: 25%;
+            height: 99.5%;
+            border: 1px solid black;
+            float: left;
+        }
+        
+        div#f24 {
+            width: 64%;
+            height: 90%;
+            float: left;
+            margin: 5%;
+        }
+        
+        div#f25 {
+            background-color: #ff5050;
+            width: 100%;
+            height: 10%;
+            margin-bottom: 5%;
+            float: left;
+            border: 1px solid black;
+        }
+        
+        div#f26 {
+            width: 100%;
+            height: 87%;
+            float: left;
+        }
+        
+        div#f27 {
+            width: 55%;
+            height: 100%;
+            margin-right: 5%;
+            float: left;
+            border: 1px solid #c0c0c0;
+        }
+        
+        div#f28 {
+            width: 37.5%;
+            height: 100%;
+            background-color: #3366ff;
+            border: 1px solid black;
+            float: left;
+        }
+        
+        div#f29 {
+            margin: 5%;
+            width: 50%;
+            height: 50%;
+            background-color: #ffffff;
+            border: 1px solid black;
+            float: left;
+        }
+        /* v2 float */
+        
+        div#f70 {
+            width: 80%;
+            height: 100%;
+            margin: 0 10% 0 10%;
+        }
+        
+        div#f71 {
+            width: 99%;
+            height: 14%;
+            background-color: #3366ff;
+            border: 1px solid black;
+            color: #ffffff;
+        }
+        
+        div#f72 {
+            width: 100%;
+            height: 70%;
+        }
+        
+        div#f73 {
+            width: 99%;
+            height: 15%;
+            background-color: #3366ff;
+            border: 1px solid black;
+            color: #ffffff;
+        }
+        
+        div#f74 {
+            width: 24%;
+            height: 99%;
+            float: left;
+            background-color: #ffcc00;
+            border: 1px solid black;
+        }
+        
+        div#f75 {
+            width: 49%;
+            height: 99%;
+            float: left;
+            background-color: #ffffff;
+            border: 1px solid black;
+        }
+        
+        div#f76 {
+            width: 24%;
+            height: 99%;
+            float: left;
+            background-color: #ffcc00;
+            border: 1px solid black;
+        }
+    </style>
+    <div></div>
+    <div class="main">
+        <div class="variant">
+            Варіант 2 (grid)
+            <div class="innerVariant" id="gv2">
+                <div id="g21">
+                    <div id="g2wh"></div>
+                    1
+                </div>
+                <div class="g2b234">
+                    <div id="g22">2</div>
+                    <div class="g2b34Nr">
+                        <div id="g2r"></div>
+                        <div class="g2b34r">
+                            <div id="g23">3</div>
+                            <div id="g24">4</div>
+                        </div>
+                    </div>
+                </div>
+                <div id="g25">5</div>
+            </div>
+        </div>
+        <div class="variant">
+            Варіант 7 (grid)
+            <div class="innerVariant" id="gv7">
+                <div></div>
+                <div id="g70">
+                    <div id="g71">1</div>
+                    <div id="g72">
+                        <div id="g74">2</div>
+                        <div id="g75">4</div>
+                        <div id="g76">5</div>
+                    </div>
+                    <div id="g71">3</div>
+                </div>
+                <div></div>
+            </div>
+        </div>
+        <div class="variant">
+            Варіант 7 (float)
+            <div class="innerVariant">
+                <div id="f20">
+                    <div id="f29"></div>
+                    1
+                </div>
+                <div id="f21">
+                    <div id="f23">2</div>
+                    <div id="f24">
+                        <div id="f25"></div>
+                        <div id="f26">
+                            <div id="f27">3</div>
+                            <div id="f28">4</div>
+                        </div>
+                    </div>
+                </div>
+                <div id="f22">5</div>
+            </div>
+        </div>
+        <div class="variant">
+            Варіант 7 (float)
+            <div class="innerVariant">
+                <div id="f70">
+                    <div id="f71">1</div>
+                    <div id="f72">
+                        <div id="f74">2</div>
+                        <div id="f75">4</div>
+                        <div id="f76">5</div>
+                    </div>
+                    <div id="f73">3</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div></div>
+</body>
+
+</html>
