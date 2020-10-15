@@ -527,561 +527,561 @@
         const lab3DescTextContent = "На третій лабораторній роботі наша задача була в тому, щоб придбати практичні навички роботи верстки сторінок засобами CSS, верстки на основі плаваючих елементів, з'ясувати переваги та недоліки типів макетів веб-сторінок. Також треба було засобами HTML та CSS створити окремо веб-сторінку, заданого вигялду використовуючи: 1)Розмітку за допомогою таблиці 2)Розмітку за допомогою плаваючих блоків"
         const lab3Type = `<div style="text-align: center">Для розробки нашої головної сторінки ми використовували комбінований макет веб-сторінки. Це можна побачити при зміні розміру вікна веб-сторінки. Деякі елементи змінють свій розмір, а деякі залишаються такими як і були, також деякі елементи змінюють своє розташування, а деякі залишаються у фіксованому місці. Приклад:</div>` + `<div style='text-align: center'>HTML<p>Таблиця</p><p><img src=\"img/lab3/Screenshot_1.png\"/></p><p>Кнопка</p><p><img src=\"img/lab3/Screenshot_2.png\"/></p>CSS<p>Адаптивна таблиця</p><p><img src=\"img/lab3/Screenshot_3.png\"/></p><p>Фіксована кнопка</p><p><img src=\"img/lab3/Screenshot_4.png\"/></p>Результат<p><img src=\"img/lab3/Screenshot_5.png\"/></p><p>Як можна побачити таблиця займає всю ширину вікна веб-браузера, навіть при зміні його розміру, а кнопка("Знайти"),все одно, має фіксований розмір, тому ми маємо комбінований макет сторінки.</p></div>`
         const lab3BasicConceptions = `<div style="text-align: center">Для розробки головної сторінки ми використовували дві базові концепції: плаваючих елментах і маніпулюванні внутрішніми та зовнішніми відступами. Приклад: </div>` + `<div style='text-align: center'>HTML<p>Блок findGroup</p><p><img src=\"img/lab3/Screenshot_6.png\"/></p><p>Заголовок таблиці</p><p><img src=\"img/lab3/Screenshot_7.png\"/></p>CSS<p>Блок findGroup(Використання плаваючих елементів)</p><p><img src=\"img/lab3/Screenshot_8.png\"/></p><p>Заголовок таблиці(Використання відступів)</p><p><img src=\"img/lab3/Screenshot_9.png\"/></p>Результат<p><img src=\"img/lab3/Screenshot_10.png\"/></p><p>Як можна побачити блок findGroup прив'язвся до правої сторони, а до заголовку таблиці були застосовані відступи</p></div>`
-        const lab3MainPageScreenshot = `<img src=\"img/lab3/Screenshot_11.png\"/>` +   `<img src=\"img/lab3/Screenshot_12.png\"/>`
-        const lab3MainPageHTMLCode = `&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;title&gt;Інтерактивний календар&lt;/title&gt;
-    &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;lab1.css&quot;&gt;
-&lt;/head&gt;
-
-&lt;body&gt;
-    &lt;div id=&quot;container&quot;&gt;
-        &lt;div style=&quot;text-align: center&quot;&gt;
-            &lt;img src=&quot;https://kpi.ua/files/images/kpi.png&quot; alt=&quot;KPI&quot; style=&quot;width: 200px;height: 200px;margin-bottom: 20px&quot;&gt;
-        &lt;/div&gt;
-        &lt;div style=&quot;height: 100px;width: 100%&quot;&gt;
-            &lt;div style=&quot;text-align: center;float: left&quot;&gt;
-                &lt;form action=&quot;subject.html&quot;&gt;
-                    &lt;button style=&quot;width: 400px;height: 100px&quot;&gt;Предметна
-            область
-        &lt;/button&gt;
-                &lt;/form&gt;
-            &lt;/div&gt;
-            &lt;div id=&quot;findGroup&quot;&gt;Розклад групи
-                &lt;div&gt;
-                    &lt;input id=&quot;inputSearchSchedule&quot;&gt;
-                &lt;/div&gt;
-                &lt;div&gt;
-                    &lt;button id=&quot;btnSearchSchedule&quot; style=&quot;text-align: center&quot; onclick=&quot;search()&quot;&gt;Знайти&lt;/button&gt;
-                &lt;/div&gt;
-            &lt;/div&gt;
-        &lt;/div&gt;
-
-        &lt;table border=&quot;1&quot;&gt;
-            &lt;caption&gt;Наш розклад&lt;/caption&gt;
-            &lt;tr&gt;
-                &lt;th&gt;&lt;/th&gt;
-                &lt;th&gt;Понеділок&lt;/th&gt;
-                &lt;th&gt;Вівторок&lt;/th&gt;
-                &lt;th&gt;Середа&lt;/th&gt;
-                &lt;th&gt;Четвер&lt;/th&gt;
-                &lt;th&gt;П'ятниця&lt;/th&gt;
-            &lt;/tr&gt;
-            &lt;tr&gt;
-                &lt;td&gt;1. 8:30&lt;/td&gt;
-                &lt;td&gt;&lt;/td&gt;
-                &lt;td class=&quot;lecture&quot;&gt;Розробка веб-застосувань&lt;/td&gt;
-                &lt;td class=&quot;practice&quot;&gt;Основи клієнтської розробки&lt;/td&gt;
-                &lt;td&gt;&lt;/td&gt;
-                &lt;td class=&quot;lecture&quot;&gt;Вступ до філософії&lt;/td&gt;
-            &lt;/tr&gt;
-            &lt;tr&gt;
-                &lt;td&gt;2. 10:25&lt;/td&gt;
-                &lt;td class=&quot;practice&quot;&gt;Комп. мережі&lt;/td&gt;
-                &lt;td class=&quot;lecture&quot;&gt;Комп. мережі&lt;/td&gt;
-                &lt;td class=&quot;lecture&quot;&gt;Основи клієнтської розробки&lt;/td&gt;
-                &lt;td&gt;&lt;/td&gt;
-                &lt;td&gt;&lt;/td&gt;
-            &lt;/tr&gt;
-            &lt;tr&gt;
-                &lt;td&gt;3. 12:20&lt;/td&gt;
-                &lt;td class=&quot;lecture&quot;&gt;ВМ-3&lt;/td&gt;
-                &lt;td class=&quot;practice&quot;&gt;Англ&lt;/td&gt;
-                &lt;td class=&quot;practice&quot;&gt;ВМ-3&lt;/td&gt;
-                &lt;td class=&quot;lecture&quot;&gt;Бази даних&lt;/td&gt;
-                &lt;td&gt;&lt;/td&gt;
-            &lt;/tr&gt;
-            &lt;tr&gt;
-                &lt;td&gt;4. 14:15&lt;/td&gt;
-                &lt;td class=&quot;practice&quot;&gt;ФВ&lt;/td&gt;
-                &lt;td class=&quot;practice&quot;&gt;Бази даних&lt;/td&gt;
-                &lt;td&gt;&lt;/td&gt;
-                &lt;td class=&quot;practice&quot;&gt;Розроблення веб-застосувань&lt;/td&gt;
-                &lt;td&gt;&lt;/td&gt;
-            &lt;/tr&gt;
-            &lt;tr&gt;
-                &lt;td&gt;5. 16:10&lt;/td&gt;
-                &lt;td&gt;&lt;/td&gt;
-                &lt;td&gt;&lt;/td&gt;
-                &lt;td&gt;&lt;/td&gt;
-                &lt;td&gt;&lt;/td&gt;
-                &lt;td class=&quot;lecture&quot;&gt;Психологія конфлікту&lt;/td&gt;
-            &lt;/tr&gt;
-
-        &lt;/table&gt;
-        &lt;h2 style=&quot;text-align: center&quot;&gt;&lt;span&gt;Запис своїх &lt;/span&gt;&lt;b&gt;нотаток&lt;/b&gt;&lt;/h2&gt;
-
-
-        &lt;input id=&quot;content&quot;&gt;
-        &lt;div id=&quot;note_block&quot;&gt;
-            &lt;button onclick=&quot;note()&quot;&gt;Занотувати&lt;/button&gt;
-            &lt;button onclick=&quot;clearNotes()&quot;&gt;Очистити&lt;/button&gt;
-        &lt;/div&gt;
-        &lt;div&gt;
-            &lt;ul id=&quot;noteContent&quot;&gt;
-                &lt;li&gt;Третьої пари у понеділок не буде&lt;/li&gt;
-            &lt;/ul&gt;
-        &lt;/div&gt;
-
-    &lt;/div&gt;
-    &lt;script src=&quot;lab1.js&quot;&gt;&lt;/script&gt;
-&lt;/body&gt;
-
-&lt;/html&gt;
-&lt;/body&gt;
-
+        const lab3MainPageScreenshot = `<img src=\"img/lab3/Screenshot_11.png\"/>` + `<img src=\"img/lab3/Screenshot_12.png\"/>`
+        const lab3MainPageHTMLCode = `&lt;!DOCTYPE html&gt;<p>
+&lt;html lang=&quot;en&quot;&gt;<p>
+<p>
+&lt;head&gt;<p>
+    &lt;meta charset=&quot;UTF-8&quot;&gt;<p>
+    &lt;title&gt;Інтерактивний календар&lt;/title&gt;<p>
+    &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;lab1.css&quot;&gt;<p>
+&lt;/head&gt;<p>
+<p>
+&lt;body&gt;<p>
+    &lt;div id=&quot;container&quot;&gt;<p>
+        &lt;div style=&quot;text-align: center&quot;&gt;<p>
+            &lt;img src=&quot;https://kpi.ua/files/images/kpi.png&quot; alt=&quot;KPI&quot; style=&quot;width: 200px;height: 200px;margin-bottom: 20px&quot;&gt;<p>
+        &lt;/div&gt;<p>
+        &lt;div style=&quot;height: 100px;width: 100%&quot;&gt;<p>
+            &lt;div style=&quot;text-align: center;float: left&quot;&gt;<p>
+                &lt;form action=&quot;subject.html&quot;&gt;<p>
+                    &lt;button style=&quot;width: 400px;height: 100px&quot;&gt;Предметна<p>
+            область<p>
+        &lt;/button&gt;<p>
+                &lt;/form&gt;<p>
+            &lt;/div&gt;<p>
+            &lt;div id=&quot;findGroup&quot;&gt;Розклад групи<p>
+                &lt;div&gt;<p>
+                    &lt;input id=&quot;inputSearchSchedule&quot;&gt;<p>
+                &lt;/div&gt;<p>
+                &lt;div&gt;<p>
+                    &lt;button id=&quot;btnSearchSchedule&quot; style=&quot;text-align: center&quot; onclick=&quot;search()&quot;&gt;Знайти&lt;/button&gt;<p>
+                &lt;/div&gt;<p>
+            &lt;/div&gt;<p>
+        &lt;/div&gt;<p>
+<p>
+        &lt;table border=&quot;1&quot;&gt;<p>
+            &lt;caption&gt;Наш розклад&lt;/caption&gt;<p>
+            &lt;tr&gt;<p>
+                &lt;th&gt;&lt;/th&gt;<p>
+                &lt;th&gt;Понеділок&lt;/th&gt;<p>
+                &lt;th&gt;Вівторок&lt;/th&gt;<p>
+                &lt;th&gt;Середа&lt;/th&gt;<p>
+                &lt;th&gt;Четвер&lt;/th&gt;<p>
+                &lt;th&gt;П'ятниця&lt;/th&gt;<p>
+            &lt;/tr&gt;<p>
+            &lt;tr&gt;<p>
+                &lt;td&gt;1. 8:30&lt;/td&gt;<p>
+                &lt;td&gt;&lt;/td&gt;<p>
+                &lt;td class=&quot;lecture&quot;&gt;Розробка веб-застосувань&lt;/td&gt;<p>
+                &lt;td class=&quot;practice&quot;&gt;Основи клієнтської розробки&lt;/td&gt;<p>
+                &lt;td&gt;&lt;/td&gt;<p>
+                &lt;td class=&quot;lecture&quot;&gt;Вступ до філософії&lt;/td&gt;<p>
+            &lt;/tr&gt;<p>
+            &lt;tr&gt;<p>
+                &lt;td&gt;2. 10:25&lt;/td&gt;<p>
+                &lt;td class=&quot;practice&quot;&gt;Комп. мережі&lt;/td&gt;<p>
+                &lt;td class=&quot;lecture&quot;&gt;Комп. мережі&lt;/td&gt;<p>
+                &lt;td class=&quot;lecture&quot;&gt;Основи клієнтської розробки&lt;/td&gt;<p>
+                &lt;td&gt;&lt;/td&gt;<p>
+                &lt;td&gt;&lt;/td&gt;<p>
+            &lt;/tr&gt;<p>
+            &lt;tr&gt;<p>
+                &lt;td&gt;3. 12:20&lt;/td&gt;<p>
+                &lt;td class=&quot;lecture&quot;&gt;ВМ-3&lt;/td&gt;<p>
+                &lt;td class=&quot;practice&quot;&gt;Англ&lt;/td&gt;<p>
+                &lt;td class=&quot;practice&quot;&gt;ВМ-3&lt;/td&gt;<p>
+                &lt;td class=&quot;lecture&quot;&gt;Бази даних&lt;/td&gt;<p>
+                &lt;td&gt;&lt;/td&gt;<p>
+            &lt;/tr&gt;<p>
+            &lt;tr&gt;<p>
+                &lt;td&gt;4. 14:15&lt;/td&gt;<p>
+                &lt;td class=&quot;practice&quot;&gt;ФВ&lt;/td&gt;<p>
+                &lt;td class=&quot;practice&quot;&gt;Бази даних&lt;/td&gt;<p>
+                &lt;td&gt;&lt;/td&gt;<p>
+                &lt;td class=&quot;practice&quot;&gt;Розроблення веб-застосувань&lt;/td&gt;<p>
+                &lt;td&gt;&lt;/td&gt;<p>
+            &lt;/tr&gt;<p>
+            &lt;tr&gt;<p>
+                &lt;td&gt;5. 16:10&lt;/td&gt;<p>
+                &lt;td&gt;&lt;/td&gt;<p>
+                &lt;td&gt;&lt;/td&gt;<p>
+                &lt;td&gt;&lt;/td&gt;<p>
+                &lt;td&gt;&lt;/td&gt;<p>
+                &lt;td class=&quot;lecture&quot;&gt;Психологія конфлікту&lt;/td&gt;<p>
+            &lt;/tr&gt;<p>
+<p>
+        &lt;/table&gt;<p>
+        &lt;h2 style=&quot;text-align: center&quot;&gt;&lt;span&gt;Запис своїх &lt;/span&gt;&lt;b&gt;нотаток&lt;/b&gt;&lt;/h2&gt;<p>
+<p>
+<p>
+        &lt;input id=&quot;content&quot;&gt;<p>
+        &lt;div id=&quot;note_block&quot;&gt;<p>
+            &lt;button onclick=&quot;note()&quot;&gt;Занотувати&lt;/button&gt;<p>
+            &lt;button onclick=&quot;clearNotes()&quot;&gt;Очистити&lt;/button&gt;<p>
+        &lt;/div&gt;<p>
+        &lt;div&gt;<p>
+            &lt;ul id=&quot;noteContent&quot;&gt;<p>
+                &lt;li&gt;Третьої пари у понеділок не буде&lt;/li&gt;<p>
+            &lt;/ul&gt;<p>
+        &lt;/div&gt;<p>
+<p>
+    &lt;/div&gt;<p>
+    &lt;script src=&quot;lab1.js&quot;&gt;&lt;/script&gt;<p>
+&lt;/body&gt;<p>
+<p>
+&lt;/html&gt;<p>
+&lt;/body&gt;<p>
+<p>
 &lt;/html&gt;
 `
-        const lab3CssCode = `* { /* Універсальний селектор */
-    margin: 10px;
-    padding: 0px;
-}
-button {
-    font-family: 'Century Gothic';
-    font-weight: bold;
-    padding: 16px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 20px 2px;
-    transition-duration: 0.4s;
-    cursor: pointer;
-    background-color: white;
-    color: black;
-    border: 2px solid #555555;
-    width: 40%;
-}
-
-button:hover {
-    background-color: #555555;
-    color: white;
-}
-
-table {
-    width: 100%; /* Адаптивний розмір, змінюється при зміні розміра вікна браузера*/
-}
-
-th, td { /* Групування */
-    text-align: center;
-    font-family: &quot;Century Gothic&quot;;
-}
-
-th {
-    padding: 15px;
-    font-weight: normal;
-}
-
-td {
-    padding: 25px;
-    font-weight: bold;
-}
-
-caption {
-    padding: 10px; /* Внутрішній відступ з усіх сторін на 10px */
-    font-family: 'Century Gothic';
-    font-weight: bold;
-    margin-bottom: 10px; /* Зовнішній відступ знизу на 10px */
-    font-size: 36px;
-}
-
-p {
-    font-family: 'Century Gothic';
-    font-weight: initial;
-    font-size: 20px;
-    font-weight: bold;
-}
-
-input[type=text], /* Селектор атрибуту */
-[id=content] {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    box-sizing: border-box;
-    border: 3px solid #ccc;
-    -webkit-transition: 0.5s;
-    transition: 0.5s;
-    outline: none;
-    font-family: &quot;Century Gothic&quot;;
-    font-weight: bold;
-    font-size: 20px;
-}
-
-#findGroup{
-    float: right; /* Прив'язка до правої сторони */
-    text-align: center;
-    font-family: 'Century Gothic';
-    font-weight: bold
-}
-
-button[id=btnSearchSchedule] { /* Фіксований розмір кпопки */
-    width: 150px;
-    height: 60px;
-    float: left;
-}
-
-input[id=inputSearchSchedule] {
-    padding: 12px 20px;
-    margin: 8px 0;
-    box-sizing: border-box;
-    border: 3px solid #ccc;
-    -webkit-transition: 0.5s;
-    transition: 0.5s;
-    outline: none;
-    font-family: &quot;Century Gothic&quot;;
-    font-weight: bold;
-}
-
-.practice{
-    color: red;
-}
-.lecture{
-    color: blue;
-}
-
-#note_block{
-    text-align: center;
-}
-
-#note_block &gt; button{
-    font-weight: bold;
-    font-family: Arial;
-    font-size: 15pt;
-}
-
-#noteContent &gt; li{ /* Дочірній селектор */
-    font-family: &quot;Century Gothic&quot;;
-    font-size: 20pt;
-    font-weight: bold;
-}
-
-h2{
-    text-align: center
-}
-span + b{ /* Сусідній селектор */
-    color: red;
-    margin: 0;
-}
-table{
-    background: linear-gradient(to bottom,  #feffff 0%,#ddf1f9 35%,#a0d8ef 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-
-}
-
-input[type=text],
-[id=content],
-[id=inputSearchSchedule]:focus {
+        const lab3CssCode = `* { /* Універсальний селектор */<p>
+    margin: 10px;<p>
+    padding: 0px;<p>
+}<p>
+button {<p>
+    font-family: 'Century Gothic';<p>
+    font-weight: bold;<p>
+    padding: 16px 32px;<p>
+    text-align: center;<p>
+    text-decoration: none;<p>
+    display: inline-block;<p>
+    font-size: 16px;<p>
+    margin: 20px 2px;<p>
+    transition-duration: 0.4s;<p>
+    cursor: pointer;<p>
+    background-color: white;<p>
+    color: black;<p>
+    border: 2px solid #555555;<p>
+    width: 40%;<p>
+}<p>
+<p>
+button:hover {<p>
+    background-color: #555555;<p>
+    color: white;<p>
+}<p>
+<p>
+table {<p>
+    width: 100%; /* Адаптивний розмір, змінюється при зміні розміра вікна браузера*/<p>
+}<p>
+<p>
+th, td { /* Групування */<p>
+    text-align: center;<p>
+    font-family: &quot;Century Gothic&quot;;<p>
+}<p>
+<p>
+th {<p>
+    padding: 15px;<p>
+    font-weight: normal;<p>
+}<p>
+<p>
+td {<p>
+    padding: 25px;<p>
+    font-weight: bold;<p>
+}<p>
+<p>
+caption {<p>
+    padding: 10px; /* Внутрішній відступ з усіх сторін на 10px */<p>
+    font-family: 'Century Gothic';<p>
+    font-weight: bold;<p>
+    margin-bottom: 10px; /* Зовнішній відступ знизу на 10px */<p>
+    font-size: 36px;<p>
+}<p>
+<p>
+p {<p>
+    font-family: 'Century Gothic';<p>
+    font-weight: initial;<p>
+    font-size: 20px;<p>
+    font-weight: bold;<p>
+}<p>
+<p>
+input[type=text], /* Селектор атрибуту */<p>
+[id=content] {<p>
+    width: 100%;<p>
+    padding: 12px 20px;<p>
+    margin: 8px 0;<p>
+    box-sizing: border-box;<p>
+    border: 3px solid #ccc;<p>
+    -webkit-transition: 0.5s;<p>
+    transition: 0.5s;<p>
+    outline: none;<p>
+    font-family: &quot;Century Gothic&quot;;<p>
+    font-weight: bold;<p>
+    font-size: 20px;<p>
+}<p>
+<p>
+#findGroup{<p>
+    float: right; /* Прив'язка до правої сторони */<p>
+    text-align: center;<p>
+    font-family: 'Century Gothic';<p>
+    font-weight: bold<p>
+}<p>
+<p>
+button[id=btnSearchSchedule] { /* Фіксований розмір кпопки */<p>
+    width: 150px;<p>
+    height: 60px;<p>
+    float: left;<p>
+}<p>
+<p>
+input[id=inputSearchSchedule] {<p>
+    padding: 12px 20px;<p>
+    margin: 8px 0;<p>
+    box-sizing: border-box;<p>
+    border: 3px solid #ccc;<p>
+    -webkit-transition: 0.5s;<p>
+    transition: 0.5s;<p>
+    outline: none;<p>
+    font-family: &quot;Century Gothic&quot;;<p>
+    font-weight: bold;<p>
+}<p>
+<p>
+.practice{<p>
+    color: red;<p>
+}<p>
+.lecture{<p>
+    color: blue;<p>
+}<p>
+<p>
+#note_block{<p>
+    text-align: center;<p>
+}<p>
+<p>
+#note_block &gt; button{<p>
+    font-weight: bold;<p>
+    font-family: Arial;<p>
+    font-size: 15pt;<p>
+}<p>
+<p>
+#noteContent &gt; li{ /* Дочірній селектор */<p>
+    font-family: &quot;Century Gothic&quot;;<p>
+    font-size: 20pt;<p>
+    font-weight: bold;<p>
+}<p>
+<p>
+h2{<p>
+    text-align: center<p>
+}<p>
+span + b{ /* Сусідній селектор */<p>
+    color: red;<p>
+    margin: 0;<p>
+}<p>
+table{<p>
+    background: linear-gradient(to bottom,  #feffff 0%,#ddf1f9 35%,#a0d8ef 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */<p>
+<p>
+}<p>
+<p>
+input[type=text],<p>
+[id=content],<p>
+[id=inputSearchSchedule]:focus {<p>
     border: 3px solid #555;
 }`
 
         const lab3GridElements = "<div style='text-align: center'>Для верстки таблицею ми обрали postion: grid" + `<img src=\"img/lab3/Screenshot_13.png\"/></div>` + `<div style='text-align: center'><p>HTML Code</p></div>` + `<p>&lt;div class=&quot;variant&quot;&gt;
-            Варіант 2 (grid)
-            &lt;div class=&quot;innerVariant&quot; id=&quot;gv2&quot;&gt;
-                &lt;div id=&quot;g21&quot;&gt;
-                    &lt;div id=&quot;g2wh&quot;&gt;&lt;/div&gt;
-                    1
-                &lt;/div&gt;
-                &lt;div class=&quot;g2b234&quot;&gt;
-                    &lt;div id=&quot;g22&quot;&gt;2&lt;/div&gt;
-                    &lt;div class=&quot;g2b34Nr&quot;&gt;
-                        &lt;div id=&quot;g2r&quot;&gt;&lt;/div&gt;
-                        &lt;div class=&quot;g2b34r&quot;&gt;
-                            &lt;div id=&quot;g23&quot;&gt;3&lt;/div&gt;
-                            &lt;div id=&quot;g24&quot;&gt;4&lt;/div&gt;
-                        &lt;/div&gt;
-                    &lt;/div&gt;
-                &lt;/div&gt;
-                &lt;div id=&quot;g25&quot;&gt;5&lt;/div&gt;
-            &lt;/div&gt;
-        &lt;/div&gt;
-        &lt;div class=&quot;variant&quot;&gt;
-            Варіант 7 (grid)
-            &lt;div class=&quot;innerVariant&quot; id=&quot;gv7&quot;&gt;
-                &lt;div&gt;&lt;/div&gt;
-                &lt;div id=&quot;g70&quot;&gt;
-                    &lt;div id=&quot;g71&quot;&gt;1&lt;/div&gt;
-                    &lt;div id=&quot;g72&quot;&gt;
-                        &lt;div id=&quot;g74&quot;&gt;2&lt;/div&gt;
-                        &lt;div id=&quot;g75&quot;&gt;4&lt;/div&gt;
-                        &lt;div id=&quot;g76&quot;&gt;5&lt;/div&gt;
-                    &lt;/div&gt;
-                    &lt;div id=&quot;g71&quot;&gt;3&lt;/div&gt;
-                &lt;/div&gt;
-                &lt;div&gt;&lt;/div&gt;
-            &lt;/div&gt;
-        &lt;/div&gt;</p>`
-        +  `<div style='text-align: center'><p>CSS code</p></div>` + `<p>/* v2 grid */
-
-div.innerVariant#gv2 {
-    display: grid;
-    grid-template-rows: 15% 1fr 15%;
-}
-
-div#g21 {
-    background-color: #ffcc00;
-    border: 1px solid black;
-    display: grid;
-    grid-template-columns: 50% 1fr;
-}
-
-div#g22 {
-    background-color: #3366ff;
-    border: 1px solid black;
-}
-
-div#g23 {
-    background-color: #ffffff;
-    border: 1px solid #c0c0c0;
-    margin-right: 10px;
-}
-
-div#g24 {
-    background-color: #3366ff;
-    border: 1px solid black;
-}
-
-div#g25 {
-    background-color: #ffcc00;
-    border: 1px solid black;
-}
-
-div#g2r {
-    background-color: #ff5050;
-    border: 1px solid black;
-    margin-bottom: 10px;
-}
-
-div#g2wh {
-    margin: 10px;
-    height: 50%;
-    width: 90%;
-    background-color: #ffffff;
-    border: 1px solid black;
-    margin-bottom: 10px;
-}
-
-div.g2b234 {
-    display: grid;
-    grid-template-columns: 30% 1fr;
-}
-
-div.g2b34Nr {
-    display: grid;
-    margin: 10px;
-    grid-template-rows: 15% 1fr;
-}
-
-div.g2b34r {
-    display: grid;
-    grid-template-columns: 60% 1fr;
-}
-
-
-/* v7 grid */
-
-div.innerVariant#gv7 {
-    display: grid;
-    grid-template-columns: 10% 1fr 10%;
-    border: 1px solid black;
-}
-
-div#g70 {
-    display: grid;
-    grid-template-rows: 15% 1fr 15%;
-}
-
-div#g71 {
-    background-color: #3366ff;
-    border: 1px solid black;
-    color: #ffffff;
-}
-
-div#g72 {
-    display: grid;
-    grid-template-columns: 25% 1fr 25%;
-}
-
-div#g74 {
-    background-color: #ffcc00;
-    border: 1px solid black;
-}
-
-div#g75 {
-    background-color: #ffffff;
-    border: 1px solid black;
-}
-
-div#g76 {
-    background-color: #ffcc00;
-    border: 1px solid black;
+            Варіант 2 (grid)<p>
+            &lt;div class=&quot;innerVariant&quot; id=&quot;gv2&quot;&gt;<p>
+                &lt;div id=&quot;g21&quot;&gt;<p>
+                    &lt;div id=&quot;g2wh&quot;&gt;&lt;/div&gt;<p>
+                    1<p>
+                &lt;/div&gt;<p>
+                &lt;div class=&quot;g2b234&quot;&gt;<p>
+                    &lt;div id=&quot;g22&quot;&gt;2&lt;/div&gt;<p>
+                    &lt;div class=&quot;g2b34Nr&quot;&gt;<p>
+                        &lt;div id=&quot;g2r&quot;&gt;&lt;/div&gt;<p>
+                        &lt;div class=&quot;g2b34r&quot;&gt;<p>
+                            &lt;div id=&quot;g23&quot;&gt;3&lt;/div&gt;<p>
+                            &lt;div id=&quot;g24&quot;&gt;4&lt;/div&gt;<p>
+                        &lt;/div&gt;<p>
+                    &lt;/div&gt;<p>
+                &lt;/div&gt;<p>
+                &lt;div id=&quot;g25&quot;&gt;5&lt;/div&gt;<p>
+            &lt;/div&gt;<p>
+        &lt;/div&gt;<p>
+        &lt;div class=&quot;variant&quot;&gt;<p>
+            Варіант 7 (grid)<p>
+            &lt;div class=&quot;innerVariant&quot; id=&quot;gv7&quot;&gt;<p>
+                &lt;div&gt;&lt;/div&gt;<p>
+                &lt;div id=&quot;g70&quot;&gt;<p>
+                    &lt;div id=&quot;g71&quot;&gt;1&lt;/div&gt;<p>
+                    &lt;div id=&quot;g72&quot;&gt;<p>
+                        &lt;div id=&quot;g74&quot;&gt;2&lt;/div&gt;<p>
+                        &lt;div id=&quot;g75&quot;&gt;4&lt;/div&gt;<p>
+                        &lt;div id=&quot;g76&quot;&gt;5&lt;/div&gt;<p>
+                    &lt;/div&gt;<p>
+                    &lt;div id=&quot;g71&quot;&gt;3&lt;/div&gt;<p>
+                &lt;/div&gt;<p>
+                &lt;div&gt;&lt;/div&gt;<p>
+            &lt;/div&gt;<p>
+        &lt;/div&gt;</p>` +
+            `<div style='text-align: center'><p>CSS code</p></div>` + `<p>/* v2 grid */
+<p>
+div.innerVariant#gv2 {<p>
+    display: grid;<p>
+    grid-template-rows: 15% 1fr 15%;<p>
+}<p>
+<p>
+div#g21 {<p>
+    background-color: #ffcc00;<p>
+    border: 1px solid black;<p>
+    display: grid;<p>
+    grid-template-columns: 50% 1fr;<p>
+}<p>
+<p>
+div#g22 {<p>
+    background-color: #3366ff;<p>
+    border: 1px solid black;<p>
+}<p>
+<p>
+div#g23 {<p>
+    background-color: #ffffff;<p>
+    border: 1px solid #c0c0c0;<p>
+    margin-right: 10px;<p>
+}<p>
+<p>
+div#g24 {<p>
+    background-color: #3366ff;<p>
+    border: 1px solid black;<p>
+}<p>
+<p>
+div#g25 {<p>
+    background-color: #ffcc00;<p>
+    border: 1px solid black;<p>
+}<p>
+<p>
+div#g2r {<p>
+    background-color: #ff5050;<p>
+    border: 1px solid black;<p>
+    margin-bottom: 10px;<p>
+}<p>
+<p>
+div#g2wh {<p>
+    margin: 10px;<p>
+    height: 50%;<p>
+    width: 90%;<p>
+    background-color: #ffffff;<p>
+    border: 1px solid black;<p>
+    margin-bottom: 10px;<p>
+}<p>
+<p>
+div.g2b234 {<p>
+    display: grid;<p>
+    grid-template-columns: 30% 1fr;<p>
+}<p>
+<p>
+div.g2b34Nr {<p>
+    display: grid;<p>
+    margin: 10px;<p>
+    grid-template-rows: 15% 1fr;<p>
+}<p>
+<p>
+div.g2b34r {<p>
+    display: grid;<p>
+    grid-template-columns: 60% 1fr;<p>
+}<p>
+<p>
+<p>
+/* v7 grid */<p>
+<p>
+div.innerVariant#gv7 {<p>
+    display: grid;<p>
+    grid-template-columns: 10% 1fr 10%;<p>
+    border: 1px solid black;<p>
+}<p>
+<p>
+div#g70 {<p>
+    display: grid;<p>
+    grid-template-rows: 15% 1fr 15%;<p>
+}<p>
+<p>
+div#g71 {<p>
+    background-color: #3366ff;<p>
+    border: 1px solid black;<p>
+    color: #ffffff;<p>
+}<p>
+<p>
+div#g72 {<p>
+    display: grid;<p>
+    grid-template-columns: 25% 1fr 25%;<p>
+}<p>
+<p>
+div#g74 {<p>
+    background-color: #ffcc00;<p>
+    border: 1px solid black;<p>
+}<p>
+<p>
+div#g75 {<p>
+    background-color: #ffffff;<p>
+    border: 1px solid black;<p>
+}<p>
+<p>
+div#g76 {<p>
+    background-color: #ffcc00;<p>
+    border: 1px solid black;<p>
 }
 </p>`
 
         const lab3FloatElements = `<img src=\"img/lab3/Screenshot_14.png\"/>` + `<div style="text-align: center"><p>HTML</p></div>` + `<p> &lt;div class=&quot;variant&quot;&gt;
-            Варіант 2 (float)
-            &lt;div class=&quot;innerVariant&quot;&gt;
-                &lt;div id=&quot;f20&quot;&gt;
-                    &lt;div id=&quot;f29&quot;&gt;&lt;/div&gt;
-                    1
-                &lt;/div&gt;
-                &lt;div id=&quot;f21&quot;&gt;
-                    &lt;div id=&quot;f23&quot;&gt;2&lt;/div&gt;
-                    &lt;div id=&quot;f24&quot;&gt;
-                        &lt;div id=&quot;f25&quot;&gt;&lt;/div&gt;
-                        &lt;div id=&quot;f26&quot;&gt;
-                            &lt;div id=&quot;f27&quot;&gt;3&lt;/div&gt;
-                            &lt;div id=&quot;f28&quot;&gt;4&lt;/div&gt;
-                        &lt;/div&gt;
-                    &lt;/div&gt;
-                &lt;/div&gt;
-                &lt;div id=&quot;f22&quot;&gt;5&lt;/div&gt;
-            &lt;/div&gt;
-        &lt;/div&gt;
-        &lt;div class=&quot;variant&quot;&gt;
-            Варіант 7 (float)
-            &lt;div class=&quot;innerVariant&quot;&gt;
-                &lt;div id=&quot;f70&quot;&gt;
-                    &lt;div id=&quot;f71&quot;&gt;1&lt;/div&gt;
-                    &lt;div id=&quot;f72&quot;&gt;
-                        &lt;div id=&quot;f74&quot;&gt;2&lt;/div&gt;
-                        &lt;div id=&quot;f75&quot;&gt;4&lt;/div&gt;
-                        &lt;div id=&quot;f76&quot;&gt;5&lt;/div&gt;
-                    &lt;/div&gt;
-                    &lt;div id=&quot;f73&quot;&gt;3&lt;/div&gt;
-                &lt;/div&gt;
-            &lt;/div&gt;
+            Варіант 2 (float)<p>
+            &lt;div class=&quot;innerVariant&quot;&gt;<p>
+                &lt;div id=&quot;f20&quot;&gt;<p>
+                    &lt;div id=&quot;f29&quot;&gt;&lt;/div&gt;<p>
+                    1<p>
+                &lt;/div&gt;<p>
+                &lt;div id=&quot;f21&quot;&gt;<p>
+                    &lt;div id=&quot;f23&quot;&gt;2&lt;/div&gt;<p>
+                    &lt;div id=&quot;f24&quot;&gt;<p>
+                        &lt;div id=&quot;f25&quot;&gt;&lt;/div&gt;<p>
+                        &lt;div id=&quot;f26&quot;&gt;<p>
+                            &lt;div id=&quot;f27&quot;&gt;3&lt;/div&gt;<p>
+                            &lt;div id=&quot;f28&quot;&gt;4&lt;/div&gt;<p>
+                        &lt;/div&gt;<p>
+                    &lt;/div&gt;<p>
+                &lt;/div&gt;<p>
+                &lt;div id=&quot;f22&quot;&gt;5&lt;/div&gt;<p>
+            &lt;/div&gt;<p>
+        &lt;/div&gt;<p>
+        &lt;div class=&quot;variant&quot;&gt;<p>
+            Варіант 7 (float)<p>
+            &lt;div class=&quot;innerVariant&quot;&gt;<p>
+                &lt;div id=&quot;f70&quot;&gt;<p>
+                    &lt;div id=&quot;f71&quot;&gt;1&lt;/div&gt;<p>
+                    &lt;div id=&quot;f72&quot;&gt;<p>
+                        &lt;div id=&quot;f74&quot;&gt;2&lt;/div&gt;<p>
+                        &lt;div id=&quot;f75&quot;&gt;4&lt;/div&gt;<p>
+                        &lt;div id=&quot;f76&quot;&gt;5&lt;/div&gt;<p>
+                    &lt;/div&gt;<p>
+                    &lt;div id=&quot;f73&quot;&gt;3&lt;/div&gt;<p>
+                &lt;/div&gt;<p>
+            &lt;/div&gt;<p>
         &lt;/div&gt;
     &lt;/div&gt;</p>` + `<div style='text-align: center'><p>CSS code</p></div>` + `<p>
-/* v2 float */
-
-div#f20 {
-    background-color: #ffcc00;
-    width: 99.5%;
-    height: 15%;
-    border: 1px solid black
-}
-
-div#f21 {
-    width: 100%;
-    height: 70%;
-}
-
-div#f22 {
-    background-color: #ffcc00;
-    width: 99.5%;
-    height: 14%;
-    border: 1px solid black;
-}
-
-div#f23 {
-    background-color: #3366ff;
-    width: 25%;
-    height: 99.5%;
-    border: 1px solid black;
-    float: left;
-}
-
-div#f24 {
-    width: 64%;
-    height: 90%;
-    float: left;
-    margin: 5%;
-}
-
-div#f25 {
-    background-color: #ff5050;
-    width: 100%;
-    height: 10%;
-    margin-bottom: 5%;
-    float: left;
-    border: 1px solid black;
-}
-
-div#f26 {
-    width: 100%;
-    height: 87%;
-    float: left;
-}
-
-div#f27 {
-    width: 55%;
-    height: 100%;
-    margin-right: 5%;
-    float: left;
-    border: 1px solid #c0c0c0;
-}
-
-div#f28 {
-    width: 37.5%;
-    height: 100%;
-    background-color: #3366ff;
-    border: 1px solid black;
-    float: left;
-}
-
-div#f29 {
-    margin: 5%;
-    width: 50%;
-    height: 50%;
-    background-color: #ffffff;
-    border: 1px solid black;
-    float: left;
-}
-
-
-/* v2 float */
-
-div#f70 {
-    width: 80%;
-    height: 100%;
-    margin: 0 10% 0 10%;
-}
-
-div#f71 {
-    width: 99%;
-    height: 14%;
-    background-color: #3366ff;
-    border: 1px solid black;
-    color: #ffffff;
-}
-
-div#f72 {
-    width: 100%;
-    height: 70%;
-}
-
-div#f73 {
-    width: 99%;
-    height: 15%;
-    background-color: #3366ff;
-    border: 1px solid black;
-    color: #ffffff;
-}
-
-div#f74 {
-    width: 24%;
-    height: 99%;
-    float: left;
-    background-color: #ffcc00;
-    border: 1px solid black;
-}
-
-div#f75 {
-    width: 49%;
-    height: 99%;
-    float: left;
-    background-color: #ffffff;
-    border: 1px solid black;
-}
-
-div#f76 {
-    width: 24%;
-    height: 99%;
-    float: left;
-    background-color: #ffcc00;
-    border: 1px solid black;
+/* v2 float */<p>
+<p>
+div#f20 {<p>
+    background-color: #ffcc00;<p>
+    width: 99.5%;<p>
+    height: 15%;<p>
+    border: 1px solid black<p>
+}<p>
+<p>
+div#f21 {<p>
+    width: 100%;<p>
+    height: 70%;<p>
+}<p>
+<p>
+div#f22 {<p>
+    background-color: #ffcc00;<p>
+    width: 99.5%;<p>
+    height: 14%;<p>
+    border: 1px solid black;<p>
+}<p>
+<p>
+div#f23 {<p>
+    background-color: #3366ff;<p>
+    width: 25%;<p>
+    height: 99.5%;<p>
+    border: 1px solid black;<p>
+    float: left;<p>
+}<p>
+<p>
+div#f24 {<p>
+    width: 64%;<p>
+    height: 90%;<p>
+    float: left;<p>
+    margin: 5%;<p>
+}<p>
+<p>
+div#f25 {<p>
+    background-color: #ff5050;<p>
+    width: 100%;<p>
+    height: 10%;<p>
+    margin-bottom: 5%;<p>
+    float: left;<p>
+    border: 1px solid black;<p>
+}<p>
+<p>
+div#f26 {<p>
+    width: 100%;<p>
+    height: 87%;<p>
+    float: left;<p>
+}<p>
+<p>
+div#f27 {<p>
+    width: 55%;<p>
+    height: 100%;<p>
+    margin-right: 5%;<p>
+    float: left;<p>
+    border: 1px solid #c0c0c0;<p>
+}<p>
+<p>
+div#f28 {<p>
+    width: 37.5%;<p>
+    height: 100%;<p>
+    background-color: #3366ff;<p>
+    border: 1px solid black;<p>
+    float: left;<p>
+}<p>
+<p>
+div#f29 {<p>
+    margin: 5%;<p>
+    width: 50%;<p>
+    height: 50%;<p>
+    background-color: #ffffff;<p>
+    border: 1px solid black;<p>
+    float: left;<p>
+}<p>
+<p>
+<p>
+/* v2 float */<p>
+<p>
+div#f70 {<p>
+    width: 80%;<p>
+    height: 100%;<p>
+    margin: 0 10% 0 10%;<p>
+}<p>
+<p>
+div#f71 {<p>
+    width: 99%;<p>
+    height: 14%;<p>
+    background-color: #3366ff;<p>
+    border: 1px solid black;<p>
+    color: #ffffff;<p>
+}<p>
+<p>
+div#f72 {<p>
+    width: 100%;<p>
+    height: 70%;<p>
+}<p>
+<p>
+div#f73 {<p>
+    width: 99%;<p>
+    height: 15%;<p>
+    background-color: #3366ff;<p>
+    border: 1px solid black;<p>
+    color: #ffffff;<p>
+}<p>
+<p>
+div#f74 {<p>
+    width: 24%;<p>
+    height: 99%;<p>
+    float: left;<p>
+    background-color: #ffcc00;<p>
+    border: 1px solid black;<p>
+}<p>
+<p>
+div#f75 {<p>
+    width: 49%;<p>
+    height: 99%;<p>
+    float: left;<p>
+    background-color: #ffffff;<p>
+    border: 1px solid black;<p>
+}<p>
+<p>
+div#f76 {<p>
+    width: 24%;<p>
+    height: 99%;<p>
+    float: left;<p>
+    background-color: #ffcc00;<p>
+    border: 1px solid black;<p>
 }</p>`
 
 
@@ -1109,15 +1109,15 @@ div#f76 {
             createLeftGroupBtn(leftButtons, "Структура документа", () => showSmallButtons2(leftButtons));
         }
 
-        function showLab3(){
+        function showLab3() {
             let leftButtons = document.getElementById("leftButtons");
             leftButtons.innerHTML = "";
 
             createLeftInfoBtn(leftButtons, "Постановка задачі Лабораторної роботи №3", lab3DescTextContent);
-            createLeftInfoBtn(leftButtons,"Тип макету",lab3Type)
-            createLeftInfoBtn(leftButtons,"Базові концепції верстки",lab3BasicConceptions)
-            createLeftGroupBtn(leftButtons,"Головна сторінка",()=>showSmallButtons3(leftButtons))
-            createLeftGroupBtn(leftButtons,"Окрема сторінка",()=>showSmallButtons4(leftButtons))
+            createLeftInfoBtn(leftButtons, "Тип макету", lab3Type)
+            createLeftInfoBtn(leftButtons, "Базові концепції верстки", lab3BasicConceptions)
+            createLeftGroupBtn(leftButtons, "Головна сторінка", () => showSmallButtons3(leftButtons))
+            createLeftGroupBtn(leftButtons, "Окрема сторінка", () => showSmallButtons4(leftButtons))
 
 
 
@@ -1153,11 +1153,11 @@ div#f76 {
             parent.appendChild(div);
         }
 
-        function showSmallButtons3(parent){
-            if (document.getElementById("smallButtons2") != null){
+        function showSmallButtons3(parent) {
+            if (document.getElementById("smallButtons2") != null) {
                 document.getElementById("smallButtons2").remove()
             }
-            if(document.getElementById("smallButtons1") != null)
+            if (document.getElementById("smallButtons1") != null)
                 return
             let div = document.createElement("div");
             div.style = "padding-left: 70px";
@@ -1169,11 +1169,12 @@ div#f76 {
             parent.appendChild(div);
 
         }
-        function showSmallButtons4(parent){
-            if (document.getElementById("smallButtons1") != null){
+
+        function showSmallButtons4(parent) {
+            if (document.getElementById("smallButtons1") != null) {
                 document.getElementById("smallButtons1").remove()
             }
-            if(document.getElementById("smallButtons2") != null)
+            if (document.getElementById("smallButtons2") != null)
                 return
             let div = document.createElement("div");
             div.style = "padding-left: 70px";
