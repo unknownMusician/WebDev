@@ -25,7 +25,7 @@ button:hover {
 }
 
 table {
-    width: 100%;
+    width: 100%; /* Адаптивний розмір, змінюється при зміні розміра вікна браузера*/
 }
 
 th, td { /* Групування */
@@ -80,7 +80,7 @@ input[type=text], /* Селектор атрибуту */
     font-weight: bold
 }
 
-button[id=btnSearchSchedule] {
+button[id=btnSearchSchedule] { /* Фіксований розмір кпопки */
     width: 150px;
     height: 60px;
     float: left;

@@ -91,7 +91,7 @@
     <div>
         <button onclick="showLab1()" class="activeButton">Лабораторна робота №1</button>
         <button onclick="showLab2()" class="activeButton">Лабораторна робота №2</button>
-        <button class="inactiveButton">Лабораторна робота №3</button>
+        <button onclick="showLab3()" class="activeButton">Лабораторна робота №3</button>
         <button class="inactiveButton">Лабораторна робота №4</button>
         <button class="inactiveButton">Лабораторна робота №5</button>
         <button class="inactiveButton">Лабораторна робота №6</button>
@@ -524,6 +524,567 @@
         lab2seletorsOther = "<div style='text-align: center;line-height: 17px'><p>Cусідні селектори - це селектори, які йдуть один за одним</p><p> </p><p>HTML</p><p><img src='img/neibrHtml.png\'></p><p>Правила css</p><p><img src='img/neibr.png\'></p><p>Результат: якщо тег span та тег b сусдні, то текст в тезі b стає червоним  </p><p><img src='img/neibrResult.png\'></p><p></p><p>Дочірні селектори - це селктори, які відносяться до дочірніх елементів певного тегу</p><p></p><p>HTML</p><p><img src='img/dojirniHtml.png\'></p><p>Правила css</p><p><img src='img/dojirni.png\'></p><p>Результат: всі дочірні елементи (li), елемента з id noteContent, будуть мати однаковий стиль</p><p><img src='img/dojirniResult.png\'></p><p></p><p>Універсальний селектор - це селектор, який звертається до всіх елементів сторінки</p><p></p><p>HTML</p><p><img src='img/universalHtml.png\'></p><p>Правила css</p><p><img src='img/universal.png\'></p><p>Результат: всі елемнти на сторінці будуть мати зовнішній відступ в 10 пікселві та внутрішній в нуль пікселів</p><p><img src='img/universalResult.png\'></p><p> </p><p>Селектор атрибуту - це селектор певного атрибуту певного елемента</p><p>HTML</p><p><img src='img/atribHtml.png\'></p><p>Правила css</p><p><img src='img/atrib.png\'></p><p>Результат: атрибут текст тегу інпут буде мати стиль, який вказано в css</p><p><img src='img/atribResutl.png'></p></div>";
         lab2selectorGroup = "<div style='text-align: center'>Групування тегів - це визначенням багатьом тегам одних і тих самих стилів<p>HTML</p><p><img src=\"img/trTh.png\"/></p><p>Css</p><p><img src=\"img/trThCss.png\"/></p><p>Результат: теги tr та th приймають однаковий стиль, який ми описали в css.</p> <p><img src=\"img/trThResult.png\"/></p> <p> Звичайно, що ми кожен з тегів має ще свої певні стилі, але за допомогою групування ми зазначили загальний стиль</p></div>";
 
+        const lab3DescTextContent = "На третій лабораторній роботі наша задача була в тому, щоб придбати практичні навички роботи верстки сторінок засобами CSS, верстки на основі плаваючих елементів, з'ясувати переваги та недоліки типів макетів веб-сторінок. Також треба було засобами HTML та CSS створити окремо веб-сторінку, заданого вигялду використовуючи: 1)Розмітку за допомогою таблиці 2)Розмітку за допомогою плаваючих блоків"
+        const lab3Type = `<div style="text-align: center">Для розробки нашої головної сторінки ми використовували комбінований макет веб-сторінки. Це можна побачити при зміні розміру вікна веб-сторінки. Деякі елементи змінють свій розмір, а деякі залишаються такими як і були, також деякі елементи змінюють своє розташування, а деякі залишаються у фіксованому місці. Приклад:</div>` + `<div style='text-align: center'>HTML<p>Таблиця</p><p><img src=\"img/lab3/Screenshot_1.png\"/></p><p>Кнопка</p><p><img src=\"img/lab3/Screenshot_2.png\"/></p>CSS<p>Адаптивна таблиця</p><p><img src=\"img/lab3/Screenshot_3.png\"/></p><p>Фіксована кнопка</p><p><img src=\"img/lab3/Screenshot_4.png\"/></p>Результат<p><img src=\"img/lab3/Screenshot_5.png\"/></p><p>Як можна побачити таблиця займає всю ширину вікна веб-браузера, навіть при зміні його розміру, а кнопка("Знайти"),все одно, має фіксований розмір, тому ми маємо комбінований макет сторінки.</p></div>`
+        const lab3BasicConceptions = `<div style="text-align: center">Для розробки головної сторінки ми використовували дві базові концепції: плаваючих елментах і маніпулюванні внутрішніми та зовнішніми відступами. Приклад: </div>` + `<div style='text-align: center'>HTML<p>Блок findGroup</p><p><img src=\"img/lab3/Screenshot_6.png\"/></p><p>Заголовок таблиці</p><p><img src=\"img/lab3/Screenshot_7.png\"/></p>CSS<p>Блок findGroup(Використання плаваючих елементів)</p><p><img src=\"img/lab3/Screenshot_8.png\"/></p><p>Заголовок таблиці(Використання відступів)</p><p><img src=\"img/lab3/Screenshot_9.png\"/></p>Результат<p><img src=\"img/lab3/Screenshot_10.png\"/></p><p>Як можна побачити блок findGroup прив'язвся до правої сторони, а до заголовку таблиці були застосовані відступи</p></div>`
+        const lab3MainPageScreenshot = `<img src=\"img/lab3/Screenshot_11.png\"/>` +   `<img src=\"img/lab3/Screenshot_12.png\"/>`
+        const lab3MainPageHTMLCode = `&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;Інтерактивний календар&lt;/title&gt;
+    &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;lab1.css&quot;&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;div id=&quot;container&quot;&gt;
+        &lt;div style=&quot;text-align: center&quot;&gt;
+            &lt;img src=&quot;https://kpi.ua/files/images/kpi.png&quot; alt=&quot;KPI&quot; style=&quot;width: 200px;height: 200px;margin-bottom: 20px&quot;&gt;
+        &lt;/div&gt;
+        &lt;div style=&quot;height: 100px;width: 100%&quot;&gt;
+            &lt;div style=&quot;text-align: center;float: left&quot;&gt;
+                &lt;form action=&quot;subject.html&quot;&gt;
+                    &lt;button style=&quot;width: 400px;height: 100px&quot;&gt;Предметна
+            область
+        &lt;/button&gt;
+                &lt;/form&gt;
+            &lt;/div&gt;
+            &lt;div id=&quot;findGroup&quot;&gt;Розклад групи
+                &lt;div&gt;
+                    &lt;input id=&quot;inputSearchSchedule&quot;&gt;
+                &lt;/div&gt;
+                &lt;div&gt;
+                    &lt;button id=&quot;btnSearchSchedule&quot; style=&quot;text-align: center&quot; onclick=&quot;search()&quot;&gt;Знайти&lt;/button&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;table border=&quot;1&quot;&gt;
+            &lt;caption&gt;Наш розклад&lt;/caption&gt;
+            &lt;tr&gt;
+                &lt;th&gt;&lt;/th&gt;
+                &lt;th&gt;Понеділок&lt;/th&gt;
+                &lt;th&gt;Вівторок&lt;/th&gt;
+                &lt;th&gt;Середа&lt;/th&gt;
+                &lt;th&gt;Четвер&lt;/th&gt;
+                &lt;th&gt;П'ятниця&lt;/th&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;1. 8:30&lt;/td&gt;
+                &lt;td&gt;&lt;/td&gt;
+                &lt;td class=&quot;lecture&quot;&gt;Розробка веб-застосувань&lt;/td&gt;
+                &lt;td class=&quot;practice&quot;&gt;Основи клієнтської розробки&lt;/td&gt;
+                &lt;td&gt;&lt;/td&gt;
+                &lt;td class=&quot;lecture&quot;&gt;Вступ до філософії&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;2. 10:25&lt;/td&gt;
+                &lt;td class=&quot;practice&quot;&gt;Комп. мережі&lt;/td&gt;
+                &lt;td class=&quot;lecture&quot;&gt;Комп. мережі&lt;/td&gt;
+                &lt;td class=&quot;lecture&quot;&gt;Основи клієнтської розробки&lt;/td&gt;
+                &lt;td&gt;&lt;/td&gt;
+                &lt;td&gt;&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;3. 12:20&lt;/td&gt;
+                &lt;td class=&quot;lecture&quot;&gt;ВМ-3&lt;/td&gt;
+                &lt;td class=&quot;practice&quot;&gt;Англ&lt;/td&gt;
+                &lt;td class=&quot;practice&quot;&gt;ВМ-3&lt;/td&gt;
+                &lt;td class=&quot;lecture&quot;&gt;Бази даних&lt;/td&gt;
+                &lt;td&gt;&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;4. 14:15&lt;/td&gt;
+                &lt;td class=&quot;practice&quot;&gt;ФВ&lt;/td&gt;
+                &lt;td class=&quot;practice&quot;&gt;Бази даних&lt;/td&gt;
+                &lt;td&gt;&lt;/td&gt;
+                &lt;td class=&quot;practice&quot;&gt;Розроблення веб-застосувань&lt;/td&gt;
+                &lt;td&gt;&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;5. 16:10&lt;/td&gt;
+                &lt;td&gt;&lt;/td&gt;
+                &lt;td&gt;&lt;/td&gt;
+                &lt;td&gt;&lt;/td&gt;
+                &lt;td&gt;&lt;/td&gt;
+                &lt;td class=&quot;lecture&quot;&gt;Психологія конфлікту&lt;/td&gt;
+            &lt;/tr&gt;
+
+        &lt;/table&gt;
+        &lt;h2 style=&quot;text-align: center&quot;&gt;&lt;span&gt;Запис своїх &lt;/span&gt;&lt;b&gt;нотаток&lt;/b&gt;&lt;/h2&gt;
+
+
+        &lt;input id=&quot;content&quot;&gt;
+        &lt;div id=&quot;note_block&quot;&gt;
+            &lt;button onclick=&quot;note()&quot;&gt;Занотувати&lt;/button&gt;
+            &lt;button onclick=&quot;clearNotes()&quot;&gt;Очистити&lt;/button&gt;
+        &lt;/div&gt;
+        &lt;div&gt;
+            &lt;ul id=&quot;noteContent&quot;&gt;
+                &lt;li&gt;Третьої пари у понеділок не буде&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/div&gt;
+
+    &lt;/div&gt;
+    &lt;script src=&quot;lab1.js&quot;&gt;&lt;/script&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;
+`
+        const lab3CssCode = `* { /* Універсальний селектор */
+    margin: 10px;
+    padding: 0px;
+}
+button {
+    font-family: 'Century Gothic';
+    font-weight: bold;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 20px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    background-color: white;
+    color: black;
+    border: 2px solid #555555;
+    width: 40%;
+}
+
+button:hover {
+    background-color: #555555;
+    color: white;
+}
+
+table {
+    width: 100%; /* Адаптивний розмір, змінюється при зміні розміра вікна браузера*/
+}
+
+th, td { /* Групування */
+    text-align: center;
+    font-family: &quot;Century Gothic&quot;;
+}
+
+th {
+    padding: 15px;
+    font-weight: normal;
+}
+
+td {
+    padding: 25px;
+    font-weight: bold;
+}
+
+caption {
+    padding: 10px; /* Внутрішній відступ з усіх сторін на 10px */
+    font-family: 'Century Gothic';
+    font-weight: bold;
+    margin-bottom: 10px; /* Зовнішній відступ знизу на 10px */
+    font-size: 36px;
+}
+
+p {
+    font-family: 'Century Gothic';
+    font-weight: initial;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+input[type=text], /* Селектор атрибуту */
+[id=content] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 3px solid #ccc;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    outline: none;
+    font-family: &quot;Century Gothic&quot;;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+#findGroup{
+    float: right; /* Прив'язка до правої сторони */
+    text-align: center;
+    font-family: 'Century Gothic';
+    font-weight: bold
+}
+
+button[id=btnSearchSchedule] { /* Фіксований розмір кпопки */
+    width: 150px;
+    height: 60px;
+    float: left;
+}
+
+input[id=inputSearchSchedule] {
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 3px solid #ccc;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    outline: none;
+    font-family: &quot;Century Gothic&quot;;
+    font-weight: bold;
+}
+
+.practice{
+    color: red;
+}
+.lecture{
+    color: blue;
+}
+
+#note_block{
+    text-align: center;
+}
+
+#note_block &gt; button{
+    font-weight: bold;
+    font-family: Arial;
+    font-size: 15pt;
+}
+
+#noteContent &gt; li{ /* Дочірній селектор */
+    font-family: &quot;Century Gothic&quot;;
+    font-size: 20pt;
+    font-weight: bold;
+}
+
+h2{
+    text-align: center
+}
+span + b{ /* Сусідній селектор */
+    color: red;
+    margin: 0;
+}
+table{
+    background: linear-gradient(to bottom,  #feffff 0%,#ddf1f9 35%,#a0d8ef 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+
+}
+
+input[type=text],
+[id=content],
+[id=inputSearchSchedule]:focus {
+    border: 3px solid #555;
+}`
+
+        const lab3GridElements = "<div style='text-align: center'>Для верстки таблицею ми обрали postion: grid" + `<img src=\"img/lab3/Screenshot_13.png\"/></div>` + `<div style='text-align: center'><p>HTML Code</p></div>` + `<p>&lt;div class=&quot;variant&quot;&gt;
+            Варіант 2 (grid)
+            &lt;div class=&quot;innerVariant&quot; id=&quot;gv2&quot;&gt;
+                &lt;div id=&quot;g21&quot;&gt;
+                    &lt;div id=&quot;g2wh&quot;&gt;&lt;/div&gt;
+                    1
+                &lt;/div&gt;
+                &lt;div class=&quot;g2b234&quot;&gt;
+                    &lt;div id=&quot;g22&quot;&gt;2&lt;/div&gt;
+                    &lt;div class=&quot;g2b34Nr&quot;&gt;
+                        &lt;div id=&quot;g2r&quot;&gt;&lt;/div&gt;
+                        &lt;div class=&quot;g2b34r&quot;&gt;
+                            &lt;div id=&quot;g23&quot;&gt;3&lt;/div&gt;
+                            &lt;div id=&quot;g24&quot;&gt;4&lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div id=&quot;g25&quot;&gt;5&lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;variant&quot;&gt;
+            Варіант 7 (grid)
+            &lt;div class=&quot;innerVariant&quot; id=&quot;gv7&quot;&gt;
+                &lt;div&gt;&lt;/div&gt;
+                &lt;div id=&quot;g70&quot;&gt;
+                    &lt;div id=&quot;g71&quot;&gt;1&lt;/div&gt;
+                    &lt;div id=&quot;g72&quot;&gt;
+                        &lt;div id=&quot;g74&quot;&gt;2&lt;/div&gt;
+                        &lt;div id=&quot;g75&quot;&gt;4&lt;/div&gt;
+                        &lt;div id=&quot;g76&quot;&gt;5&lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div id=&quot;g71&quot;&gt;3&lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div&gt;&lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;</p>`
+        +  `<div style='text-align: center'><p>CSS code</p></div>` + `<p>/* v2 grid */
+
+div.innerVariant#gv2 {
+    display: grid;
+    grid-template-rows: 15% 1fr 15%;
+}
+
+div#g21 {
+    background-color: #ffcc00;
+    border: 1px solid black;
+    display: grid;
+    grid-template-columns: 50% 1fr;
+}
+
+div#g22 {
+    background-color: #3366ff;
+    border: 1px solid black;
+}
+
+div#g23 {
+    background-color: #ffffff;
+    border: 1px solid #c0c0c0;
+    margin-right: 10px;
+}
+
+div#g24 {
+    background-color: #3366ff;
+    border: 1px solid black;
+}
+
+div#g25 {
+    background-color: #ffcc00;
+    border: 1px solid black;
+}
+
+div#g2r {
+    background-color: #ff5050;
+    border: 1px solid black;
+    margin-bottom: 10px;
+}
+
+div#g2wh {
+    margin: 10px;
+    height: 50%;
+    width: 90%;
+    background-color: #ffffff;
+    border: 1px solid black;
+    margin-bottom: 10px;
+}
+
+div.g2b234 {
+    display: grid;
+    grid-template-columns: 30% 1fr;
+}
+
+div.g2b34Nr {
+    display: grid;
+    margin: 10px;
+    grid-template-rows: 15% 1fr;
+}
+
+div.g2b34r {
+    display: grid;
+    grid-template-columns: 60% 1fr;
+}
+
+
+/* v7 grid */
+
+div.innerVariant#gv7 {
+    display: grid;
+    grid-template-columns: 10% 1fr 10%;
+    border: 1px solid black;
+}
+
+div#g70 {
+    display: grid;
+    grid-template-rows: 15% 1fr 15%;
+}
+
+div#g71 {
+    background-color: #3366ff;
+    border: 1px solid black;
+    color: #ffffff;
+}
+
+div#g72 {
+    display: grid;
+    grid-template-columns: 25% 1fr 25%;
+}
+
+div#g74 {
+    background-color: #ffcc00;
+    border: 1px solid black;
+}
+
+div#g75 {
+    background-color: #ffffff;
+    border: 1px solid black;
+}
+
+div#g76 {
+    background-color: #ffcc00;
+    border: 1px solid black;
+}
+</p>`
+
+        const lab3FloatElements = `<img src=\"img/lab3/Screenshot_14.png\"/>` + `<div style="text-align: center"><p>HTML</p></div>` + `<p> &lt;div class=&quot;variant&quot;&gt;
+            Варіант 2 (float)
+            &lt;div class=&quot;innerVariant&quot;&gt;
+                &lt;div id=&quot;f20&quot;&gt;
+                    &lt;div id=&quot;f29&quot;&gt;&lt;/div&gt;
+                    1
+                &lt;/div&gt;
+                &lt;div id=&quot;f21&quot;&gt;
+                    &lt;div id=&quot;f23&quot;&gt;2&lt;/div&gt;
+                    &lt;div id=&quot;f24&quot;&gt;
+                        &lt;div id=&quot;f25&quot;&gt;&lt;/div&gt;
+                        &lt;div id=&quot;f26&quot;&gt;
+                            &lt;div id=&quot;f27&quot;&gt;3&lt;/div&gt;
+                            &lt;div id=&quot;f28&quot;&gt;4&lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div id=&quot;f22&quot;&gt;5&lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;variant&quot;&gt;
+            Варіант 7 (float)
+            &lt;div class=&quot;innerVariant&quot;&gt;
+                &lt;div id=&quot;f70&quot;&gt;
+                    &lt;div id=&quot;f71&quot;&gt;1&lt;/div&gt;
+                    &lt;div id=&quot;f72&quot;&gt;
+                        &lt;div id=&quot;f74&quot;&gt;2&lt;/div&gt;
+                        &lt;div id=&quot;f75&quot;&gt;4&lt;/div&gt;
+                        &lt;div id=&quot;f76&quot;&gt;5&lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div id=&quot;f73&quot;&gt;3&lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;</p>` + `<div style='text-align: center'><p>CSS code</p></div>` + `<p>
+/* v2 float */
+
+div#f20 {
+    background-color: #ffcc00;
+    width: 99.5%;
+    height: 15%;
+    border: 1px solid black
+}
+
+div#f21 {
+    width: 100%;
+    height: 70%;
+}
+
+div#f22 {
+    background-color: #ffcc00;
+    width: 99.5%;
+    height: 14%;
+    border: 1px solid black;
+}
+
+div#f23 {
+    background-color: #3366ff;
+    width: 25%;
+    height: 99.5%;
+    border: 1px solid black;
+    float: left;
+}
+
+div#f24 {
+    width: 64%;
+    height: 90%;
+    float: left;
+    margin: 5%;
+}
+
+div#f25 {
+    background-color: #ff5050;
+    width: 100%;
+    height: 10%;
+    margin-bottom: 5%;
+    float: left;
+    border: 1px solid black;
+}
+
+div#f26 {
+    width: 100%;
+    height: 87%;
+    float: left;
+}
+
+div#f27 {
+    width: 55%;
+    height: 100%;
+    margin-right: 5%;
+    float: left;
+    border: 1px solid #c0c0c0;
+}
+
+div#f28 {
+    width: 37.5%;
+    height: 100%;
+    background-color: #3366ff;
+    border: 1px solid black;
+    float: left;
+}
+
+div#f29 {
+    margin: 5%;
+    width: 50%;
+    height: 50%;
+    background-color: #ffffff;
+    border: 1px solid black;
+    float: left;
+}
+
+
+/* v2 float */
+
+div#f70 {
+    width: 80%;
+    height: 100%;
+    margin: 0 10% 0 10%;
+}
+
+div#f71 {
+    width: 99%;
+    height: 14%;
+    background-color: #3366ff;
+    border: 1px solid black;
+    color: #ffffff;
+}
+
+div#f72 {
+    width: 100%;
+    height: 70%;
+}
+
+div#f73 {
+    width: 99%;
+    height: 15%;
+    background-color: #3366ff;
+    border: 1px solid black;
+    color: #ffffff;
+}
+
+div#f74 {
+    width: 24%;
+    height: 99%;
+    float: left;
+    background-color: #ffcc00;
+    border: 1px solid black;
+}
+
+div#f75 {
+    width: 49%;
+    height: 99%;
+    float: left;
+    background-color: #ffffff;
+    border: 1px solid black;
+}
+
+div#f76 {
+    width: 24%;
+    height: 99%;
+    float: left;
+    background-color: #ffcc00;
+    border: 1px solid black;
+}</p>`
+
+
         function showLab1() {
             let leftButtons = document.getElementById("leftButtons");
             leftButtons.innerHTML = "";
@@ -546,6 +1107,22 @@
             createLeftInfoBtn(leftButtons, "Відступи", lab2tabs);
             createLeftInfoBtn(leftButtons, "Плаваючі елементи", lab2floats);
             createLeftGroupBtn(leftButtons, "Структура документа", () => showSmallButtons2(leftButtons));
+        }
+
+        function showLab3(){
+            let leftButtons = document.getElementById("leftButtons");
+            leftButtons.innerHTML = "";
+
+            createLeftInfoBtn(leftButtons, "Постановка задачі Лабораторної роботи №3", lab3DescTextContent);
+            createLeftInfoBtn(leftButtons,"Тип макету",lab3Type)
+            createLeftInfoBtn(leftButtons,"Базові концепції верстки",lab3BasicConceptions)
+            createLeftGroupBtn(leftButtons,"Головна сторінка",()=>showSmallButtons3(leftButtons))
+            createLeftGroupBtn(leftButtons,"Окрема сторінка",()=>showSmallButtons4(leftButtons))
+
+
+
+
+
         }
 
         function showSmallButtons1(parent) {
@@ -576,6 +1153,37 @@
             parent.appendChild(div);
         }
 
+        function showSmallButtons3(parent){
+            if (document.getElementById("smallButtons2") != null){
+                document.getElementById("smallButtons2").remove()
+            }
+            if(document.getElementById("smallButtons1") != null)
+                return
+            let div = document.createElement("div");
+            div.style = "padding-left: 70px";
+
+            div.id = "smallButtons1";
+            createLeftInfoBtn(div, "Screenshot головної сторінки", lab3MainPageScreenshot, fontSizeHeightLineHTML);
+            createLeftInfoBtn(div, "HTML code головної сторінки", lab3MainPageHTMLCode, fontSizeHeightLineHTML);
+            createLeftInfoBtn(div, "CSS code головної сторінки", lab3CssCode, fontSizeHeightLineHTML);
+            parent.appendChild(div);
+
+        }
+        function showSmallButtons4(parent){
+            if (document.getElementById("smallButtons1") != null){
+                document.getElementById("smallButtons1").remove()
+            }
+            if(document.getElementById("smallButtons2") != null)
+                return
+            let div = document.createElement("div");
+            div.style = "padding-left: 70px";
+
+            div.id = "smallButtons2";
+            createLeftInfoBtn(div, "Розмітка за допомогою таблиці", lab3GridElements, fontSizeHeightLineHTML);
+            createLeftInfoBtn(div, "Розмітка за допомогою плаваючих елементів", lab3FloatElements, fontSizeHeightLineHTML);
+            parent.appendChild(div);
+
+        }
         // Functions for creating buttons and setting them a content
 
         function createLeftInfoBtn(parent, buttonText, mainContentText, style) {
