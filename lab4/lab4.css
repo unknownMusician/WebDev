@@ -1,0 +1,60 @@
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+
+
+#container{
+    text-align: center;
+}
+
+h1{
+    font-family: "Century Gothic";
+    font-size: 34pt;
+}
+#inputNumber{
+    width: 6%;
+    height: 60px;
+    font-size: 20pt;
+    padding-left: 10px;
+    min-width: 50px;
+
+}
+#inputBlock{
+    margin-bottom: 30px;
+}
+
+
+#inputNumber:focus{
+    border-radius: 10px;
+}
+
+
+#content{
+    margin-bottom: 30px;
+}
+
+#massive{
+    font-size:35pt;
+    margin-bottom: 20px;
+}
+
+#functions{
+    font-size: 35pt;
+    color: green;
+}
+
+
+
+button{
+    padding: 0;
+    min-width: 116px;
+    width: 15%;
+    height: 50px;
+    margin-left: 20px;
+    font-size: 15pt;
+    border-radius: 10px;
+
+}

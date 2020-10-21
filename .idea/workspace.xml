@@ -10,8 +10,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="CSS File" />
+        <option value="HTML File" />
         <option value="JavaScript File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -24,9 +25,10 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../labsJS/lab2" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../labsJS/lab2/script.js" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="settings.editor.selected.configurable" value="editing.templates" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -73,6 +75,11 @@
       <workItem from="1602759026713" duration="643000" />
       <workItem from="1602759783473" duration="959000" />
       <workItem from="1602761926750" duration="1317000" />
+      <workItem from="1602763689775" duration="14000" />
+      <workItem from="1603277917646" duration="13803000" />
+      <workItem from="1603293179336" duration="2457000" />
+      <workItem from="1603295645802" duration="1434000" />
+      <workItem from="1603298403140" duration="311000" />
     </task>
     <servers />
   </component>
@@ -80,10 +87,10 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="245" y="215" key="FileChooserDialogImpl" timestamp="1602757140580">
+    <state x="245" y="215" key="FileChooserDialogImpl" timestamp="1603286904541">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="245" y="215" key="FileChooserDialogImpl/0.0.1920.1040/-1440.176.1440.860@0.0.1920.1040" timestamp="1602757140580" />
+    <state x="245" y="215" key="FileChooserDialogImpl/0.0.1920.1040/-1440.176.1440.860@0.0.1920.1040" timestamp="1603286904541" />
     <state x="351" y="78" key="SettingsEditor" timestamp="1600420955350">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
