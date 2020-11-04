@@ -1,6 +1,8 @@
 
 $(document).ready(function() {
 
-    // todo
+    $(".accordion__sections").accordion()
+    $("#menu").menu()
+
 
 });
