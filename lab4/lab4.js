@@ -35,6 +35,7 @@ function sort(){
     else{
         document.getElementById("functions").style.color = "red";
         document.getElementById("functions").innerText = "An array is empty"
+
     }
 
 }

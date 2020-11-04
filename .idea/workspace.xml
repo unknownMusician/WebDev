@@ -28,9 +28,9 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../labsJS/lab2/script.js" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
-    <property name="settings.editor.selected.configurable" value="editing.templates" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -81,7 +81,11 @@
       <workItem from="1603295645802" duration="1434000" />
       <workItem from="1603298403140" duration="1115000" />
       <workItem from="1603355026053" duration="609000" />
-      <workItem from="1603368035562" duration="895000" />
+      <workItem from="1603368035562" duration="2182000" />
+      <workItem from="1603540600960" duration="14000" />
+      <workItem from="1603973956130" duration="307000" />
+      <workItem from="1603975351983" duration="1901000" />
+      <workItem from="1604517159989" duration="618000" />
     </task>
     <servers />
   </component>
@@ -89,14 +93,14 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="245" y="215" key="FileChooserDialogImpl" timestamp="1603286904541">
+    <state x="245" y="215" key="FileChooserDialogImpl" timestamp="1603540613496">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="245" y="215" key="FileChooserDialogImpl/0.0.1920.1040/-1440.176.1440.860@0.0.1920.1040" timestamp="1603286904541" />
-    <state x="351" y="78" key="SettingsEditor" timestamp="1600420955350">
+    <state x="245" y="215" key="FileChooserDialogImpl/0.0.1920.1040/-1440.176.1440.860@0.0.1920.1040" timestamp="1603540613496" />
+    <state x="351" y="78" key="SettingsEditor" timestamp="1603975946929">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="351" y="78" key="SettingsEditor/0.0.1920.1040/-1440.176.1440.860@0.0.1920.1040" timestamp="1600420955350" />
+    <state x="351" y="78" key="SettingsEditor/0.0.1920.1040/-1440.176.1440.860@0.0.1920.1040" timestamp="1603975946929" />
     <state width="623" height="498" key="SwitcherDM" timestamp="1602755863823">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
