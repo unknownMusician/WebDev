@@ -114,12 +114,21 @@ h1 {
     border-style: dashed;
 }
 
-.task-content {
+.task-content__elements {
     width: 100%;
     height: 450px;
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.task-content__element{
+}
+
+
+.task-content__element-title{
+    font-size: 30px;
 }
 
 .ui-menu {
