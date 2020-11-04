@@ -121,3 +121,7 @@ h1 {
     flex-direction: row;
     justify-content: space-around;
 }
+
+.ui-menu {
+    width: 150px;
+}
