@@ -87,7 +87,8 @@
       <workItem from="1603975351983" duration="1901000" />
       <workItem from="1604517159989" duration="618000" />
       <workItem from="1604522146083" duration="297000" />
-      <workItem from="1604522451445" duration="2403000" />
+      <workItem from="1604522451445" duration="3584000" />
+      <workItem from="1604567475009" duration="1189000" />
     </task>
     <servers />
   </component>
@@ -95,6 +96,10 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="694" y="302" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1604525792504">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="694" y="302" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040/-1440.176.1440.860@0.0.1920.1040" timestamp="1604525792504" />
     <state x="245" y="215" key="FileChooserDialogImpl" timestamp="1603540613496">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -115,5 +120,13 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="1046" y="14" width="765" height="1008" key="dock-window-2/0.0.1920.1040/-1440.176.1440.860@0.0.1920.1040" timestamp="1600423051006" />
+    <state x="532" y="237" key="run.anything.popup" timestamp="1604525910866">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="532" y="237" key="run.anything.popup/0.0.1920.1040/-1440.176.1440.860@0.0.1920.1040" timestamp="1604525910866" />
+    <state x="539" y="5" width="840" height="1034" key="search.everywhere.popup" timestamp="1604568661765">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="539" y="5" width="840" height="1034" key="search.everywhere.popup/0.0.1920.1040/-1440.176.1440.860@0.0.1920.1040" timestamp="1604568661765" />
   </component>
 </project>

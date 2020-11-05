@@ -25,5 +25,8 @@ $(document).ready(function() {
 
     $(".tabs").tabs();
 
+    $("#gallery").unitegallery();
+
+
 
 });

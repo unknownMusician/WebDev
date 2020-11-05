@@ -12,5 +12,8 @@
     <orderEntry type="library" name="jquery" level="application" />
     <orderEntry type="library" name="jquery-ui" level="application" />
     <orderEntry type="library" name="jquery-1.12.4" level="application" />
+    <orderEntry type="library" name="unitegallery" level="application" />
+    <orderEntry type="library" name="unite-gallery" level="application" />
+    <orderEntry type="library" name="ug-theme-default" level="application" />
   </component>
 </module>
