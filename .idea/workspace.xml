@@ -36,6 +36,7 @@
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\User\Documents\GitHub\labsJS\WebDev\lab5" />
+      <recent name="C:\Users\User\Documents\GitHub\labsJS\WebDev\videos" />
       <recent name="C:\Users\User\Documents\GitHub\labsJS\WebDev\lab5\img" />
       <recent name="C:\Users\User\Documents\GitHub\labsJS\WebDev\lab3" />
       <recent name="C:\Users\User\Documents\GitHub\labsJS\WebDev" />
@@ -91,7 +92,7 @@
       <workItem from="1604522146083" duration="297000" />
       <workItem from="1604522451445" duration="3584000" />
       <workItem from="1604567475009" duration="3881000" />
-      <workItem from="1604571422562" duration="1779000" />
+      <workItem from="1604571422562" duration="3458000" />
     </task>
     <servers />
   </component>
@@ -99,10 +100,10 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="694" y="302" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1604525792504">
+    <state x="694" y="302" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1604573944393">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="694" y="302" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040/-1440.176.1440.860@0.0.1920.1040" timestamp="1604525792504" />
+    <state x="694" y="302" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040/-1440.176.1440.860@0.0.1920.1040" timestamp="1604573944393" />
     <state x="245" y="215" key="FileChooserDialogImpl" timestamp="1603540613496">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
