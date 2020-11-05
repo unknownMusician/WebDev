@@ -15,5 +15,7 @@
     <orderEntry type="library" name="unitegallery" level="application" />
     <orderEntry type="library" name="unite-gallery" level="application" />
     <orderEntry type="library" name="ug-theme-default" level="application" />
+    <orderEntry type="library" name="font-awesome" level="application" />
+    <orderEntry type="library" name="bootstrap" level="application" />
   </component>
 </module>
