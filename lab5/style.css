@@ -101,7 +101,6 @@ main {
 
 .task {
     width: 100%;
-    height: 500px;
     border: 1px solid black;
 }
 
@@ -110,25 +109,32 @@ h1 {
     text-align: center;
     font-size: 35px;
     background-color: #eee;
-    border-bottom: 1px black;
-    border-style: dashed;
+    border-bottom: dashed 1px black;
 }
 
 .task-content__elements {
     width: 100%;
     height: 450px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.task-content__element {
+    padding: 10px;
+    border: dashed 1px black;
     text-align: center;
 }
 
-.task-content__element{
+#gallery {
+    display: flex;
+    justify-content: center;
 }
 
-
-.task-content__element-title{
+.task-content__element-title {
     font-size: 30px;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    border-bottom: solid 1px #aaa;
 }
 
 .ui-menu {
