@@ -198,6 +198,8 @@
         const lab4Entity = `HTML <p><img src="img/lab4/entity.png" /> <p>Code <p> <img src="img/lab4/entityCode.png" /><p>Ми використали підстановку за допомогою JavaScript, аби змінювати зміст нотаток та дати можливість користувачу динамічно заповнювати свою сторінку календаря.`;
         const lab4Insertion = `Code <p><img src="img/lab4/scriptTag.png" /><p>Тег SCRIPT використувується для того, щоб виокремити логічну реалізацію документа від стильової, та при цьому дати їм можливість взаємодіяти між собою.`;
 
+        const lab5DescTextContent = `<h1 style="font-weight: normal"><b>Тема: </b>придбати практичні навички роботи jQuery UI, вміти додавати до сайту  динамічні елементи цієї бібіліотеки, плагін галереї UniteGallery, кнопки соціальних мереж, інформери та інше.`;
+
         function showLab1() {
             let leftButtons = document.getElementById("leftButtons");
             leftButtons.innerHTML = "";
@@ -254,6 +256,16 @@
             createLeftInfoBtn(leftButtons, "6 пункт - Завдання 2 варіант", lab4Task62, fontSizeHeightLineHTML);
             createLeftInfoBtn(leftButtons, "Висновки", lab4Conclusion)
         }
+
+        function showLab5() {
+            let leftButtons = document.getElementById("leftButtons");
+            leftButtons.innerHTML = "";
+
+            createLeftInfoBtn(leftButtons, "Постановка задачі Лабораторної роботи №5", lab5DescTextContent);
+            // todo
+        }
+
+        /////////
 
         function showSmallButtons1(parent) {
             if (document.getElementById("smallButtons1") != null)
@@ -326,6 +338,10 @@
             createLeftInfoBtn(div, "Підстановка (entity)", lab4Entity, fontSizeHeightLineHTML);
             createLeftInfoBtn(div, "Вставка (тег SCRIPT)", lab4Insertion, fontSizeHeightLineHTML);
             parent.appendChild(div);
+        }
+
+        function showSmallButtons53(parent) {
+            //todo
         }
 
         // Functions for creating buttons and setting them a content
