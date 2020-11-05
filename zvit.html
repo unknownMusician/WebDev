@@ -199,6 +199,13 @@
         const lab4Insertion = `Code <p><img src="img/lab4/scriptTag.png" /><p>Тег SCRIPT використувується для того, щоб виокремити логічну реалізацію документа від стильової, та при цьому дати їм можливість взаємодіяти між собою.`;
 
         const lab5DescTextContent = `<h1 style="font-weight: normal"><b>Тема: </b>придбати практичні навички роботи jQuery UI, вміти додавати до сайту  динамічні елементи цієї бібіліотеки, плагін галереї UniteGallery, кнопки соціальних мереж, інформери та інше.`;
+        const lab5Conclusion = `На цій лабораторній роботі ми попрацювали засобами jQuery, jQuery UI, навчилися створювати галерею та слайдер медіа-матеріалів за допомогою UniteGallery, додавати кнопки соціальних мереж, використовувати різноманітні інформери, а також використовувати модулі jQuery для мультимедіа`;
+        const lab5task3 = `<h1>Завдання</h1><p><img src="img/lab4/task4.png" />`;
+        const lab5task4 = `<h1>Завдання</h1><p><img src="img/lab4/task4.png" />`;
+        const lab5task5 = `<h1>Завдання</h1><p><img src="img/lab4/task4.png" />`;
+        const lab5task6 = `<h1>Завдання</h1><p><img src="img/lab4/task4.png" />`;
+        const lab5task7 = `<h1>Завдання</h1><p><img src="img/lab4/task4.png" />`;
+
         // todo
 
         function showLab1() {
@@ -263,18 +270,25 @@
             leftButtons.innerHTML = "";
 
             createLeftInfoBtn(leftButtons, "Постановка задачі Лабораторної роботи №5", lab5DescTextContent);
-            // todo
+            createBtnWithRedirect(leftButtons, "Результат роботи", "lab5/index.html");
+            createLeftInfoBtn(leftButtons, "3 Пункт (Динамічні елементи)", lab5task3);
+            createLeftInfoBtn(leftButtons, "4 Пункт (UnityGallery)", lab5task4);
+            createLeftInfoBtn(leftButtons, "5 Пункт (Кнопки соціальних мереж)", lab5task5);
+            createLeftInfoBtn(leftButtons, "6 Пункт (Інформери)", lab5task6);
+            createLeftInfoBtn(leftButtons, "7 Пункт (Динамічні елементи)", lab5task7);
+            createLeftInfoBtn(leftButtons, "Висновки", lab5Conclusion)
         }
 
         /////////
 
         function showSmallButtons1(parent) {
-            if (document.getElementById("smallButtons1") != null)
-                return;
+            if (document.getElementById("smallButtons") != null) {
+                document.getElementById("smallButtons").remove()
+            }
             let div = document.createElement("div");
             div.style = "padding-left: 70px";
 
-            div.id = "smallButtons1";
+            div.id = "smallButtons";
             createLeftInfoBtn(div, "HTML-код таблиць", lab1HtmlTable, fontSizeHeightLineHTML);
             createLeftInfoBtn(div, "HTML-код форми", lab1HtmlForm, fontSizeHeightLineHTML);
             createLeftInfoBtn(div, "HTML-код зображень", lab1HtmlImg, fontSizeHeightLineHTML);
@@ -284,12 +298,13 @@
         }
 
         function showSmallButtons2(parent) {
-            if (document.getElementById("smallButtons2") != null)
-                return;
+            if (document.getElementById("smallButtons") != null) {
+                document.getElementById("smallButtons").remove()
+            }
             let div = document.createElement("div");
             div.style = "padding-left: 70px";
 
-            div.id = "smallButtons2";
+            div.id = "smallButtons";
             createLeftInfoBtn(div, "Селектори тегу і класу", lab2selectorsTagsClass, fontSizeHeightLineHTML);
             createLeftInfoBtn(div, "Інші селектори", lab2seletorsOther, fontSizeHeightLineHTML);
             createLeftInfoBtn(div, "Групування селекторів", lab2selectorGroup, fontSizeHeightLineHTML);
@@ -297,15 +312,13 @@
         }
 
         function showSmallButtons3(parent) {
-            if (document.getElementById("smallButtons2") != null) {
-                document.getElementById("smallButtons2").remove()
+            if (document.getElementById("smallButtons") != null) {
+                document.getElementById("smallButtons").remove()
             }
-            if (document.getElementById("smallButtons1") != null)
-                return
             let div = document.createElement("div");
             div.style = "padding-left: 70px";
 
-            div.id = "smallButtons1";
+            div.id = "smallButtons";
             createLeftInfoBtn(div, "Screenshot головної сторінки", lab3MainPageScreenshot, fontSizeHeightLineHTML);
             createLeftInfoBtn(div, "HTML code головної сторінки", lab3MainPageHTMLCode, fontSizeHeightLineHTML);
             createLeftInfoBtn(div, "CSS code головної сторінки", lab3CssCode, fontSizeHeightLineHTML);
@@ -314,35 +327,30 @@
         }
 
         function showSmallButtons32(parent) {
-            if (document.getElementById("smallButtons1") != null) {
-                document.getElementById("smallButtons1").remove()
+            if (document.getElementById("smallButtons") != null) {
+                document.getElementById("smallButtons").remove()
             }
-            if (document.getElementById("smallButtons2") != null)
-                return
             let div = document.createElement("div");
             div.style = "padding-left: 70px";
-            div.id = "smallButtons2";
+            div.id = "smallButtons";
             createLeftInfoBtn(div, "Розмітка за допомогою таблиці", lab3GridElements, fontSizeHeightLineHTML);
             createLeftInfoBtn(div, "Розмітка за допомогою плаваючих елементів", lab3FloatElements, fontSizeHeightLineHTML);
             parent.appendChild(div);
         }
 
         function showSmallButtons4(parent) {
-            if (document.getElementById("smallButtons4") != null)
-                return;
+            if (document.getElementById("smallButtons") != null) {
+                document.getElementById("smallButtons").remove()
+            }
             let div = document.createElement("div");
             div.style = "padding-left: 70px";
+            div.id = "smallButtons";
 
-            div.id = "smallButtons4";
             createLeftInfoBtn(div, "Схема URL", lab4UrlScheme, fontSizeHeightLineHTML);
             createLeftInfoBtn(div, "Обробник подій", lab4Events, fontSizeHeightLineHTML);
             createLeftInfoBtn(div, "Підстановка (entity)", lab4Entity, fontSizeHeightLineHTML);
             createLeftInfoBtn(div, "Вставка (тег SCRIPT)", lab4Insertion, fontSizeHeightLineHTML);
             parent.appendChild(div);
-        }
-
-        function showSmallButtons53(parent) {
-            //todo
         }
 
         // Functions for creating buttons and setting them a content
