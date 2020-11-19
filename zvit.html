@@ -103,7 +103,7 @@
         <button onclick="showLab3()" class="activeButton">Лабораторна робота №3</button>
         <button onclick="showLab4()" class="activeButton">Лабораторна робота №4</button>
         <button onclick="showLab5()" class="activeButton">Лабораторна робота №5</button>
-        <button class="inactiveButton">Лабораторна робота №6</button>
+        <button onclick="showLab6()" class="activeButton">Лабораторна робота №6</button>
         <button class="inactiveButton">Лабораторна робота №7</button>
         <button class="inactiveButton">Лабораторна робота №8</button>
         <button class="inactiveButton">Лабораторна робота №9</button>
@@ -227,6 +227,12 @@
         const lab5task6 = `<h1>Завдання</h1><p><img src="img/lab5/t6task.png" /><h1>Результат</h1><p><img src="img/lab5/t6result.png" />` + lab5task6js1 + lab5task6js2 + lab5task6js3;
         const lab5task7 = `<h1>Завдання</h1><p><img src="img/lab5/t7task.png" /><h1>Результат</h1><p><img src="img/lab5/t7result.png" />` + lab5task7js;
 
+        const lab6DescTextContent = `<h1 style="font-weight: normal"><b>Тема: </b>WEB-СЕРВЕРИ ТА ПРИНЦИПИ ЇХ РОБОТИ З КОРИСТУВАЧЕМ.
+СЕРВЕРНІ WEB-ЗАСТОСУВАННЯ.
+</h1>` + "У 6 Лабораторній роботі ми повинні були придбати практичні навички встановлення та конфігурування WEB-сервера, встановлення та налаштування Apache. Визначити певні настройки файла узла. Перевірити корректність відображення інформації.";
+        const lab6InstallServer = `<h1>Завдання</h1><p><img src="img/lab6/Screenshot_1.png"/></p>` + `Для емулятора WEB-серваера ми обрали Apache24. Завантажили його з офіційного сайту Apache`+ `<p><img src="img/lab6/Screenshot_2.png"/></p>` + `Після цього розпакували файл в папку Apache24` + `<p><img src="img/lab6/Screenshot_3.png"/></p>` + `Знаходимо файл httpd.conf в папці conf та налаштовуємо деякі параметри` + `<p>DocumentRoot та Directory змінюємо на те значення, де в нас знаходиться Apache24</p>` +`<p><img src="img/lab6/Screenshot_4.png"/></p>` + `<p><img src="img/lab6/Screenshot_5.png"/></p>` + "Змінюємо ім`я серверу на localhost:80" + `<p><img src="img/lab6/Screenshot_6.png"/></p>`  + `<p><img src="img/lab6/Screenshot_7.png"/></p>` + 'Перевіряємо чи допустили ми помилки при налаштуванні серверу' + `<p><img src="img/lab6/Screenshot_8.png"/></p>` + 'Як бачимо в нас є помилка на 39 рядку. Виправимо її' + `<p><img src="img/lab6/Screenshot_9.png"/></p>` + 'Знову перевіримо' + `<p><img src="img/lab6/Screenshot_10.png"/></p>` + 'Запустимо наш сервер та зайдемо на localhost' + `<p><img src="img/lab6/Screenshot_11.png"/></p>` + `Сервер встановленно.`
+        const lab6InstallPhp = `<h1>Завдання</h1><p><img src="img/lab6/Screenshot_1.png"/></p>` + `Завантажуємо php з офіційного сайту ` + `<p><img src="img/lab6/Screenshot_12.png"/></p>` + `Розпаковуємо архів в папку C:/php та знаходимо файл php-ini-development` + `<p><img src="img/lab6/Screenshot_13.png"/></p>` + `Змінюємо деякі налаштування` + `<p><img src="img/lab6/Screenshot_14.png"/></p>`+ `<p><img src="img/lab6/Screenshot_18.png"/></p>` + `<p><img src="img/lab6/Screenshot_15.png"/></p>` + 'Додаємо до DirectoryIndex значення index.php' + '<p><img src="img/lab6/Screenshot_16.png"/></p>' + '<p><img src="img/lab6/Screenshot_17.png"/></p>' + 'Застосовуємо дякий код та перевіряємо роботу сервера' + '<p><img src="img/lab6/Screenshot_19.png"/></p>' + 'Сервер повністю налаштованно'
+        const lab6ServerWork = `<h1>Завдання</h1><p><img src="img/lab6/Screenshot_20.png"/></p>` + `<p>index.html Code</p>` + `<p></p>` + `<p>index.php Code</p>` + `<p></p>` + `<p style="text-align: center">Робота серверу:</p>` + `<p >index.html</p>` + `<p><img src="img/lab6/Screenshot_23.png"/></p>` + `<p>index.php</p>` + `<p><img src="img/lab6/Screenshot_24.png"/></p>`
         // // // // //
 
         function showLab1() {
@@ -299,6 +305,18 @@
             createLeftInfoBtn(leftButtons, "6 Пункт (Інформери)", lab5task6, fontSizeHeightLineHTML);
             createLeftInfoBtn(leftButtons, "7 Пункт (Динамічні елементи)", lab5task7, fontSizeHeightLineHTML);
             createLeftInfoBtn(leftButtons, "Висновки", lab5Conclusion)
+
+        }
+
+        function showLab6(){
+            let leftButtons = document.getElementById("leftButtons");
+            leftButtons.innerHTML = "";
+
+            createLeftInfoBtn(leftButtons,"Постановка задачі Лабораторної роботи №6",lab6DescTextContent)
+            createLeftInfoBtn(leftButtons,"Встановлення серверу",lab6InstallServer)
+            createLeftInfoBtn(leftButtons,"Встановелння php, налаштування серверу",lab6InstallPhp)
+            createLeftInfoBtn(leftButtons,"Робота серверу",lab6ServerWork)
+
         }
 
         /////////
