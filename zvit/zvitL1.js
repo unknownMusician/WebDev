@@ -51,12 +51,9 @@ const lab1Conclusion = "На цій лабораторній роботі ми �
 
 //
 
-export default function showLab1() {
-    let leftButtons = document.getElementById("leftButtons");
-    leftButtons.innerHTML = "";
-
-    z.createBtnWithRedirect(leftButtons, "Опис предментої області", "../subject.html")
-    z.createBtnWithRedirect(leftButtons, "Лабораторна робота", "../lab1.html")
+export default function showLab1(leftButtons) {
+    z.createBtnWithRedirect(leftButtons, "Опис предментої області", "../subject.html");
+    z.createBtnWithRedirect(leftButtons, "Лабораторна робота", "../lab1.html");
     z.createLeftInfoBtn(leftButtons, "Постановка задачі Лабораторної роботи №1", lab1DescTextContent);
     z.createLeftInfoBtn(leftButtons, "Загальна постановка задачі програми", lab1WorkTaskTextContent);
     z.createLeftGroupBtn(leftButtons, "Структура документа", () => showSmallButtons1(leftButtons));

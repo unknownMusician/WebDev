@@ -10,15 +10,10 @@ const lab6Conclusion = `На цій лабораторній роботі, ми 
 
 //
 
-export default function showLab6() {
-    let leftButtons = document.getElementById("leftButtons");
-    leftButtons.innerHTML = "";
-
-
-    z.createLeftInfoBtn(leftButtons, "Постановка задачі Лабораторної роботи №6", lab6DescTextContent)
-    z.createLeftInfoBtn(leftButtons, "Встановлення серверу", lab6InstallServer)
-    z.createLeftInfoBtn(leftButtons, "Встановелння php, налаштування серверу", lab6InstallPhp)
-    z.createLeftInfoBtn(leftButtons, "Робота серверу", lab6ServerWork, z.fontSizeHeightLineHTML)
-    z.createLeftInfoBtn(leftButtons, "Висновки", lab6Conclusion)
-
+export default function showLab6(leftButtons) {
+    z.createLeftInfoBtn(leftButtons, "Постановка задачі Лабораторної роботи №6", lab6DescTextContent);
+    z.createLeftInfoBtn(leftButtons, "Встановлення серверу", lab6InstallServer);
+    z.createLeftInfoBtn(leftButtons, "Встановелння php, налаштування серверу", lab6InstallPhp);
+    z.createLeftInfoBtn(leftButtons, "Робота серверу", lab6ServerWork, z.fontSizeHeightLineHTML);
+    z.createLeftInfoBtn(leftButtons, "Висновки", lab6Conclusion);
 }

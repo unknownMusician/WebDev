@@ -12,17 +12,14 @@ const lab3Conclusion = "На цій лабораторній роботі ми �
 
 //
 
-export default function showLab3() {
-    let leftButtons = document.getElementById("leftButtons");
-    leftButtons.innerHTML = "";
-
+export default function showLab3(leftButtons) {
     z.createLeftInfoBtn(leftButtons, "Постановка задачі Лабораторної роботи №3", lab3DescTextContent);
-    z.createLeftInfoBtn(leftButtons, "Тип макету", lab3Type)
-    z.createLeftInfoBtn(leftButtons, "Базові концепції верстки", lab3BasicConceptions)
-    z.createLeftGroupBtn(leftButtons, "Головна сторінка", () => showSmallButtons3(leftButtons))
-    z.createBtnWithRedirect(leftButtons, "Лабораторна робота №3", "../lab3/lab3.html")
-    z.createLeftGroupBtn(leftButtons, "Окрема сторінка", () => showSmallButtons32(leftButtons))
-    z.createLeftInfoBtn(leftButtons, "Висновки", lab3Conclusion)
+    z.createLeftInfoBtn(leftButtons, "Тип макету", lab3Type);
+    z.createLeftInfoBtn(leftButtons, "Базові концепції верстки", lab3BasicConceptions);
+    z.createLeftGroupBtn(leftButtons, "Головна сторінка", () => showSmallButtons3(leftButtons));
+    z.createBtnWithRedirect(leftButtons, "Лабораторна робота №3", "../lab3/lab3.html");
+    z.createLeftGroupBtn(leftButtons, "Окрема сторінка", () => showSmallButtons32(leftButtons));
+    z.createLeftInfoBtn(leftButtons, "Висновки", lab3Conclusion);
 }
 
 function showSmallButtons3(parent) {

@@ -13,12 +13,9 @@ const lab4Insertion = `Code <p><img src="../img/lab4/scriptTag.png" /><p>Тег 
 
 //
 
-export default function showLab4() {
-    let leftButtons = document.getElementById("leftButtons");
-    leftButtons.innerHTML = "";
-
+export default function showLab4(leftButtons) {
     z.createLeftInfoBtn(leftButtons, "Постановка задачі Лабораторної роботи №4", lab4DescTextContent);
-    z.createLeftGroupBtn(leftButtons, "Способи функціонального застосування JavaScript", () => showSmallButtons4(leftButtons))
+    z.createLeftGroupBtn(leftButtons, "Способи функціонального застосування JavaScript", () => showSmallButtons4(leftButtons));
     z.createBtnWithRedirect(leftButtons, "Масиви (4 пункт) 7 варіант", "../lab4/lab4.html");
     z.createLeftInfoBtn(leftButtons, "4 пункт - Завдання 7 варіант", lab4Task4, z.fontSizeHeightLineHTML);
     z.createBtnWithRedirect(leftButtons, "Масиви (4 пункт) 2 варіант", "../lab4/var2/task4.html");
@@ -27,7 +24,7 @@ export default function showLab4() {
     z.createLeftInfoBtn(leftButtons, "6 пункт - Завдання 7 варіант", lab4Task6, z.fontSizeHeightLineHTML);
     z.createBtnWithRedirect(leftButtons, "Виконання 6 пункту 2 варіант", "../lab4/var2/task6Page1.html");
     z.createLeftInfoBtn(leftButtons, "6 пункт - Завдання 2 варіант", lab4Task62, z.fontSizeHeightLineHTML);
-    z.createLeftInfoBtn(leftButtons, "Висновки", lab4Conclusion)
+    z.createLeftInfoBtn(leftButtons, "Висновки", lab4Conclusion);
 }
 
 function showSmallButtons4(parent) {

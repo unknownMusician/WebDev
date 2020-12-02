@@ -23,10 +23,7 @@ const lab5task7 = `<h1>Завдання</h1><p><img src="../img/lab5/t7task.png"
 
 //
 
-export default function showLab5() {
-    let leftButtons = document.getElementById("leftButtons");
-    leftButtons.innerHTML = "";
-
+export default function showLab5(leftButtons) {
     z.createLeftInfoBtn(leftButtons, "Постановка задачі Лабораторної роботи №5", lab5DescTextContent);
     z.createBtnWithRedirect(leftButtons, "Результат роботи", "../lab5/index.html");
     z.createLeftInfoBtn(leftButtons, "Загальна структура сайту", lab5html + lab5css + lab5js, z.fontSizeHeightLineHTML);
@@ -35,6 +32,6 @@ export default function showLab5() {
     z.createLeftInfoBtn(leftButtons, "5 Пункт (Кнопки соціальних мереж)", lab5task5, z.fontSizeHeightLineHTML);
     z.createLeftInfoBtn(leftButtons, "6 Пункт (Інформери)", lab5task6, z.fontSizeHeightLineHTML);
     z.createLeftInfoBtn(leftButtons, "7 Пункт (Динамічні елементи)", lab5task7, z.fontSizeHeightLineHTML);
-    z.createLeftInfoBtn(leftButtons, "Висновки", lab5Conclusion)
+    z.createLeftInfoBtn(leftButtons, "Висновки", lab5Conclusion);
 
 }

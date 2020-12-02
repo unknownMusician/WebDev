@@ -12,11 +12,7 @@ const lab2Conclusion = "На другій лабораторній роботі 
 
 //
 
-export default function showLab2() {
-    let leftButtons = document.getElementById("leftButtons");
-    leftButtons.innerHTML = "";
-
-
+export default function showLab2(leftButtons) {
     z.createLeftInfoBtn(leftButtons, "Постановка задачі Лабораторної роботи №2", lab2DescTextContent);
     z.createLeftInfoBtn(leftButtons, "Списки", lab2lists);
     z.createLeftInfoBtn(leftButtons, "Ідентифікатори", lab2identificators);
