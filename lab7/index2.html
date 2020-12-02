@@ -30,7 +30,7 @@
 </style>
 
 <body>
-    <form action="http://127.0.0.1/index.php" method="post">
+    <form action="http://127.0.0.1/pharmacyEnter.php" method="POST" id="form">
         <section>
             <h2>Продукт</h2>
             <div>
@@ -76,8 +76,27 @@
                 <input name='workerMiddlename' />
             </div>
         </section>
+        <div>
+            <input onclick="onCheckBox(true)" type="radio" /> Write
+            <input onclick="onCheckBox(false)" type="radio" /> Find
+        </div>
         <input type="submit">
     </form>
+    <script>
+        function onCheckBox(isWriting) {
+            let checks = document.querySelectorAll(`input[type="radio"]`);
+            checks[isWriting ? 1 : 0].checked = false;
+            // method = "GET";
+
+            let action = "http://127.0.0.1/" +
+                (isWriting ? 'pharmacyEnter' : 'pharmacyFind') +
+                ".php";
+
+            console.log(action);
+
+            document.getElementById('form').action = action;
+        }
+    </script>
 </body>
 
 </html>
