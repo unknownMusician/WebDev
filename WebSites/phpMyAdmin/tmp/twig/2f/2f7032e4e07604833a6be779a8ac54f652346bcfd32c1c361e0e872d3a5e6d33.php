@@ -78,6 +78,6 @@ class __TwigTemplate_bd5f94095940fb278a3b8c658d9e2e06fea6b96c73a7114bc2482796dc9
 
     public function getSourceContext()
     {
-        return new Source("", "display/results/comment_for_row.twig", "D:\\Labs\\WebDev\\WebSites\\phpMyAdmin\\templates\\display\\results\\comment_for_row.twig");
+        return new Source("", "display/results/comment_for_row.twig", "C:\\Users\\User\\Documents\\GitHub\\labsJS\\WebDev\\WebSites\\phpMyAdmin\\templates\\display\\results\\comment_for_row.twig");
     }
 }

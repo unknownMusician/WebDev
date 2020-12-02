@@ -108,6 +108,6 @@ class __TwigTemplate_75b6a157235fa030d02218a52b90c222e93b69d83067fd9833565c2650a
 
     public function getSourceContext()
     {
-        return new Source("", "database/structure/index.twig", "D:\\Labs\\WebDev\\WebSites\\phpMyAdmin\\templates\\database\\structure\\index.twig");
+        return new Source("", "database/structure/index.twig", "C:\\Users\\User\\Documents\\GitHub\\labsJS\\WebDev\\WebSites\\phpMyAdmin\\templates\\database\\structure\\index.twig");
     }
 }

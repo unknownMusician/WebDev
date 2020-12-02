@@ -126,6 +126,6 @@ class __TwigTemplate_6d2d14041a9444f1617e33d488b8b78acb7191a43a2d93f72e37755f153
 
     public function getSourceContext()
     {
-        return new Source("", "select_lang.twig", "D:\\Labs\\WebDev\\WebSites\\phpMyAdmin\\templates\\select_lang.twig");
+        return new Source("", "select_lang.twig", "C:\\Users\\User\\Documents\\GitHub\\labsJS\\WebDev\\WebSites\\phpMyAdmin\\templates\\select_lang.twig");
     }
 }
