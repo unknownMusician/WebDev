@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    form {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+    }
+    
+    input[type="submit"] {
+        height: 50px;
+        font-weight: bolder;
+    }
+</style>
+
+<body>
+    <form action="http://127.0.0.1/index.php" method="post">
+        <div>
+            <h3>author</h3>
+            <input name='author' />
+        </div>
+        <div>
+            <h3>title</h3>
+            <input name='title' />
+        </div>
+        <div>
+            <h3>publisher</h3>
+            <input name='publisher' />
+        </div>
+        <div>
+            <h3>city</h3>
+            <input name='city' />
+        </div>
+        <div>
+            <h3>year</h3>
+            <input name='year' />
+        </div>
+        <div>
+            <h3>page_qty</h3>
+            <input name='page_qty' />
+        </div>
+        <div>
+            <h3>annotation</h3>
+            <input name='annotation' />
+        </div>
+        <input type="submit">
+    </form>
+</body>
+
+</html>
