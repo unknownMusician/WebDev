@@ -50,9 +50,11 @@ export function setMainContent(buttonText, mainText, style) {
     let funcs = [showLab1, showLab2, showLab3, showLab4, showLab5, showLab6, showLab7];
 
     let leftButtons = document.getElementById("leftButtons");
-    leftButtons.innerHTML = "";
 
     for (let i = 0; i < elements.length; i++) {
-        elements[i].addEventListener('click', e => funcs[i](leftButtons));
+        elements[i].addEventListener('click', e => {
+            leftButtons.innerHTML = "";
+            funcs[i](leftButtons);
+        });
     }
 })();

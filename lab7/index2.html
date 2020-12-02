@@ -86,7 +86,6 @@
         function onCheckBox(isWriting) {
             let checks = document.querySelectorAll(`input[type="radio"]`);
             checks[isWriting ? 1 : 0].checked = false;
-            // method = "GET";
 
             let action = "http://127.0.0.1/" +
                 (isWriting ? 'pharmacyEnter' : 'pharmacyFind') +
