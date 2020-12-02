@@ -1,6 +1,7 @@
 <?php
 if (isset($_POST)) {
     $connection = mysqli_connect("127.0.0.1", "root", "12345", "library") or die ("Could not connect:");
+
     $author = $_POST["author"];
     $title = $_POST["title"];
     $publisher = $_POST["publisher"];
@@ -8,8 +9,10 @@ if (isset($_POST)) {
     $year = $_POST["year"];
     $page_qty = $_POST["page_qty"];
     $annotation = $_POST["annotation"];
+
     $len_author = strlen($author);
     $len_title = strlen($title);
+
     if($len_author > 0 & $len_title > 0){
         $query = "INSERT IGNORE INTO author (id, name) VALUES (NULL, '$author')";
         mysqli_query($connection, $query) or die (mysqli_error($connection));
