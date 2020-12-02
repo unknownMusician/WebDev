@@ -169,6 +169,6 @@ class __TwigTemplate_0ce36b99ccd3f8347f9a17f980e856d30829926969c38165dc84f4cf21f
 
     public function getSourceContext()
     {
-        return new Source("", "display/results/options_block.twig", "D:\\Labs\\WebDev\\WebSites\\phpMyAdmin\\templates\\display\\results\\options_block.twig");
+        return new Source("", "display/results/options_block.twig", "C:\\Users\\User\\Documents\\GitHub\\labsJS\\WebDev\\WebSites\\phpMyAdmin\\templates\\display\\results\\options_block.twig");
     }
 }

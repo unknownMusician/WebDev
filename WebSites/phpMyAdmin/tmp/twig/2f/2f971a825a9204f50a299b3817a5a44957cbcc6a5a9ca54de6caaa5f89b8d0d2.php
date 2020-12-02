@@ -75,6 +75,6 @@ class __TwigTemplate_ca406cd1f600d166ede850d802776ef39d077aeb5850787d008648833b7
 
     public function getSourceContext()
     {
-        return new Source("", "database/structure/favorite_anchor.twig", "D:\\Labs\\WebDev\\WebSites\\phpMyAdmin\\templates\\database\\structure\\favorite_anchor.twig");
+        return new Source("", "database/structure/favorite_anchor.twig", "C:\\Users\\User\\Documents\\GitHub\\labsJS\\WebDev\\WebSites\\phpMyAdmin\\templates\\database\\structure\\favorite_anchor.twig");
     }
 }

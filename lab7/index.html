@@ -21,37 +21,54 @@
 </style>
 
 <body>
-    <form action="http://127.0.0.1/index.php" method="post">
+<form action="http://127.0.0.1/index.php" method="post">
+    <section>
+        <h2>Глава</h2>
         <div>
-            <h3>author</h3>
-            <input name='author' />
+            <h3>Назва</h3>
+            <input name='chapter-name' />
         </div>
         <div>
-            <h3>title</h3>
-            <input name='title' />
+            <h3>Кількість сторінок</h3>
+            <input name='chapter-amountPages' />
         </div>
         <div>
-            <h3>publisher</h3>
-            <input name='publisher' />
+            <h3>Епіграф</h3>
+            <input name='chapter-epigraph' />
+        </div>
+    </section>
+    <section>
+        <h2>Параграф</h2>
+        <div>
+            <h3>Назва</h3>
+            <input name='paragraph-name' />
         </div>
         <div>
-            <h3>city</h3>
-            <input name='city' />
+            <h3>Кількість сторінок</h3>
+            <input name='paragraph-amountPages' />
         </div>
         <div>
-            <h3>year</h3>
-            <input name='year' />
+            <h3>Епіграф</h3>
+            <input name='paragraph-epigraph' />
+        </div>
+    </section>
+    <section>
+        <h2>Радіотехніка</h2>
+        <div>
+            <h3>Назва</h3>
+            <input name='radioEngineering-name' />
         </div>
         <div>
-            <h3>page_qty</h3>
-            <input name='page_qty' />
+            <h3>Опис</h3>
+            <input name='radioEngineering-description' />
         </div>
         <div>
-            <h3>annotation</h3>
-            <input name='annotation' />
+            <h3>Ціна</h3>
+            <input name='radioEngineering-price' />
         </div>
-        <input type="submit">
-    </form>
+    </section>
+    <input type="submit">
+</form>
 </body>
 
 </html>

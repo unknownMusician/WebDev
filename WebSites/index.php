@@ -1,30 +1,62 @@
 <?php
 if (isset($_POST)) {
-    $connection = mysqli_connect("127.0.0.1", "root", "12345", "library") or die ("Could not connect:");
+    $connection = mysqli_connect("127.0.0.1", "root", "12345", "radiodirectory") or die ("Could not connect:");
 
-    $author = $_POST["author"];
-    $title = $_POST["title"];
-    $publisher = $_POST["publisher"];
-    $city = $_POST["city"];
-    $year = $_POST["year"];
-    $page_qty = $_POST["page_qty"];
-    $annotation = $_POST["annotation"];
+    $chapterName = $_POST["chapter-name"];
+    $chapterAmountPages = $_POST["chapter-amountPages"];
+    $chapterEpigraph = $_POST["chapter-epigraph"];
 
-    $len_author = strlen($author);
-    $len_title = strlen($title);
 
-    if($len_author > 0 & $len_title > 0){
-        $query = "INSERT IGNORE INTO author (id, name) VALUES (NULL, '$author')";
-        mysqli_query($connection, $query) or die (mysqli_error($connection));
-        $query = "INSERT IGNORE INTO city (id, name) VALUES (NULL, '$city')";
-        mysqli_query($connection, $query) or die (mysqli_error($connection));
-        $query = "INSERT IGNORE INTO publisher (id, name, city) VALUES (NULL, '$publisher', (SELECT id FROM city WHERE name = '$city'))"; // двойное равно?
-        mysqli_query($connection, $query) or die (mysqli_error($connection));
-        $query = "INSERT IGNORE INTO book (id, title, year, page, annotation, publisher) VALUES (NULL, '$title', '$year', '$page_qty', '$annotation', (SELECT id FROM publisher WHERE name = '$publisher'))";
-        mysqli_query($connection, $query) or die (mysqli_error($connection));
-        $query = "INSERT IGNORE INTO book_author (book, author) VALUES ((SELECT id FROM book WHERE title = '$title'), (SELECT id FROM author WHERE name = '$author'))";
-        mysqli_query($connection, $query) or die (mysqli_error($connection));
+    $len_chapterName = strlen($chapterName);
+    $len_chapterEpigraph = strlen($chapterEpigraph);
+
+    $paragraphName = $_POST["paragraph-name"];
+    $paragraphEpigraph = $_POST["paragraph-epigraph"];
+    $paragraphAmountPages =$_POST["paragraph-amountPages"];
+
+    $len_paragraphName = strlen($paragraphName);
+    $len_paragraphEpigraph = strlen($paragraphEpigraph);
+
+    $radioEngineeringName = $_POST["radioEngineering-name"];
+    $radioEngineeringDescription = $_POST["radioEngineering-description"];
+    $radioEngineeringPrice = $_POST["radioEngineering-price"];
+
+    $len_radioEngineeringName = strlen($radioEngineeringName);
+    $len_radioEngineeringDescription = strlen($radioEngineeringDescription);
+
+    if(
+        $len_chapterName == 0 ||
+        !is_numeric($chapterAmountPages) ||
+        intval($chapterAmountPages) <= 0 ||
+        $len_chapterEpigraph == 0 ||
+        $len_paragraphName == 0 ||
+        !is_numeric($paragraphAmountPages) ||
+        intval($paragraphAmountPages) <= 0 ||
+        $len_paragraphEpigraph == 0 ||
+        $len_radioEngineeringName == 0 ||
+        $len_radioEngineeringDescription == 0 ||
+        !is_numeric($radioEngineeringPrice) ||
+        intval($radioEngineeringPrice) <= 0
+    )
+    {
+        die();
     }
-    echo "Дані про книгу $title автора $author успішно добавлено до БД<br>";
+
+
+        $query = "INSERT IGNORE INTO chapters (id, name,amountPages,epigraph) VALUES (NULL, '$chapterName','$chapterAmountPages','$chapterEpigraph')";
+        mysqli_query($connection, $query) or die (mysqli_error($connection));
+
+        $query = "INSERT IGNORE INTO paragraphs (id, name,idChapter,epigraph,amountPages) VALUES (NULL, '$paragraphName',
+            (SELECT ID FROM chapters WHERE NAME = '$chapterName'),' $paragraphEpigraph','  $paragraphAmountPages')";
+        mysqli_query($connection, $query) or die (mysqli_error($connection));
+
+        $query = "INSERT IGNORE INTO radioengineering (id, name,description,price) VALUES (NULL, '$radioEngineeringName','$radioEngineeringDescription','$radioEngineeringPrice')";
+        mysqli_query($connection, $query) or die (mysqli_error($connection));
+
+        $query = "INSERT IGNORE INTO paragraphradio (id,idParagraph,idRadioEngr) VALUES (NULL,(SELECT ID FROM paragraphs WHERE NAME = '$paragraphName'),
+        (SELECT ID FROM radioengineering WHERE NAME =  '$radioEngineeringName') )";
+        mysqli_query($connection, $query) or die (mysqli_error($connection));
+
+        echo "Дані про главу: Ім'я - $chapterName, Параграф - $paragraphName, Радіотехніку - $radioEngineeringName успішно додано до БД<br>";
 }
 ?>
