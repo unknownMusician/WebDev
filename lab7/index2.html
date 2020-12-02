@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    form {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+    }
+    
+    input {
+        margin: 10px;
+        height: 30px;
+    }
+    
+    input[type="submit"] {
+        height: 50px;
+        font-weight: bolder;
+    }
+    
+    * div {
+        display: flex;
+    }
+</style>
+
+<body>
+    <form action="http://127.0.0.1/index.php" method="post">
+        <section>
+            <h2>Продукт</h2>
+            <div>
+                <h3>Назва</h3>
+                <input name='productName' />
+            </div>
+            <div>
+                <h3>Опис</h3>
+                <input name='productDescription' />
+            </div>
+            <div>
+                <h3>Ціна</h3>
+                <input name='productPrice' />
+            </div>
+        </section>
+        <section>
+            <h2>Клієнт</h2>
+            <div>
+                <h3>Ім'я</h3>
+                <input name='clientName' />
+            </div>
+            <div>
+                <h3>Прізвище</h3>
+                <input name='clientSurname' />
+            </div>
+            <div>
+                <h3>По-батькові</h3>
+                <input name='clientMiddlename' />
+            </div>
+        </section>
+        <section>
+            <h2>Працівник</h2>
+            <div>
+                <h3>Ім'я</h3>
+                <input name='workerName' />
+            </div>
+            <div>
+                <h3>Прізвище</h3>
+                <input name='workerSurname' />
+            </div>
+            <div>
+                <h3>По-батькові</h3>
+                <input name='workerMiddlename' />
+            </div>
+        </section>
+        <input type="submit">
+    </form>
+</body>
+
+</html>
