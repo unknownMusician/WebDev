@@ -30,7 +30,7 @@
 </style>
 
 <body>
-    <form action="http://127.0.0.1/pharmacyEnter.php" method="POST" id="form">
+    <form action="http://127.0.0.1/pharmacyFind.php" method="POST" id="form">
         <section>
             <h2>Продукт</h2>
             <div>
@@ -78,7 +78,7 @@
         </section>
         <div>
             <input onclick="onCheckBox(true)" type="radio" /> Write
-            <input onclick="onCheckBox(false)" type="radio" /> Find
+            <input onclick="onCheckBox(false)" type="radio" checked /> Find
         </div>
         <input type="submit">
     </form>
@@ -95,6 +95,12 @@
             console.log(action);
 
             document.getElementById('form').action = action;
+
+            let boolValue = true;
+            let ifTrue = 5;
+            let ifFalse = 10;
+
+            let result = boolValue ? ifTrue : ifFalse;
         }
     </script>
 </body>

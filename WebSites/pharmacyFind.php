@@ -32,10 +32,24 @@ FROM products, clients, workers, deals
 WHERE 
 deals.idclient = clients.id AND
 deals.idworker = workers.id AND
-deals.idproduct = products.id"; // todo add search;
+deals.idproduct = products.id";
 
 if ($clientName != ""){
     $query = $query . " AND clients.name = '$clientName'";
+} if ($clientSurname != ""){
+    $query = $query . " AND clients.surname = '$clientSurname'";
+} if ($clientMiddlename != ""){
+    $query = $query . " AND clients.middlename = '$clientMiddlename'";
+} if ($workerName != ""){
+    $query = $query . " AND worker.name = '$workerName'";
+} if ($workerSurname != ""){
+    $query = $query . " AND worker.surname = '$workerSurname'";
+} if ($workerMiddlename != ""){
+    $query = $query . " AND worker.middlename = '$workerMiddlename'";
+} if ($productName != ""){
+    $query = $query . " AND products.name = '$productName'";
+} if ($productDescription != ""){
+    $query = $query . " AND products.description = '$productDescription'";
 } if ($productPrice != ""){
     $query = $query . " AND products.price = $productPrice";
 }
