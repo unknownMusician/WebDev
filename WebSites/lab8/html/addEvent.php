@@ -106,6 +106,11 @@ if (isset($_POST) && isset($_POST["title"])) {
                 <a href="./addEvent.php?lang='.$lang.'" style="color: whitesmoke"><div class="nav__add-event">'.$language[1].'</div></a>
                 <a href="./login.php?lang='.$lang.'" style="color: whitesmoke"><div class="nav__about">'.$language[2].'</div></a>
             </nav>
+             <div class="header__icons">
+             <div class="header__icon"><form action="" method="get"><input name="lang" value="ua" type="hidden"><button style="background: transparent; border: none"><img src="../img/ukraine_round_icon_64.png"></button></form></div>
+                    <div class="header__icon"><form action="" method="get"><input name="lang" value="ru" type="hidden"><button style="background: transparent; border: none"><img src="../img/russia_round_icon_64.png"></button></form></div>
+                    <div class="header__icon"><form action="" method="get"><input name="lang" value="eng" type="hidden"><button style="background: transparent; border: none"><img src="../img/united_kingdom_round_icon_64.png"></button></form></div>
+            </div>
         </div>
     </header>
     <main>
