@@ -1,6 +1,13 @@
 <?php 
 
+function writeLog($text) {
+    $file = '../logs.txt';
+    $fin = substr(date(DATE_RFC822, time()), 0, 23) . ": " . $text . "\n";
+    file_put_contents($file, $fin, FILE_APPEND | LOCK_EX);
+}
+
 session_start();
+if(isset($_SESSION["username"])) { writeLog("User log out: " . $_SESSION["username"]); }
 unset($_SESSION["username"]);
 unset($_SESSION["password"]);
 
@@ -42,11 +49,10 @@ switch ($lang){
 
 if(isset($_POST) && isset($_POST['username'])) {
 
-
-
-
     $username = $_POST["username"];
     $password = $_POST["password"];
+    
+    writeLog("Log in try: " . $username);
 
     if (strlen($username) > 0 && strlen($password) > 0) {
         $conn = new mysqli("127.0.0.1", "root", "12345", "calendar");
@@ -62,9 +68,10 @@ if(isset($_POST) && isset($_POST['username'])) {
             session_start();
             $_SESSION["username"] = $username;
             $_SESSION["password"] = $password;
+            writeLog("Log in succesful: " . $username);
             header('Location: ' . "../index.php?lang=".$lang);
-        }
-    }
+        } else { writeLog("Log in error: " . $username); }
+    } else { writeLog("Log in error: " . $username); }
 }
 
 ?>

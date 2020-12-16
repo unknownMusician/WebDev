@@ -81,9 +81,9 @@ $result = $conn->query($query);
                     </a>
                 </nav>
             <div class="header__icons">
-             <div class="header__icon"><form action="" method="get"><input name="lang" value="ua" type="hidden"><button style="background: transparent"><img src="../../img/lab8/ukraine_round_icon_64.png"></button></form></div>
-                    <div class="header__icon"><form action="" method="get"><input name="lang" value="ru" type="hidden"><button style="background: transparent"><img src="../../img/lab8/russia_round_icon_64.png"></button></form></div>
-                    <div class="header__icon"><form action="" method="get"><input name="lang" value="eng" type="hidden"><button style="background: transparent"><img src="../../img/lab8/united_kingdom_round_icon_64.png"></button></form></div>
+             <div class="header__icon"><form action="" method="get"><input name="lang" value="ua" type="hidden"><button style="background: transparent"><img src="./img/ukraine_round_icon_64.png"></button></form></div>
+                    <div class="header__icon"><form action="" method="get"><input name="lang" value="ru" type="hidden"><button style="background: transparent"><img src="./img/russia_round_icon_64.png"></button></form></div>
+                    <div class="header__icon"><form action="" method="get"><input name="lang" value="eng" type="hidden"><button style="background: transparent"><img src="./img/united_kingdom_round_icon_64.png"></button></form></div>
             </div>
             </div>
         </header>

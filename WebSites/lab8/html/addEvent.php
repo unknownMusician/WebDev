@@ -1,5 +1,11 @@
 <?php
 
+function writeLog($text) {
+    $file = '../logs.txt';
+    $fin = substr(date(DATE_RFC822, time()), 0, 23) . ": " . $text . "\n";
+    file_put_contents($file, $fin, FILE_APPEND | LOCK_EX);
+}
+
 session_start();
 $lang = "";
 
@@ -38,6 +44,7 @@ if(!isset($_SESSION["username"])) {
     header('Location: ' . "./login.php");
 }
 if (isset($_POST) && isset($_POST["title"])) {
+
     $conn = new mysqli("127.0.0.1", "root", "12345", "calendar");
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
@@ -52,6 +59,8 @@ if (isset($_POST) && isset($_POST["title"])) {
     $dateEnd = $_POST["dateEnd"];
     $timeEnd = $_POST["timeEnd"];
     $description = $_POST["description"];
+
+    writeLog("Add event try: " . $username);
 
     if (
         strlen($username) > 0 && 
@@ -74,8 +83,9 @@ if (isset($_POST) && isset($_POST["title"])) {
             '$dateTimeEnd')";
 
         $conn->query($query);
+        writeLog('Added event successfully: username="' . $username . '", title="' . $title . '", description="' . $description . '", dateTimeStart="' . $dateTimeStart . '", dateTimeEnd="' . $dateTimeEnd . '"');
         header('Location: ' . "../index.php?lang=".$lang);
-    }
+    } else { writeLog('Added event error'); }
 }
 ?>
 <?php echo '

@@ -1,0 +1,14 @@
+Wed, 16 Dec 20 18:56:17: Log in try: tsaef
+Wed, 16 Dec 20 18:56:17: Log in error: tsaef
+Wed, 16 Dec 20 18:56:28: Log in try: testUserName
+Wed, 16 Dec 20 18:56:28: Log in succesful: testUserName
+Wed, 16 Dec 20 18:56:45: Add event try: testUserName
+Wed, 16 Dec 20 18:56:45: Added event successfully: username="testUserName", title="event4", description="lisudakjhvbaowieuhWIU od\fhOWDIU SC WD SDF w", dateTimeStart="2020-12-03 20:59", dateTimeEnd="2020-12-01 23:56"
+Wed, 16 Dec 20 18:56:46: User log out: testUserName
+Wed, 16 Dec 20 18:56:50: Log in try: dfgaergawr
+Wed, 16 Dec 20 18:56:50: Log in error: dfgaergawr
+Wed, 16 Dec 20 18:58:14: Log in try: testUserName
+Wed, 16 Dec 20 18:58:14: Log in succesful: testUserName
+Wed, 16 Dec 20 18:58:35: Add event try: testUserName
+Wed, 16 Dec 20 18:58:35: Added event successfully: username="testUserName", title="gwfgzsgwr", description="SDfavefzhs rthseth ethj aethE", dateTimeStart="2020-12-04 20:01", dateTimeEnd="2020-12-03 20:00"
+Wed, 16 Dec 20 18:58:37: User log out: testUserName
