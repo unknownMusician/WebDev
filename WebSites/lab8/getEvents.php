@@ -10,11 +10,7 @@ $password = $_GET["password"];
 
 if (
     strlen($username) == 0 || 
-    strlen($password) == 0 || 
-    strlen($title) == 0 || 
-    strlen($description) == 0 || 
-    strlen($dateTimeStart) == 0 || 
-    strlen($dateTimeEnd) == 0
+    strlen($password) == 0
 ) { die; }
 
 $query = "SELECT
@@ -22,14 +18,13 @@ events.title as 'title',
 events.description as 'description', 
 events.dateTimeStart as 'dateTimeStart', 
 events.dateTimeEnd as 'dateTimeEnd'
-FROM events, users
-WHERE 
-events.idUser = (SELECT ID FROM users WHERE Name = '$username')";
+FROM events, users";
+// WHERE 
+// events.idUser = (SELECT ID FROM users WHERE Name = '$username')";
 
 $result = $conn->query($query);
 
-
-if ($result->num_rows > 0) {
+if ($result != null && $result->num_rows > 0) {
     echo '{ "events": [ ';
     // output data of each row
     $row = $result->fetch_assoc();
@@ -37,15 +32,10 @@ if ($result->num_rows > 0) {
     while($row) {
         echo " { ";
         //
-        foreach($row as $part){
-            echo "<td>";
-            echo $part;
-            echo "</td>";
-        }
-        echo ' "title" : ' . $row["title"] . ', ';
-        echo ' "description" : ' . $row["description"] . ', ';
-        echo ' "dateTimeStart" : ' . $row["dateTimeStart"] . ', ';
-        echo ' "dateTimeEnd" : ' . $row["dateTimeEnd"];
+        echo ' "title" : "' . $row["title"] . '", ';
+        echo ' "description" : "' .  $row["description"] . '", ';
+        echo ' "dateTimeStart" : "' .  $row["dateTimeStart"] . '", ';
+        echo ' "dateTimeEnd" : "' .  $row["dateTimeEnd"] . '"';
         //
         echo " } ";
         $row = $result->fetch_assoc();
