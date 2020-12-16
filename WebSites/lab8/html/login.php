@@ -40,7 +40,6 @@ if(isset($_POST) && isset($_POST['username'])) {
     <link rel="stylesheet" type="text/css" href="../css/addEvent.css">
 
 </head>
-
 <body>
 <div class="wrapper">
     <header>

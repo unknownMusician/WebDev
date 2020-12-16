@@ -27,6 +27,7 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: inherit;}
 
 header{
     background-color: black;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
 }
 
 .header__wrapper{
@@ -71,10 +72,16 @@ header{
     font-family: "Arial",sans-serif;
 }
 
+.first-row__title h2 {
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #bbb;
+}
+
 .first-row__add-btn{
     background-color: green;
-    border-radius: 25px;
-    padding: 5px 12px 5px 12px;
+    border-radius: 50%;
+    padding: 5px 12px;
     height: 33px;
     color: whitesmoke;
     cursor: pointer;
@@ -87,7 +94,8 @@ a{
 }
 
 .first-row__add-btn:hover{
-    background-color: blue;
+    padding: 7px 14px;
+    background-color: lightgreen;
 }
 
 
@@ -97,12 +105,20 @@ a{
     grid-gap: 30px;
 }
 .event__wrapper{
+    min-height: 200px;
     display: grid;
     grid-gap: 15px;
     grid-template: 0.3fr 1fr/1fr;
     background-color: #efc2c2;
     padding: 10px 20px 30px 20px;
     border-radius: 10px;
+    border: 1px solid #a18484;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.3);
+    transition: 0.5s;
+}
+
+.event__wrapper:hover {
+    margin: 0 -10px;
 }
 
 .event__title{
@@ -129,8 +145,6 @@ a{
 .event__description{
     line-height: 24px;
     font-size:18px
-
-
 }
 
 .footer__wrapper{
@@ -145,4 +159,5 @@ a{
 footer{
     background-color: black;
     color: whitesmoke;
+    box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.3);
 }

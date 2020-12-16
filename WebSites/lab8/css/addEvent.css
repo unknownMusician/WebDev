@@ -7,6 +7,8 @@
 }
 
 .title{
+    margin-bottom: 2rem;
+    border-bottom: 1px solid #bbb;
     font-size: 30px;
     font-family: "Arial",sans-serif;
     font-weight: bold;
@@ -19,6 +21,14 @@
     grid-template: 0.1fr 0.5fr 0.5fr 0.5fr 0.1fr/1fr;
     grid-gap: 20px;
     font-family: "Arial",sans-serif;
+    border-radius: 10px;
+    border: 1px solid #aaa;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+    transition: 0.5s;
+}
+
+.event-form:hover {
+    padding: 60px 50px;
 }
 
 .event-form__starts, .event-form__ends,.event-form__title{
@@ -45,10 +55,18 @@
 }
 
 
-#area{
+#area, .input{
     padding: 5px;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1) inset;
+    border: 1px solid #aaa;
 }
 
-.input{
-    padding: 5px;
+button {
+    border: 1px solid #aaa;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+    transition: 0.2s;
+}
+
+button:hover {
+    box-shadow: 0 5px 5px transparent;
 }

@@ -58,7 +58,7 @@ $result = $conn->query($query);
                     <div class="first-row__title">
                         <h2>Your events</h2>
                     </div>
-                    <a href="html/addEvent.html">
+                    <a href="html/addEvent.php">
                         <div class="first-row__add-btn">+</div>
                     </a>
                 </div>
