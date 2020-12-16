@@ -1,0 +1,5 @@
+ - writeEvent.php _POST(username, password, title, description, dateTimeStart, dateTimeEnd)
+
+ - getEvents.php _GET(username, password)
+
+ - (createUser.php _POST(usernamem password))
