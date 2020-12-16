@@ -11,23 +11,23 @@ if (isset($_POST)) {
     $dateTimeEnd = $_POST["dateTimeEnd"];
 
     if (
-        strlen($username) == 0 || 
-        strlen($password) == 0 || 
-        strlen($title) == 0 || 
-        strlen($description) == 0 || 
-        strlen($dateTimeStart) == 0 || 
-        strlen($dateTimeEnd) == 0
-    ) { die; }
+        strlen($username) > 0 && 
+        strlen($password) > 0 && 
+        strlen($title) > 0 && 
+        strlen($description) > 0 && 
+        strlen($dateTimeStart) > 0 && 
+        strlen($dateTimeEnd) > 0
+    ) {
+        $query = "INSERT IGNORE INTO events (ID, idUser, title, description, dateTimeStart, dateTimeEnd) VALUES (
+            NULL,
+            (SELECT ID FROM users WHERE title = '$username'),
+            '$title', 
+            '$description', 
+            '$dateTimeStart', 
+            '$dateTimeEnd')";
+        mysqli_query($connection, $query) or die (mysqli_error($connection));
 
-    $query = "INSERT IGNORE INTO events (ID, idUser, title, description, dateTimeStart, dateTimeEnd) VALUES (
-        NULL,
-        (SELECT ID FROM users WHERE Name = '$username'),
-        '$title', 
-        '$description', 
-        '$dateTimeStart', 
-        '$dateTimeEnd')";
-    mysqli_query($connection, $query) or die (mysqli_error($connection));
-
-    echo "true";
+        echo "true";
+    }
 }
 ?>

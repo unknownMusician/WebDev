@@ -1,0 +1,106 @@
+<?php
+
+session_start();
+if(!isset($_SESSION["username"])) {
+    header('Location: ' . "./login.php");
+}
+if (isset($_POST) && isset($_POST["title"])) {
+    $conn = new mysqli("127.0.0.1", "root", "12345", "calendar");
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+
+    $username = $_SESSION["username"];
+    $password = $_SESSION["password"];
+
+    $title = $_POST["title"];
+    $dateStart = $_POST["dateStart"];
+    $timeStart = $_POST["timeStart"];
+    $dateEnd = $_POST["dateEnd"];
+    $timeEnd = $_POST["timeEnd"];
+    $description = $_POST["description"];
+
+    if (
+        strlen($username) > 0 && 
+        strlen($password) > 0 && 
+        strlen($title) > 0 && 
+        strlen($dateStart) > 0 && 
+        strlen($timeStart) > 0 && 
+        strlen($dateEnd) > 0 && 
+        strlen($timeEnd) > 0
+    ) {
+        $dateTimeStart = $dateStart . " " . $timeStart;
+        $dateTimeEnd = $dateEnd . " " . $timeEnd;
+
+        $query = "INSERT IGNORE INTO events (ID, idUser, title, description, dateTimeStart, dateTimeEnd) VALUES (
+            NULL,
+            (SELECT ID FROM users WHERE title = '$username'),
+            '$title', 
+            '$description', 
+            '$dateTimeStart', 
+            '$dateTimeEnd')";
+
+        $conn->query($query);
+        header('Location: ' . "../index.php");
+    }
+}
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <link rel="stylesheet" type="text/css" href="../css/addEvent.css">
+    <title>Title</title>
+</head>
+<body>
+<div class="wrapper">
+    <header>
+        <div class="header__wrapper">
+            <nav class="header__navigation">
+                <a href="../index.php" style="color: whitesmoke"><div class="nav__home">Home</div></a>
+                <a href="./addEvent.php" style="color: whitesmoke"><div class="nav__add-event">Add Event</div></a>
+                <a href="./login.php" style="color: whitesmoke"><div class="nav__about">About</div></a>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="main__wrapper">
+            <div class="title">Adding event</div>
+            <form class="event-form" action="" method="POST">
+                <div class="event-form__title">
+                    <h2 class="event-form__name parag">Event name</h2>
+                    <input type="text" class="event-form__name-input input" required name="title">
+                </div>
+                <div class="event-form__starts">
+                    <h2 class="event-form__date-starts parag">Date when it starts</h2>
+                    <input type="date" class="event-form__date-starts-input input" required name="dateStart">
+                    <h2 class="event-form__time-starts parag">Time when it starts</h2>
+                    <input type="time" class="event-form__time-starts-input input" required name="timeStart">
+                </div>
+                <div class="event-form__ends">
+                    <h2 class="event-form__date-ends parag">Date when it ends</h2>
+                    <input type="date" class="event-form__date-ends-input input" required name="dateEnd">
+                    <h2 class="event-form__time-ends parag">Time when it ends</h2>
+                    <input type="time" class="event-form__time-ends-input input" required name="timeEnd">
+                </div>
+                <div class="event-form__description">
+                    <h2 class="event-form__description-text parag">Event description</h2>
+                    <textarea name="description" id="area" cols="30" rows="10" class="event-form__description-input" required></textarea>
+                </div>
+                <div class="event-form__submit-btn">
+                    <button>submit</button>
+                </div>
+            </form>
+        </div>
+    </main>
+    <footer>
+        <div class="footer__wrapper">
+            <div class="footer__author">@nekt2111.github.io</div>
+            <div class="footer__author">@unknownMusician.github.io</div>
+        </div>
+    </footer>
+</div>
+</body>
+</html>

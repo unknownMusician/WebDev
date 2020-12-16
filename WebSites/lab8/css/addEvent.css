@@ -1,0 +1,54 @@
+
+.main__wrapper{
+    padding: 50px;
+    display: grid;
+    grid-template: 0.1fr 1fr/1fr;
+    justify-items: center;
+}
+
+.title{
+    font-size: 30px;
+    font-family: "Arial",sans-serif;
+    font-weight: bold;
+}
+
+.event-form{
+    background-color: rgba(0,0,0,0.2);
+    padding: 50px;
+    display: grid;
+    grid-template: 0.1fr 0.5fr 0.5fr 0.5fr 0.1fr/1fr;
+    grid-gap: 20px;
+    font-family: "Arial",sans-serif;
+}
+
+.event-form__starts, .event-form__ends,.event-form__title{
+    display: grid;
+    grid-template: 1fr 1fr/1fr;
+    grid-gap: 10px;
+}
+.event-form__description{
+    display: grid;
+    grid-template: 0.1fr 1fr/1fr;
+    grid-gap: 10px;
+}
+.parag{
+    font-size: 18px;
+}
+.event-form__submit-btn{
+    justify-self: center;
+    align-self: center;
+}
+
+.event-form__submit-btn button{
+    padding: 10px 80px 10px 80px;
+    font-size: 18px;
+}
+
+
+#area{
+    padding: 5px;
+}
+
+.input{
+    padding: 5px;
+}
