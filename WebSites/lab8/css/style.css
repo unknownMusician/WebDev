@@ -30,7 +30,15 @@ header{
 }
 
 .header__wrapper{
-    padding: 0 40% 0 100px
+    padding: 0 10% 0 100px;
+    display: grid;
+    grid-template: 1fr/1fr 0.3fr;
+}
+
+.header__icons{
+    display: grid;
+    grid: 1fr/1fr 1fr 1fr;
+    align-items: center;
 }
 
 .header__navigation{
