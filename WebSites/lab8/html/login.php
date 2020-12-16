@@ -4,7 +4,46 @@ session_start();
 unset($_SESSION["username"]);
 unset($_SESSION["password"]);
 
+$lang = "";
+$langCookie = "";
+
+if(isset($_COOKIE["language"])){
+    $lang = $_COOKIE["language"];
+}
+
+if(isset($_GET["lang"])) {
+    $lang = $_GET["lang"];
+}
+
+
+
+$ukranian = ["Головна","Додати подію","Вийти","Логін","Пароль","Увійти"];
+$russian = ["Главная","Добавить событие","Выйти","Логин","Пароль","Войти"];
+$english = ["Home","Add event","Exit","Login","Password","Log in"];
+
+$language = [];
+
+switch ($lang){
+
+    case "ua":
+        $language = $ukranian;
+        setcookie("language","ua",mktime(0,0,0,6,16,21));
+        break;
+    case "ru":
+        $language = $russian;
+        setcookie("language","ru",mktime(0,0,0,6,16,21));
+        break;
+    default:
+        $language = $english;
+        setcookie("language","eng",mktime(0,0,0,6,16,21));
+        break;
+}
+
+
 if(isset($_POST) && isset($_POST['username'])) {
+
+
+
 
     $username = $_POST["username"];
     $password = $_POST["password"];
@@ -23,7 +62,7 @@ if(isset($_POST) && isset($_POST['username'])) {
             session_start();
             $_SESSION["username"] = $username;
             $_SESSION["password"] = $password;
-            header('Location: ' . "../index.php");
+            header('Location: ' . "../index.php?lang=".$lang);
         }
     }
 }
@@ -41,30 +80,35 @@ if(isset($_POST) && isset($_POST['username'])) {
 
 </head>
 <body>
+<?php
+echo '
 <div class="wrapper">
     <header>
+        
         <div class="header__wrapper">
             <nav class="header__navigation">
-                <a href="../index.php"style="color: whitesmoke" ><div class="nav__home">Home</div></a>
-                <a href="addEvent.php" style="color: whitesmoke"><div class="nav__add-event">Add Event</div></a>
-                <a href="login.php" style="color: whitesmoke"><div class="nav__about">About</div></a>
+                
+                <a href="../index.php?lang='.$lang.'"style="color: whitesmoke" ><div class="nav__home">'.$language [0].'</div></a>
+                <a href="addEvent.php?lang='.$lang.'" style="color: whitesmoke"><div class="nav__add-event">'.$language [1].'</div></a>
+                <a href="login.php?lang='.$lang.'" style="color: whitesmoke"><div class="nav__about">'.$language [2].'</div></a>
             </nav>
         </div>
     </header>
     <main>
         <form class="login-form" action="" method="POST">
             <div class="login">
-                <h2 class="login-title">Login:</h2>
+                <h2 class="login-title">'.$language [3].':</h2>
                 <input type="text" class="login-input input" name="username">
             </div>
             <div class="password">
-                <h2 class="password-tilte">Password:</h2>
+                <h2 class="password-tilte">'.$language[4].':</h2>
                 <input type="password" class="password-input input" name="password">
             </div>
             <div class="submit-btn">
-                <button class="submit-btn">Log in</button>
+                <button class="submit-btn">'.$language[5].'</button>
             </div>
         </form>
+            '; ?>
     </main>
     <footer>
         <div class="footer__wrapper">

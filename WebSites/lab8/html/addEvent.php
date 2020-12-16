@@ -1,6 +1,39 @@
 <?php
 
 session_start();
+$lang = "";
+
+$langCookie = "";
+
+if(isset($_COOKIE["language"])){
+    $lang = $_COOKIE["language"];
+}
+if(isset($_GET["lang"])) {
+    $lang = $_GET["lang"];
+}
+
+
+$ukranian = ["Головна","Додати подію","Вийти","Додавання події","Назва події","Дата початку","Час початку","Дата закінчення","Час закінчення","Опис події","Підтвердити"];
+$russian = ["Главная","Добавить событие","Выйти","Добавление события","Имя события","Дата начала","Час начала","Дата окончания","Время окончания","Описание события","Подтвердить"];
+$english = ["Home","Add event","Exit","Adding event","Event name","Date when it starts","Time when it starts","Date when it ends","Time when it ends","Event description","Submit"];
+
+$language = [];
+
+switch ($lang){
+
+    case "ua":
+        $language = $ukranian;
+        setcookie("language","ua",mktime(0,0,0,6,16,21));
+        break;
+    case "ru":
+        $language = $russian;
+        setcookie("language","ru",mktime(0,0,0,6,16,21));
+        break;
+    default:
+        $language = $english;
+        setcookie("language","eng",mktime(0,0,0,6,16,21));
+        break;
+}
 if(!isset($_SESSION["username"])) {
     header('Location: ' . "./login.php");
 }
@@ -41,11 +74,11 @@ if (isset($_POST) && isset($_POST["title"])) {
             '$dateTimeEnd')";
 
         $conn->query($query);
-        header('Location: ' . "../index.php");
+        header('Location: ' . "../index.php?lang=".$lang);
     }
 }
 ?>
-
+<?php echo '
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -59,42 +92,43 @@ if (isset($_POST) && isset($_POST["title"])) {
     <header>
         <div class="header__wrapper">
             <nav class="header__navigation">
-                <a href="../index.php" style="color: whitesmoke"><div class="nav__home">Home</div></a>
-                <a href="./addEvent.php" style="color: whitesmoke"><div class="nav__add-event">Add Event</div></a>
-                <a href="./login.php" style="color: whitesmoke"><div class="nav__about">About</div></a>
+                <a href="../index.php?lang='.$lang.'" style="color: whitesmoke"><div class="nav__home">'.$language[0].'</div></a>
+                <a href="./addEvent.php?lang='.$lang.'" style="color: whitesmoke"><div class="nav__add-event">'.$language[1].'</div></a>
+                <a href="./login.php?lang='.$lang.'" style="color: whitesmoke"><div class="nav__about">'.$language[2].'</div></a>
             </nav>
         </div>
     </header>
     <main>
         <div class="main__wrapper">
-            <div class="title">Adding event</div>
+            <div class="title">'.$language[3].'</div>
             <form class="event-form" action="" method="POST">
                 <div class="event-form__title">
-                    <h2 class="event-form__name parag">Event name</h2>
+                    <h2 class="event-form__name parag">'.$language[4].'</h2>
                     <input type="text" class="event-form__name-input input" required name="title">
                 </div>
                 <div class="event-form__starts">
-                    <h2 class="event-form__date-starts parag">Date when it starts</h2>
+                    <h2 class="event-form__date-starts parag">'.$language[5].'</h2>
                     <input type="date" class="event-form__date-starts-input input" required name="dateStart">
-                    <h2 class="event-form__time-starts parag">Time when it starts</h2>
+                    <h2 class="event-form__time-starts parag">'.$language[6].'</h2>
                     <input type="time" class="event-form__time-starts-input input" required name="timeStart">
                 </div>
                 <div class="event-form__ends">
-                    <h2 class="event-form__date-ends parag">Date when it ends</h2>
+                    <h2 class="event-form__date-ends parag">'.$language[7].'</h2>
                     <input type="date" class="event-form__date-ends-input input" required name="dateEnd">
-                    <h2 class="event-form__time-ends parag">Time when it ends</h2>
+                    <h2 class="event-form__time-ends parag">'.$language[8].'</h2>
                     <input type="time" class="event-form__time-ends-input input" required name="timeEnd">
                 </div>
                 <div class="event-form__description">
-                    <h2 class="event-form__description-text parag">Event description</h2>
+                    <h2 class="event-form__description-text parag">'.$language[9].'</h2>
                     <textarea name="description" id="area" cols="30" rows="10" class="event-form__description-input" required></textarea>
                 </div>
                 <div class="event-form__submit-btn">
-                    <button>submit</button>
+                    <button>'.$language[10].'</button>
                 </div>
             </form>
         </div>
     </main>
+    ';?>
     <footer>
         <div class="footer__wrapper">
             <div class="footer__author">@nekt2111.github.io</div>
