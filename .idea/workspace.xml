@@ -3,9 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="6bf1dedb-db91-4dcf-aea5-5727d64a8e7c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebSites/lab8/html/addEvent.php" beforeDir="false" afterPath="$PROJECT_DIR$/WebSites/lab8/html/addEvent.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebSites/lab8/html/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/WebSites/lab8/html/login.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebSites/lab8/logs.txt" beforeDir="false" afterPath="$PROJECT_DIR$/WebSites/lab8/logs.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zvit/zvit.html" beforeDir="false" afterPath="$PROJECT_DIR$/zvit/zvit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zvit/zvit.js" beforeDir="false" afterPath="$PROJECT_DIR$/zvit/zvit.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,9 +17,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
         <option value="HTML File" />
         <option value="CSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -113,7 +112,9 @@
       <workItem from="1606991143418" duration="1649000" />
       <workItem from="1607001257073" duration="106000" />
       <workItem from="1608122074239" duration="8201000" />
-      <workItem from="1608130305599" duration="7985000" />
+      <workItem from="1608130305599" duration="8278000" />
+      <workItem from="1608203386676" duration="2467000" />
+      <workItem from="1608206509811" duration="1272000" />
     </task>
     <servers />
   </component>

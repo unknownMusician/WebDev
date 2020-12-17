@@ -9,6 +9,7 @@ import showLab4 from "./zvitL4.js";
 import showLab5 from "./zvitL5.js";
 import showLab6 from "./zvitL6.js";
 import showLab7 from "./zvitL7.js";
+import showLab8 from "./zvitL8.js";
 
 // Functions for creating buttons and setting them a content
 
@@ -47,7 +48,7 @@ export function setMainContent(buttonText, mainText, style) {
 
 (function start() {
     let elements = document.querySelectorAll(".activeButton");
-    let funcs = [showLab1, showLab2, showLab3, showLab4, showLab5, showLab6, showLab7];
+    let funcs = [showLab1, showLab2, showLab3, showLab4, showLab5, showLab6, showLab7,showLab8];
 
     let leftButtons = document.getElementById("leftButtons");
 
