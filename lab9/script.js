@@ -4,10 +4,19 @@
 let arr = []
 let counters = new Map()
 
+function getData(){
+    return $.ajax("..//WebSites//lab9//dataGet.php")
+}
+
+async function main(){
+    let data = await getData();
+    console.log(data)
+}
+
+
 function addNumber(){
-        let number = document.getElementById("inputNum")
-    console.log(counters.has(parseInt(number.value)))
-    console.log(counters.size!==0)
+
+    let number = document.getElementById("inputNum")
     if(counters.size > 20 && !counters.has(parseInt(number.value))) {
         document.getElementById("massive").innerText = "Max amount of unique elements"
     }
@@ -58,3 +67,5 @@ addEventListener("keyup", function(event) {
         document.getElementById("add_btn").click();
     }
 });
+
+main()
