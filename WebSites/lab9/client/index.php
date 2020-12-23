@@ -71,6 +71,7 @@ $result = $conn->query($query);
 <body>
     <div class="wrapper">
         <header>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
             <div class="header__wrapper">
                 <nav class="header__navigation">
                     <a href="./index.php?lang='.$lang.'" style="color: whitesmoke">
@@ -131,5 +132,6 @@ $result = $conn->query($query);
         </footer>
     </div>
 </body>
+<script src="js/script.js"></script>
 
 </html>
