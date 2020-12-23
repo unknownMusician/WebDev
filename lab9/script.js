@@ -55,8 +55,8 @@ function addNumber(){
             })
         }
         number.value = ""
-        let arrStr = "[" + arr.toString() + "]"
-        document.getElementById("massive").innerText = arrStr
+        let arrStr = arr.toString()
+        document.getElementById("numbers").innerText = arrStr
         getPercents()
 
     }
