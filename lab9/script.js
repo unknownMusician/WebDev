@@ -42,8 +42,8 @@ function addNumber(){
             // function to add to db
             $.ajax({
                 url:'..//WebSites//lab9//dataAdd.php',
-                type:'POST',
-                data: parseInt(number.value)
+                method:'POST',
+                data: {num: parseInt(number.value)}
             })
         }
         number.value = ""
