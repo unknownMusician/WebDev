@@ -1,15 +1,21 @@
 <?php 
 
-$xml = simplexml_load_string(
+if (!isset($_GET)) die;
+
+$num = $_GET["num"];
+
+$entries = simplexml_load_string(
     file_get_contents("db.xml")
 );
 
 //
-
+$entries->addChild("num", $num);
 //
 
-file_put_contents("db.xml", $xml);
-$json = json_encode($xml);
+echo $entries;
+
+file_put_contents("db.xml", $entries);
+$json = json_encode($entries);
 
 echo $json;
 
