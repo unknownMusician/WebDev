@@ -59,3 +59,13 @@ Wed, 23 Dec 20 10:55:19: User log out: testUserName
 Wed, 23 Dec 20 22:28:42: Log in try: testUserName
 Wed, 23 Dec 20 22:28:42: Log in succesful: testUserName
 Wed, 23 Dec 20 22:38:55: User log out: testUserName
+Wed, 23 Dec 20 22:46:06: Log in try: testUserName
+Wed, 23 Dec 20 22:46:06: Log in error: testUserName
+Wed, 23 Dec 20 22:46:12: Log in try: testUserName
+Wed, 23 Dec 20 22:46:12: Log in error: testUserName
+Wed, 23 Dec 20 22:46:37: Log in try: testUserName
+Wed, 23 Dec 20 22:46:37: Log in error: testUserName
+Wed, 23 Dec 20 22:46:45: Log in try: testUserName
+Wed, 23 Dec 20 22:46:45: Log in succesful: testUserName
+Wed, 23 Dec 20 22:47:13: Add event try: testUserName
+Wed, 23 Dec 20 22:47:13: Added event successfully: username="testUserName", title="Ортостатична проба", description="dsadd", dateTimeStart="2021-01-02 02:47", dateTimeEnd="2020-12-26 03:50"
