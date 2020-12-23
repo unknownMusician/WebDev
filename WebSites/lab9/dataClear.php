@@ -15,9 +15,4 @@ while ($numbers->getElementsByTagName('num')->item(0)) {
 }
 
 file_put_contents("db.xml", $doc->saveXML());
-
-$file = 'logs.txt';
-$fin = substr(date(DATE_RFC822, time()), 0, 23) . ": " . "Data cleared" . "\n";
-file_put_contents($file, $fin, FILE_APPEND | LOCK_EX);
-
 ?>
