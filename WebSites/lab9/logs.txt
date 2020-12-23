@@ -1,3 +1,64 @@
+Wed, 16 Dec 20 19:10:03: Log in try: testUserName
+Wed, 16 Dec 20 19:10:03: Log in succesful: testUserName
+Wed, 16 Dec 20 19:13:55: User log out: testUserName
+Wed, 16 Dec 20 19:14:23: Log in try: testUserName
+Wed, 16 Dec 20 19:14:23: Log in succesful: testUserName
+Wed, 16 Dec 20 19:14:41: User log out: testUserName
+Wed, 16 Dec 20 19:14:48: Log in try: dsad
+Wed, 16 Dec 20 19:14:48: Log in error: dsad
+Wed, 16 Dec 20 19:14:52: Log in try: dasdas
+Wed, 16 Dec 20 19:14:52: Log in error: dasdas
+Wed, 16 Dec 20 19:14:54: Log in try: dsad
+Wed, 16 Dec 20 19:14:54: Log in error: dsad
+Wed, 16 Dec 20 19:15:27: Log in try: testUserName
+Wed, 16 Dec 20 19:15:27: Log in succesful: testUserName
+Wed, 16 Dec 20 19:15:45: Add event try: testUserName
+Wed, 16 Dec 20 19:15:45: Added event successfully: username="testUserName", title="Ортостатична проба", description="LALALA", dateTimeStart="2020-12-18 21:17", dateTimeEnd="2020-12-17 21:17"
+Wed, 16 Dec 20 19:15:53: User log out: testUserName
+Thu, 17 Dec 20 12:37:38: Log in try: testUserName
+Thu, 17 Dec 20 12:37:38: Log in error: testUserName
+Thu, 17 Dec 20 12:39:20: Log in try: testUserName
+Thu, 17 Dec 20 12:39:20: Log in succesful: testUserName
+Thu, 17 Dec 20 12:39:27: User log out: testUserName
+Thu, 17 Dec 20 12:41:46: Log in try: testUserName
+Thu, 17 Dec 20 12:41:46: Log in succesful: testUserName
+Thu, 17 Dec 20 12:41:50: User log out: testUserName
+Thu, 17 Dec 20 12:43:53: Log in try: testUserName
+Thu, 17 Dec 20 12:43:53: Log in succesful: testUserName
+Thu, 17 Dec 20 12:44:14: User log out: testUserName
+Thu, 17 Dec 20 12:45:13: Log in try: testUserName
+Thu, 17 Dec 20 12:45:13: Log in succesful: testUserName
+Thu, 17 Dec 20 12:45:16: User log out: testUserName
+Thu, 17 Dec 20 12:46:01: Log in try: testUserName
+Thu, 17 Dec 20 12:46:01: Log in succesful: testUserName
+Thu, 17 Dec 20 12:47:26: User log out: testUserName
+Thu, 17 Dec 20 12:49:50: Log in try: testUserName
+Thu, 17 Dec 20 12:49:50: Log in succesful: testUserName
+Thu, 17 Dec 20 12:52:02: User log out: testUserName
+Thu, 17 Dec 20 12:52:10: Log in try: testUserName
+Thu, 17 Dec 20 12:52:10: Log in succesful: testUserName
+Thu, 17 Dec 20 12:52:13: User log out: testUserName
+Thu, 17 Dec 20 13:11:53: Log in try: testUserName
+Thu, 17 Dec 20 13:11:53: Log in succesful: testUserName
+Thu, 17 Dec 20 13:12:15: Add event try: testUserName
+Thu, 17 Dec 20 13:12:15: Added event successfully: username="testUserName", title="Laala", description="dsad", dateTimeStart="2020-12-04 17:14", dateTimeEnd="2020-12-18 17:14"
+Sat, 19 Dec 20 12:59:17: Log in try: testUserName
+Sat, 19 Dec 20 12:59:17: Log in succesful: testUserName
+Sat, 19 Dec 20 12:59:42: Add event try: testUserName
+Sat, 19 Dec 20 12:59:42: Added event successfully: username="testUserName", title="Проба Руф'є", description="dasdasdasd", dateTimeStart="2020-12-27 16:01", dateTimeEnd="2020-12-27 16:01"
+Sat, 19 Dec 20 13:00:16: Add event try: testUserName
+Sat, 19 Dec 20 13:00:16: Added event successfully: username="testUserName", title="Проба Руф'є", description="dsad", dateTimeStart="2020-12-27 17:02", dateTimeEnd="2020-12-27 17:02"
+Sat, 19 Dec 20 13:00:53: Add event try: testUserName
+Sat, 19 Dec 20 13:00:53: Added event successfully: username="testUserName", title="dsads", description="dsad", dateTimeStart="2020-12-27 17:02", dateTimeEnd="2020-12-20 17:02"
+Sat, 19 Dec 20 13:01:11: User log out: testUserName
+Wed, 23 Dec 20 10:53:51: Log in try: testUserName
+Wed, 23 Dec 20 10:53:51: Log in succesful: testUserName
+Wed, 23 Dec 20 10:54:30: Add event try: testUserName
+Wed, 23 Dec 20 10:54:30: Added event successfully: username="testUserName", title="Ортостатична проба", description="KFKFK", dateTimeStart="2021-01-02 12:59", dateTimeEnd="2021-01-09 15:57"
+Wed, 23 Dec 20 10:55:19: User log out: testUserName
+Wed, 23 Dec 20 22:28:42: Log in try: testUserName
+Wed, 23 Dec 20 22:28:42: Log in succesful: testUserName
+Wed, 23 Dec 20 22:38:55: User log out: testUserName
 Wed, 23 Dec 20 21:45:48: Data GET request made
 Wed, 23 Dec 20 21:45:50: New entry written
 Wed, 23 Dec 20 21:45:55: New entry written

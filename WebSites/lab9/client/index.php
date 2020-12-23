@@ -83,7 +83,7 @@ $result = $conn->query($query);
                         <div class="nav__about">'.$language[2]. '</div>
                     </a>
                     <a href="html/weather.html?lang='.$lang.'"style="color: whitesmoke">
-                        <div class="nav__about">'.$language[6]. '</div>
+                        <div class="nav__weather">'.$language[6]. '</div>
                     </a>
                 </nav>
             <div class="header__icons">

@@ -44,7 +44,7 @@ header{
 
 .header__navigation{
     display: inline-grid;
-    grid-template: 1fr/1fr 1fr 1fr;
+    grid-template: 1fr/1fr 1fr 1fr 1fr;
     color: whitesmoke;
     grid-gap: 200px;
     font-size: 24px;
@@ -52,7 +52,7 @@ header{
     font-family: "Roboto",sans-serif;
 }
 
-.nav__home, .nav__add-event, .nav__about{
+.nav__home, .nav__add-event, .nav__about, .nav__weather {
     display: inline;
     cursor: pointer;
     transition: 0.1s;
