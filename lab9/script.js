@@ -14,12 +14,8 @@ async function main(){
     if(data.num !== undefined) {
         for (let i = 0; i < data.num.length; i++) {
             arr.push(parseInt(data.num[i]))
-            if (i === data.num.length - 1) {
-                document.getElementById("numbers").innerText += parseInt(data.num[i])
-            } else {
-                document.getElementById("numbers").innerText += parseInt(data.num[i]) + ","
-            }
         }
+        await addNumberIntoHTML()
     }
     else{
         document.getElementById("numbers").innerText = ' '
@@ -27,6 +23,22 @@ async function main(){
         document.getElementById('clearBtn').addEventListener('click', clear)
 
 }
+
+async function addNumberIntoHTML(){
+    let dataStr = await getData();
+    let data = JSON.parse(dataStr)
+    if(data.num !== undefined) {
+        document.getElementById("numbers").innerText = data.num.toString()
+    }
+}
+
+async function load(){
+    await getPercents()
+    await  addNumberIntoHTML()
+    await draw()
+}
+
+setInterval(load,1000);
 
 function clear(){
     // function to clear in db
@@ -41,8 +53,7 @@ function clear(){
 }
 
 
-function addNumber(){
-    console.log(arr)
+async function addNumber(){
     let number = document.getElementById("inputNum")
     if(counters.size > 20 && !counters.has(parseInt(number.value))) {
         document.getElementById("massive").innerText = "Max amount of unique elements"
@@ -60,13 +71,13 @@ function addNumber(){
         number.value = ""
         let arrStr = arr.toString()
         document.getElementById("numbers").innerText = arrStr
-        getPercents()
+        await getPercents()
 
     }
 }
 
-function draw(){
-    getPercents()
+async function draw(){
+    await getPercents()
     const bars = document.getElementById("bars")
     while(bars.firstChild){
         bars.removeChild(bars.lastChild)
@@ -81,18 +92,22 @@ function draw(){
     }
 }
 
-function getPercents(){
+async function getPercents(){
+    let data = JSON.parse(await getData())
+    let newArr = data.num;
     counters.length = 0
-    for (let i = 0; i < arr.length ; i++) {
-        let counter = 0
-        for(let j = 0;j<arr.length;j++) {
-            if (arr[i] === arr[j]) {
-                counter += 1
+    if(newArr !== undefined) {
+        for (let i = 0; i < newArr.length; i++) {
+            let counter = 0
+            for (let j = 0; j < newArr.length; j++) {
+                if (newArr[i] === newArr[j]) {
+                    counter += 1
+                }
+                counters.set(newArr[i], (counter / newArr.length) * 400)
             }
-            counters.set(arr[i], (counter/arr.length)*400)
         }
     }
-    console.log(counters)
+
 
 }
 addEventListener("keyup", function(event) {
