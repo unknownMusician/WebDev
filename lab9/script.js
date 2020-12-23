@@ -33,13 +33,14 @@ function clear(){
         url:'..//WebSites//lab9//dataClear.php',
         data: {confirm:true}
     })
+
     document.querySelector(".bars").innerHTML = ''
     document.getElementById("numbers").innerText = ' '
 }
 
 
 function addNumber(){
-
+    console.log(arr)
     let number = document.getElementById("inputNum")
     if(counters.size > 20 && !counters.has(parseInt(number.value))) {
         document.getElementById("massive").innerText = "Max amount of unique elements"
