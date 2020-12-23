@@ -9,7 +9,6 @@ function getData(){
 }
 
 async function main(){
-    document.getElementById("numbers").innerText = ' '
     let dataStr = await getData();
     let data = JSON.parse(dataStr)
     if(data.num !== undefined) {
@@ -22,6 +21,9 @@ async function main(){
             }
         }
     }
+    else{
+        document.getElementById("numbers").innerText = ' '
+    }
         document.getElementById('clearBtn').addEventListener('click', clear)
 
 }
@@ -33,7 +35,7 @@ function clear(){
         url:'..//WebSites//lab9//dataClear.php',
         data: {confirm:true}
     })
-
+    arr.length = 0;
     document.querySelector(".bars").innerHTML = ''
     document.getElementById("numbers").innerText = ' '
 }
