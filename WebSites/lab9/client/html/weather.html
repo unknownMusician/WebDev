@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <link rel="stylesheet" type="text/css" href="../css/style.css">
     <link rel="stylesheet" type="text/css" href="../css/login.css">
 </head>
+
 <body>
     <div class="wrapper">
         <header>
@@ -25,11 +27,17 @@
                         <div class="nav__weather"></div>
                     </a>
                 </nav>
-            <div class="header__icons">
-             <div class="header__icon"><form action="" method="get"><input name="lang" value="ua" type="hidden"><button style="background: transparent"><img src="../img/ukraine_round_icon_64.png"></button></form></div>
-                    <div class="header__icon"><form action="" method="get"><input name="lang" value="ru" type="hidden"><button style="background: transparent"><img src="../img/russia_round_icon_64.png"></button></form></div>
-                    <div class="header__icon"><form action="" method="get"><input name="lang" value="eng" type="hidden"><button style="background: transparent"><img src="../img/united_kingdom_round_icon_64.png"></button></form></div>
-            </div>
+                <div class="header__icons">
+                    <div class="header__icon">
+                        <form action="" method="get"><input name="lang" value="ua" type="hidden"><button style="background: transparent"><img src="../img/ukraine_round_icon_64.png"></button></form>
+                    </div>
+                    <div class="header__icon">
+                        <form action="" method="get"><input name="lang" value="ru" type="hidden"><button style="background: transparent"><img src="../img/russia_round_icon_64.png"></button></form>
+                    </div>
+                    <div class="header__icon">
+                        <form action="" method="get"><input name="lang" value="eng" type="hidden"><button style="background: transparent"><img src="../img/united_kingdom_round_icon_64.png"></button></form>
+                    </div>
+                </div>
             </div>
         </header>
         <main>
@@ -40,6 +48,15 @@
                     </div>
                 </div>
                 <div class="second-row">
+                    <!--  -->
+
+                    <div id="weather-holder">
+                        <div id="w-city"></div>
+                        <div id="w-temp"></div>
+                        <div id="w-feels"></div>
+                        <div id="w-icon"></div>
+                    </div>
+
                     <!--  -->
                 </div>
             </div>
@@ -54,43 +71,68 @@
 </body>
 
 <script>
-    let lang = urlParams.get('lang');
-    
-let ukranian = ["Головна","Додати подію","Вийти","Логін","Пароль","Увійти","Погода"];
-let russian = ["Главная","Добавить событие","Выйти","Логин","Пароль","Войти","Погода"];
-let english = ["Home","Add event","Exit","Login","Password","Log in","Weather"];
+    function getData() {
+        return $.ajax({
+            method: 'GET',
+            url: 'http://api.openweathermap.org/data/2.5/weather?q=kiev&appid=d2a5c0783c8b61bbdb0cb40fb84388b4'
+        });
+    }
 
-language = [];
+    async function getWeather() {
+        let weather = {}
+        let data = await getData();
+        weather.feelsLike = (data.main.feels_like - 273.15).toFixed(2);
+        weather.temp = (data.main.temp - 273.15).toFixed(2);
+        weather.name = data.name;
+        weather.icon = data.weather[0].icon;
+        return weather;
+    }
 
-switch (lang) {
+    async function setWeatherHTML() {
+        let weather = await getWeather();
 
-case "ua":
-    language = ukranian;
-    setcookie("language","ua",mktime(0,0,0,6,16,21));
-    break;
-case "ru":
-    language = russian;
-    setcookie("language","ru",mktime(0,0,0,6,16,21));
-    break;
-default:
-    language = english;
-    setcookie("language","eng",mktime(0,0,0,6,16,21));
-    break;
-}
+        document.getElementById('w-city').innerText = weather.name;
+        document.getElementById('w-feels').innerText = weather.feelsLike;
+        document.getElementById('w-temp').innerText = weather.temp;
+        document.getElementById('w-icon').src = `http://openweathermap.org/img/wn/${weather.icon}@2x.png`
 
-document.querySelector('.nav__home').innerHTML = language[0];
-document.querySelector('.nav__add-event').innerHTML = language[1];
-document.querySelector('.nav__about').innerHTML = language[2];
-document.querySelector('.nav__weather').innerHTML = language[6];
 
-document.querySelector('.nav__home').href = `../index.php?lang=${lang}`;
-document.querySelector('.nav__add-event').href = `./addEvent.php?lang=${lang}`;
-document.querySelector('.nav__about').href = `./login.php?lang=${lang}`;
-document.querySelector('.nav__weather').href = `./weather.html?lang=${lang}`;
-
-document.querySelector('.first-row__title h2').innerHTML = language[3];
+    }
 
 
 
+    let lang = new URLSearchParams(window.location.search).get('lang');
+
+    let ukranian = ["Головна", "Додати подію", "Вийти", "Логін", "Пароль", "Увійти", "Погода"];
+    let russian = ["Главная", "Добавить событие", "Выйти", "Логин", "Пароль", "Войти", "Погода"];
+    let english = ["Home", "Add event", "Exit", "Login", "Password", "Log in", "Weather"];
+
+    language = [];
+
+    switch (lang) {
+
+        case "ua":
+            language = ukranian;
+            break;
+        case "ru":
+            language = russian;
+            break;
+        default:
+            language = english;
+            break;
+    }
+
+    document.querySelector('.nav__home').innerHTML = language[0];
+    document.querySelector('.nav__add-event').innerHTML = language[1];
+    document.querySelector('.nav__about').innerHTML = language[2];
+    document.querySelector('.nav__weather').innerHTML = language[6];
+
+    // document.querySelector('.nav__home').href = `../index.php?lang=${lang}`;
+    // document.querySelector('.nav__add-event').href = `./addEvent.php?lang=${lang}`;
+    // document.querySelector('.nav__about').href = `./login.php?lang=${lang}`;
+    // document.querySelector('.nav__weather').href = `./weather.html?lang=${lang}`;
+
+    setWeatherHTML();
 </script>
+
 </html>
