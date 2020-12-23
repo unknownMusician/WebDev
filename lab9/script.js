@@ -9,22 +9,30 @@ function getData(){
 }
 
 async function main(){
+    document.getElementById("numbers").innerText = ' '
     let dataStr = await getData();
     let data = JSON.parse(dataStr)
-    for (let i = 0; i <data.num.length ; i++) {
+    if(data.num !== undefined) {
+        for (let i = 0; i < data.num.length; i++) {
             arr.push(parseInt(data.num[i]))
-        if(i === data.num.length - 1){
-            document.getElementById("numbers").innerText += parseInt(data.num[i])
-        }
-        else{
-            document.getElementById("numbers").innerText += parseInt(data.num[i]) + ","
+            if (i === data.num.length - 1) {
+                document.getElementById("numbers").innerText += parseInt(data.num[i])
+            } else {
+                document.getElementById("numbers").innerText += parseInt(data.num[i]) + ","
+            }
         }
     }
-    document.getElementById('clearBtn').addEventListener('click',clear)
+        document.getElementById('clearBtn').addEventListener('click', clear)
+
 }
 
 function clear(){
     // function to clear in db
+    $.ajax({
+        method: 'POST',
+        url:'..//WebSites//lab9//dataClear.php',
+        data: {confirm:true}
+    })
     document.querySelector(".bars").innerHTML = ''
     document.getElementById("numbers").innerText = ' '
 }
