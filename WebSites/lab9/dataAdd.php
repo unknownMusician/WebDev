@@ -2,20 +2,15 @@
 
 if (!isset($_GET)) die;
 
-$num = $_GET["num"];
+$num = (int)$_GET["num"];
 
-$entries = simplexml_load_string(
-    file_get_contents("db.xml")
-);
+$xml = simplexml_load_file("db.xml");
 
-//
-$entries->addChild("num", $num);
-//
+$xml->addChild('num', $num);
 
-echo $entries;
+file_put_contents("db.xml", $xml->saveXML());
 
-file_put_contents("db.xml", $entries);
-$json = json_encode($entries);
+$json = json_encode($xml);
 
 echo $json;
 
