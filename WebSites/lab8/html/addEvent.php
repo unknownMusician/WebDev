@@ -9,7 +9,6 @@ function writeLog($text) {
 session_start();
 $lang = "";
 
-$langCookie = "";
 
 if(isset($_COOKIE["language"])){
     $lang = $_COOKIE["language"];

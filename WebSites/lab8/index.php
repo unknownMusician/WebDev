@@ -1,4 +1,7 @@
 <?php
+session_start();
+
+
 $lang = "";
 
 if(isset($_COOKIE["language"])){
@@ -7,7 +10,7 @@ if(isset($_COOKIE["language"])){
 if(isset($_GET["lang"])) {
     $lang = $_GET["lang"];
 }
-session_start();
+
 if(!isset($_SESSION["username"])) {
     header('Location: ' . "html/login.php?lang=".$lang);
 }
