@@ -12,7 +12,6 @@ unset($_SESSION["username"]);
 unset($_SESSION["password"]);
 
 $lang = "";
-$langCookie = "";
 
 if(isset($_COOKIE["language"])){
     $lang = $_COOKIE["language"];
