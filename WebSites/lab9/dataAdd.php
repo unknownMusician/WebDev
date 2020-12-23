@@ -14,8 +14,4 @@ $json = json_encode($xml);
 
 echo $json;
 
-$file = 'logs.txt';
-$fin = substr(date(DATE_RFC822, time()), 0, 23) . ": " . "New entry written" . "\n";
-file_put_contents($file, $fin, FILE_APPEND | LOCK_EX);
-
 ?>
