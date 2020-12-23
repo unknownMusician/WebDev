@@ -8,7 +8,47 @@
     <link rel="stylesheet" type="text/css" href="../css/style.css">
     <link rel="stylesheet" type="text/css" href="../css/login.css">
 </head>
+<style>
+    #weather-holder {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-direction: column;
+    }
 
+    .w-info {
+        width: 100px;
+        padding: 20px 50px;
+        font-size: 2rem;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        background-color: #3bb3ce;
+        margin: 10px;
+        border-radius: 2px;
+        border: 1px solid  #2b8da3;
+        transition: 0.5s;
+        color: white;
+    }
+
+    .w-info:hover {
+        width: 150px;
+        background-color: rgba(100, 150, 100, 0.2);
+        color: black;
+    }
+
+    #w-icon {
+        width: 100px;
+        padding: 20px 50px;
+        margin: 10px;
+        border: 1px dashed transparent;
+        transition: 0.5s;
+
+    }
+
+    #w-icon:hover {
+        width: 150px;
+        border: 1px dashed #2b8da3;
+    }
+</style>
 <body>
     <div class="wrapper">
         <header>
@@ -47,18 +87,18 @@
                         <h2>Weather</h2>
                     </div>
                 </div>
-                <div class="second-row">
                     <!--  -->
 
                     <div id="weather-holder">
-                        <div id="w-city"></div>
-                        <div id="w-temp"></div>
-                        <div id="w-feels"></div>
-                        <div id="w-icon"></div>
+                        <div id="w-city" class="w-info">Kyiv</div>
+                        <div id="w-temp" class="w-info">24 °C</div>
+                        <div id="w-feels" class="w-info">22 °C</div>
+                        <div id="w-icon">
+                            <img src="http://openweathermap.org/img/wn/10d@2x.png" />
+                        </div>
                     </div>
 
                     <!--  -->
-                </div>
             </div>
         </main>
         <footer>
@@ -92,8 +132,8 @@
         let weather = await getWeather();
 
         document.getElementById('w-city').innerText = weather.name;
-        document.getElementById('w-feels').innerText = weather.feelsLike;
-        document.getElementById('w-temp').innerText = weather.temp;
+        document.getElementById('w-feels').innerText = weather.feelsLike + ' °C';
+        document.getElementById('w-temp').innerText = weather.temp + ' °C';
         document.getElementById('w-icon').src = `http://openweathermap.org/img/wn/${weather.icon}@2x.png`
 
 
@@ -127,10 +167,10 @@
     document.querySelector('.nav__about').innerHTML = language[2];
     document.querySelector('.nav__weather').innerHTML = language[6];
 
-    // document.querySelector('.nav__home').href = `../index.php?lang=${lang}`;
-    // document.querySelector('.nav__add-event').href = `./addEvent.php?lang=${lang}`;
-    // document.querySelector('.nav__about').href = `./login.php?lang=${lang}`;
-    // document.querySelector('.nav__weather').href = `./weather.html?lang=${lang}`;
+    document.querySelector('.nav__home').href = `../index.php?lang=${lang}`;
+    document.querySelector('.nav__add-event').href = `./addEvent.php?lang=${lang}`;
+    document.querySelector('.nav__about').href = `./login.php?lang=${lang}`;
+    document.querySelector('.nav__weather').href = `./weather.html?lang=${lang}`;
 
     setWeatherHTML();
 </script>
