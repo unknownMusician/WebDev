@@ -7,6 +7,7 @@
     <title>Weather</title>
     <link rel="stylesheet" type="text/css" href="../css/style.css">
     <link rel="stylesheet" type="text/css" href="../css/login.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <style>
     #weather-holder {
@@ -54,16 +55,16 @@
         <header>
             <div class="header__wrapper">
                 <nav class="header__navigation">
-                    <a style="color: whitesmoke">
+                    <a href="../index.php" style="color: whitesmoke">
                         <div class="nav__home"></div>
                     </a>
-                    <a style="color: whitesmoke">
+                    <a href="addEvent.php" style="color: whitesmoke">
                         <div class="nav__add-event"></div>
                     </a>
-                    <a style="color: whitesmoke">
+                    <a href="login.php" style="color: whitesmoke">
                         <div class="nav__about"></div>
                     </a>
-                    <a style="color: whitesmoke">
+                    <a href="weather.html" style="color: whitesmoke">
                         <div class="nav__weather"></div>
                     </a>
                 </nav>
@@ -90,11 +91,11 @@
                     <!--  -->
 
                     <div id="weather-holder">
-                        <div id="w-city" class="w-info">Kyiv</div>
-                        <div id="w-temp" class="w-info">24 °C</div>
-                        <div id="w-feels" class="w-info">22 °C</div>
+                        <div id="w-city" class="w-info"></div>
+                        <div id="w-temp" class="w-info"></div>
+                        <div id="w-feels" class="w-info"></div>
                         <div id="w-icon">
-                            <img src="http://openweathermap.org/img/wn/10d@2x.png" />
+                            <img src="http://openweathermap.org/img/wn/10d@2x.png"/>
                         </div>
                     </div>
 
@@ -111,36 +112,6 @@
 </body>
 
 <script>
-    function getData() {
-        return $.ajax({
-            method: 'GET',
-            url: 'http://api.openweathermap.org/data/2.5/weather?q=kiev&appid=d2a5c0783c8b61bbdb0cb40fb84388b4'
-        });
-    }
-
-    async function getWeather() {
-        let weather = {}
-        let data = await getData();
-        weather.feelsLike = (data.main.feels_like - 273.15).toFixed(2);
-        weather.temp = (data.main.temp - 273.15).toFixed(2);
-        weather.name = data.name;
-        weather.icon = data.weather[0].icon;
-        return weather;
-    }
-
-    async function setWeatherHTML() {
-        let weather = await getWeather();
-
-        document.getElementById('w-city').innerText = weather.name;
-        document.getElementById('w-feels').innerText = weather.feelsLike + ' °C';
-        document.getElementById('w-temp').innerText = weather.temp + ' °C';
-        document.getElementById('w-icon').src = `http://openweathermap.org/img/wn/${weather.icon}@2x.png`
-
-
-    }
-
-
-
     let lang = new URLSearchParams(window.location.search).get('lang');
 
     let ukranian = ["Головна", "Додати подію", "Вийти", "Логін", "Пароль", "Увійти", "Погода"];
@@ -167,12 +138,11 @@
     document.querySelector('.nav__about').innerHTML = language[2];
     document.querySelector('.nav__weather').innerHTML = language[6];
 
-    document.querySelector('.nav__home').href = `../index.php?lang=${lang}`;
-    document.querySelector('.nav__add-event').href = `./addEvent.php?lang=${lang}`;
-    document.querySelector('.nav__about').href = `./login.php?lang=${lang}`;
-    document.querySelector('.nav__weather').href = `./weather.html?lang=${lang}`;
+    document.querySelector('.nav__home').href = `../index.php`;
+    document.querySelector('.nav__add-event').href = `./addEvent.php`;
+    document.querySelector('.nav__about').href = `./login.php`;
+    document.querySelector('.nav__weather').href = `./weather.html`;
 
-    setWeatherHTML();
 </script>
-
+<script src="../js/script.js"></script>
 </html>

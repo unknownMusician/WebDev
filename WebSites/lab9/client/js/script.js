@@ -16,14 +16,14 @@ async function getWeather(){
     return weather;
 }
 
-function setWeatherHTML(){
-    let weather = getWeather();
+async function setWeatherHTML(){
+    let weather = await getWeather();
 
-    document.getElementById('').innerText = weather.name;
-    document.getElementById('').innerText = weather.feelsLike;
-    document.getElementById('').innerText = weather.temp;
-    document.getElementById('').src = `http://openweathermap.org/img/wn/${weather.icon}@2x.png`
-
+    document.getElementById('w-city').innerText = weather.name;
+    document.getElementById('w-feels').innerText = weather.feelsLike +"°C";
+    document.getElementById('w-temp').innerText = weather.temp +"°C";
+    document.getElementById('w-icon').src = `http://openweathermap.org/img/wn/${weather.icon}@2x.png`
 
 }
+setWeatherHTML()
 
