@@ -1,18 +1,18 @@
-<?php 
+<?php
 
-if (!isset($_POST) || !isset($_GET["confirm"])) die;
-if ($_GET["confirm"] != 'true') die;
+if (!isset($_POST) || !isset($_POST["confirm"])) die;
+if ($_POST["confirm"] != 'true') die;
 
-$confirm = $_GET["confirm"];
+$doc = new DOMDocument;
+$doc->load('db.xml');
 
-$xml = simplexml_load_file("db.xml");
+$numbers = $doc->documentElement;
 
-$xml->addChild('num', $num);
+// находим главу (chapter) и удалям из книги (book)
+while ($numbers->getElementsByTagName('num')->item(0)) {
+    $chapter = $numbers->getElementsByTagName('num')->item(0);
+    $oldchapter = $numbers->removeChild($chapter);
+}
 
-file_put_contents("db.xml", $xml->saveXML());
-
-$json = json_encode($xml);
-
-echo $json;
-
+file_put_contents("db.xml", $doc->saveXML());
 ?>
