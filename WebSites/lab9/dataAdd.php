@@ -1,8 +1,8 @@
 <?php 
 
-if (!isset($_GET)) die;
+if (!isset($_POST) || !isset($_POST["num"])) die;
 
-$num = (int)$_GET["num"];
+$num = (int)$_POST["num"];
 
 $xml = simplexml_load_file("db.xml");
 
