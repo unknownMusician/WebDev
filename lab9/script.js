@@ -9,8 +9,24 @@ function getData(){
 }
 
 async function main(){
-    let data = await getData();
-    console.log(data)
+    let dataStr = await getData();
+    let data = JSON.parse(dataStr)
+    for (let i = 0; i <data.num.length ; i++) {
+            arr.push(parseInt(data.num[i]))
+        if(i === data.num.length - 1){
+            document.getElementById("numbers").innerText += parseInt(data.num[i])
+        }
+        else{
+            document.getElementById("numbers").innerText += parseInt(data.num[i]) + ","
+        }
+    }
+    document.getElementById('clearBtn').addEventListener('click',clear)
+}
+
+function clear(){
+    // function to clear in db
+    document.querySelector(".bars").innerHTML = ''
+    document.getElementById("numbers").innerText = ' '
 }
 
 
@@ -23,6 +39,12 @@ function addNumber(){
     else{
         if (!isNaN(parseInt(number.value))) {
             arr.push(parseInt(number.value))
+            // function to add to db
+            $.ajax({
+                url:'..//WebSites//lab9//dataAdd.php',
+                type:'POST',
+                data: parseInt(number.value)
+            })
         }
         number.value = ""
         let arrStr = "[" + arr.toString() + "]"
@@ -33,7 +55,7 @@ function addNumber(){
 }
 
 function draw(){
-
+    getPercents()
     const bars = document.getElementById("bars")
     while(bars.firstChild){
         bars.removeChild(bars.lastChild)
