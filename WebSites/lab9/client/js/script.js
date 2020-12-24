@@ -59,7 +59,7 @@ document.querySelectorAll(".editBtn").forEach((element) => {element.addEventList
     let desc = element.parentElement.parentElement.previousElementSibling
     let descText = desc.textContent.trim()
     console.log(descText)
-    desc.innerHTML = `<input type="text" class="event-desc-input" value="${descText}">`
+    desc.innerHTML = `<textarea class="event-desc-input">${descText}</textarea>`
     let title = element.parentElement.parentElement.parentElement.firstElementChild.firstElementChild.nextElementSibling
     let titleText = title.textContent.trim()
     title.innerHTML = `<input type="text" class="event-title-input" value="${titleText}">`

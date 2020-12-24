@@ -70,12 +70,12 @@ if(isset($_POST["editTitle"]) && isset($_POST["editDesc"]) && isset($_POST["edit
     $editDescNew = $_POST["editDescNew"];
 
     $query = "UPDATE events
-    SET title = '$editTitleNew' AND description = '$editDescNew'
+    SET title = '$editTitleNew', description = '$editDescNew'
     WHERE title = '$editTitle' AND description = '$editDesc'";
 
     $conn->query($query);
 
-    writeLog("Updated note with title '" . $evTitle . "' and descrition '" . $evDesc . "' (now = '" . $evTitle . "'/'" . $evDesc . "')");
+    writeLog("Updated note with title '" . $editTitle . "' and descrition '" . $editDesc . "' (now = '" . $editTitleNew . "'/'" . $editDescNew . "')");
 }
 
 $query = "SELECT
@@ -161,7 +161,7 @@ $result = $conn->query($query);
                                 </div>
                             </div>
                             <div class="event__description">
-                                <input type="text" class="event-desc-input, hide">
+                                <textarea class="event-desc-input, hide"></textarea>
                                 ' . $row["description"] . '
       
                             </div>
@@ -172,7 +172,7 @@ $result = $conn->query($query);
                             <input class="postTitle"  type="hidden" name="editTitleNew">
                             <input class="postDesc"  type="hidden" name="editDescNew">
                             <div class="change__btns, hide">
-                            <button type="submit" style="background: transparent" class="postBtn">Save</button>        
+                            <button type="submit" class="postBtn">Save</button>        
                             </div>    
                             <button type="button" class="editBtn" style="background: transparent">
                             <img src="./img/edit-img.png" alt="">         
