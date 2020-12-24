@@ -1,6 +1,12 @@
 <?php
-session_start();
 
+function writeLog($text) {
+    $file = '../logs.txt';
+    $fin = substr(date(DATE_RFC822, time()), 0, 23) . ": " . $text . "\n";
+    file_put_contents($file, $fin, FILE_APPEND | LOCK_EX);
+}
+
+session_start();
 
 $lang = "";
 
@@ -54,9 +60,22 @@ if(isset($_POST["evTitle"]) && isset($_POST["evDesc"])) {
 
     $conn->query($query);
 
-    $file = '../logs.txt';
-    $fin = substr(date(DATE_RFC822, time()), 0, 23) . ": " . "Deleted note with title '" . $evTitle . "' and descrition '" . $evDesc . "'" . "\n";
-    file_put_contents($file, $fin, FILE_APPEND | LOCK_EX);
+    writeLog("Deleted note with title '" . $evTitle . "' and descrition '" . $evDesc . "'");
+}
+
+if(isset($_POST["editTitle"]) && isset($_POST["editDesc"]) && isset($_POST["editTitleNew"]) && isset($_POST["editDescNew"])) {
+    $editTitle = $_POST["editTitle"];
+    $editDesc = $_POST["editDesc"];
+    $editTitleNew = $_POST["editTitleNew"];
+    $editDescNew = $_POST["editDescNew"];
+
+    $query = "UPDATE events
+    SET title = '$editTitleNew' AND description = '$editDescNew'
+    WHERE title = '$editTitle' AND description = '$editDesc'";
+
+    $conn->query($query);
+
+    writeLog("Updated note with title '" . $evTitle . "' and descrition '" . $evDesc . "' (now = '" . $evTitle . "'/'" . $evDesc . "')");
 }
 
 $query = "SELECT
@@ -97,7 +116,7 @@ $result = $conn->query($query);
                     <a href="html/login.php?lang='.$lang.'"style="color: whitesmoke">
                         <div class="nav__about">'.$language[2]. '</div>
                     </a>
-                    <a href="html/weather.html?lang='.$lang.'"style="color: whitesmoke">
+                    <a href="html/weather.php?lang='.$lang.'"style="color: whitesmoke">
                         <div class="nav__weather">'.$language[6]. '</div>
                     </a>
                 </nav>
