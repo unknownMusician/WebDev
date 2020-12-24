@@ -29,26 +29,48 @@ async function setWeatherHTML(){
 
 // Search by name
 
-document.getElementById("search").oninput = function (){
-    let val = this.value.trim().toLowerCase()
-    let elasticItems = document.querySelectorAll(".event__title");
-    console.log(elasticItems)
-    if (val !== '') {
-        elasticItems.forEach((elem) => {
-            if (elem.innerText.toLowerCase().search(val) === -1) {
-                elem.parentElement.classList.add('hide')
-            } else {
-                elem.parentElement.classList.remove('hide')
-            }
+if(document.getElementById("search") !== null) {
+    document.getElementById("search").oninput = function () {
+        let val = this.value.trim().toLowerCase()
+        let elasticItems = document.querySelectorAll(".event__title");
+        console.log(elasticItems)
+        if (val !== '') {
+            elasticItems.forEach((elem) => {
+                if (elem.innerText.toLowerCase().search(val) === -1) {
+                    elem.parentElement.classList.add('hide')
+                } else {
+                    elem.parentElement.classList.remove('hide')
+                }
 
-        })
-    } else {
-        elasticItems.forEach((elem) => {
-            elem.parentElement.classList.remove('hide')
-        })
+            })
+        } else {
+            elasticItems.forEach((elem) => {
+                elem.parentElement.classList.remove('hide')
+            })
+        }
     }
 }
 
+document.querySelectorAll(".editBtn").forEach((element) => {element.addEventListener('click',()=> {
+
+    console.log("edit")
+    element.classList.add('hide')
+    element.previousElementSibling.classList.remove('hide')
+    let descText = element.parentElement.parentElement.previousElementSibling
+    
+
+
+
+})})
+
+document.querySelectorAll('.closeBtn').forEach((element)=>{
+    element.addEventListener('click',()=>{
+
+        element.parentElement.classList.add('hide')
+        element.parentElement.nextElementSibling.classList.remove('hide')
+
+    })
+})
 
 setWeatherHTML()
 
