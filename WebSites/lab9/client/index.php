@@ -152,15 +152,32 @@ $result = $conn->query($query);
                                         </button>
                                     </form>
                                 </div>
-                                <div class="event__name">' . $row["title"] . '</div>
+                                <div class="event__name">
+                               <input type="hidden" class="event-title-input">
+                                ' . $row["title"] . '</div>
                                 <div class="event__date">
                                     <div class="event__date-start">'.$language[4]. ': ' . $row["dateTimeStart"] . '</div>
                                     <div class="event__date-end">'.$language[5]. ': ' . $row["dateTimeEnd"] . '</div>
                                 </div>
                             </div>
                             <div class="event__description">
+                                <input type="hidden" class="event-desc-input">
                                 ' . $row["description"] . '
       
+                            </div>
+                            <div class="event__change"><form action="" type="POST">
+                            <input type="hidden" value="' . $row["title"] .'" name="editTitle">
+                            <input type="hidden" value="' . $row["description"] .'" name="editDesc">
+                            <input class="postTitle"  type="hidden" name="editTitleNew">
+                            <input class="postDesc"  type="hidden" name="editDescNew">
+                            <div class="change__btns, hide">
+                            <button type="submit" style="background: transparent" class="postBtn" ">Save</button>        
+                            <button type="button" style="background: transparent" class="closeBtn" >Close</button>  
+                            </div>    
+                            <button type="button" class="editBtn" style="background: transparent">
+                            <img src="./img/edit-img.png" alt="">         
+                            </button>        
+                            </form>
                             </div>
                         </div>
                         ';}
