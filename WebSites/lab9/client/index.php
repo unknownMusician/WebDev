@@ -130,6 +130,7 @@ $result = $conn->query($query);
         <main>
             <div class="main__wrapper">
                 <div class="first-row">
+                <div class="first-row__search"><input placeholder="Search..." id="search"></div>
                     <div class="first-row__title">
                         <h2>'.$language[3]. '</h2>
                     </div>

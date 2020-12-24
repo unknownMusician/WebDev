@@ -73,17 +73,37 @@ header{
 
 .first-row{
     display: grid;
-    grid-template: 1fr/ 1fr 0.1fr;
+    grid-template: 1fr/0.5fr 1fr 0.1fr;
     justify-items: center;
     font-size: 35px;
     font-weight: bold;
     font-family: "Arial",sans-serif;
 }
 
+.first-row__title{
+    padding-right: 40%;
+}
+
 .first-row__title h2 {
     padding-bottom: 0.5rem;
     margin-bottom: 1rem;
     border-bottom: 1px solid #bbb;
+}
+
+.first-row__search{
+    justify-self: start;
+}
+
+.first-row__search input{
+    padding: 10px 60px 10px 10px;
+    border: 1px solid rgba(0,0,0,0.35);
+    border-radius: 25px;
+    font-size: 17px;
+    font-family: "Arial",sans-serif;
+}
+
+#search-input::placeholder{
+    color: rgba(0,0,0,0.35);
 }
 
 .first-row__add-btn{
@@ -178,4 +198,8 @@ footer{
     background-color: black;
     color: whitesmoke;
     box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.3);
+}
+
+.hide{
+    display: none;
 }
