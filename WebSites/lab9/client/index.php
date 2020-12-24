@@ -22,6 +22,7 @@ if ($conn->connect_error) {
 
 $username = $_SESSION["username"];
 $password = $_SESSION["password"];
+
 $ukranian = ["Головна","Додати подію","Вийти","Ваші події","Починається","Закінчується","Погода"];
 $russian = ["Главная","Добавить событие","Выйти","Ваши события","Начало","Конец","Погода"];
 $english = ["Home","Add event","Exit","Your events","Start","End","Weather"];
@@ -44,6 +45,15 @@ switch ($lang){
         break;
 }
 
+if(isset($_POST["evTitle"]) && isset($_POST["evDescription"])) {
+    $evTitle = $_POST["evTitle"];
+    $evDescription = $_POST["evDescription"];
+
+    $query = "DELETE FROM events WHERE 
+    title = '$evTitle' AND description = '$evDescription'";
+
+    $conn->query($query);
+}
 
 $query = "SELECT
 events.title as 'title',

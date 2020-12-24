@@ -20,8 +20,8 @@ async function setWeatherHTML(){
     let weather = await getWeather();
 
     document.getElementById('w-city').innerText = weather.name;
-    document.getElementById('w-feels').innerText = weather.feelsLike +"°C";
-    document.getElementById('w-temp').innerText = weather.temp +"°C";
+    document.getElementById('w-feels').innerText = "Feels: " + weather.feelsLike +"°C";
+    document.getElementById('w-temp').innerText = "Temp: " + weather.temp +"°C";
     document.getElementById('w-icon').src = `http://openweathermap.org/img/wn/${weather.icon}@2x.png`
 
 }
