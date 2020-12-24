@@ -109,6 +109,7 @@ $result = $conn->query($query);
                 echo  '
                         <div class="event__wrapper">
                             <div class="event__title">
+                                <div class="event__delete"><form method="POST"><input type="hidden" value='.$row["title"].' name="evTitle"><input type="hidden" value='.$row["description"].' name="evDesc"><button type="submit" style="background: transparent"><img src="../../../img/lab9/delete-button.svg"></button></form></div>
                                 <div class="event__name">' . $row["title"] . '</div>
                                 <div class="event__date">
                                     <div class="event__date-start">'.$language[4]. ': ' . $row["dateTimeStart"] . '</div>
@@ -117,6 +118,7 @@ $result = $conn->query($query);
                             </div>
                             <div class="event__description">
                                 ' . $row["description"] . '
+      
                             </div>
                         </div>
                         ';}
