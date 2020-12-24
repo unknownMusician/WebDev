@@ -123,11 +123,9 @@ if(!isset($_SESSION["username"])) {
     </header>
     <main>
         <div class="main__wrapper">
-            <div class="first-row">
-                <div class="first-row__title">
-                    <h2>'.$language [3].'</h2>
+                <div class="first-row__title" style="padding: 0px; font-size: 35px; font-weight: bold; font-family: \'Arial\',sans-serif;">
+                    <h2 style="text-align: center">'.$language [3].'</h2>
                 </div>
-            </div>
                 <!--  -->
 
                 <div id="weather-holder">
