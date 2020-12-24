@@ -25,7 +25,30 @@ async function setWeatherHTML(){
         document.getElementById('w-temp').innerText = "Temp: " + weather.temp + "°C";
         document.getElementById('w-icon').src = `http://openweathermap.org/img/wn/${weather.icon}@2x.png`
     }
-
 }
+
+// Search by name
+
+document.getElementById("search").oninput = function (){
+    let val = this.value.trim().toLowerCase()
+    let elasticItems = document.querySelectorAll(".event__title");
+    console.log(elasticItems)
+    if (val !== '') {
+        elasticItems.forEach((elem) => {
+            if (elem.innerText.toLowerCase().search(val) === -1) {
+                elem.parentElement.classList.add('hide')
+            } else {
+                elem.parentElement.classList.remove('hide')
+            }
+
+        })
+    } else {
+        elasticItems.forEach((elem) => {
+            elem.parentElement.classList.remove('hide')
+        })
+    }
+}
+
+
 setWeatherHTML()
 
