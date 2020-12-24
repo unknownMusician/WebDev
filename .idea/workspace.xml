@@ -21,8 +21,10 @@
   <component name="ChangeListManager">
     <list default="true" id="6bf1dedb-db91-4dcf-aea5-5727d64a8e7c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebSites/lab9/client/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/WebSites/lab9/client/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebSites/lab9/client/js/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/WebSites/lab9/client/js/script.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebSites/lab9/client/logs.txt" beforeDir="false" afterPath="$PROJECT_DIR$/WebSites/lab9/client/logs.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebSites/lab9/db.xml" beforeDir="false" afterPath="$PROJECT_DIR$/WebSites/lab9/db.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebSites/lab9/logs.txt" beforeDir="false" afterPath="$PROJECT_DIR$/WebSites/lab9/logs.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zvit/zvitL9.js" beforeDir="false" afterPath="$PROJECT_DIR$/zvit/zvitL9.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -138,7 +140,8 @@
       <workItem from="1608753540332" duration="3557000" />
       <workItem from="1608757234299" duration="12846000" />
       <workItem from="1608797810957" duration="7029000" />
-      <workItem from="1608804857390" duration="1565000" />
+      <workItem from="1608804857390" duration="2195000" />
+      <workItem from="1608811983262" duration="1258000" />
     </task>
     <servers />
   </component>

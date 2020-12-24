@@ -7,3 +7,7 @@ Wed, 23 Dec 20 23:55:21: Log in try: testUserName
 Wed, 23 Dec 20 23:55:21: Log in succesful: testUserName
 Thu, 24 Dec 20 00:43:04: Add event try: testUserName
 Thu, 24 Dec 20 00:43:04: Added event successfully: username="testUserName", title="ssss", description="asdAdvawrvaw aw faw ", dateTimeStart="2020-12-12 05:42", dateTimeEnd="2020-12-11 02:45"
+Thu, 24 Dec 20 12:18:10: Log in try: testUserName
+Thu, 24 Dec 20 12:18:10: Log in succesful: testUserName
+Thu, 24 Dec 20 12:27:28: Add event try: testUserName
+Thu, 24 Dec 20 12:27:28: Added event successfully: username="testUserName", title="Ортостатична проба123", description="віфві", dateTimeStart="2020-12-11 17:30", dateTimeEnd="2021-01-02 17:30"
