@@ -58,7 +58,7 @@ header{
     transition: 0.1s;
 }
 
-.nav__home:hover, .nav__add-event:hover, .nav__about:hover{
+.nav__home:hover, .nav__add-event:hover, .nav__about:hover, .nav__weather:hover {
     font-weight: 800;
 }
 

@@ -45,14 +45,18 @@ switch ($lang){
         break;
 }
 
-if(isset($_POST["evTitle"]) && isset($_POST["evDescription"])) {
+if(isset($_POST["evTitle"]) && isset($_POST["evDesc"])) {
     $evTitle = $_POST["evTitle"];
-    $evDescription = $_POST["evDescription"];
+    $evDesc = $_POST["evDesc"];
 
     $query = "DELETE FROM events WHERE 
-    title = '$evTitle' AND description = '$evDescription'";
+    title = '$evTitle' AND description = '$evDesc'";
 
     $conn->query($query);
+
+    $file = '../logs.txt';
+    $fin = substr(date(DATE_RFC822, time()), 0, 23) . ": " . "Deleted note with title '" . $evTitle . "' and descrition '" . $evDesc . "'" . "\n";
+    file_put_contents($file, $fin, FILE_APPEND | LOCK_EX);
 }
 
 $query = "SELECT
@@ -120,9 +124,9 @@ $result = $conn->query($query);
                         <div class="event__wrapper">
                             <div class="event__title">
                                 <div class="event__delete">
-                                    <form method="POST">
-                                        <input type="hidden" value='.$row["title"].' name="evTitle">
-                                        <input type="hidden" value='.$row["description"].' name="evDesc">
+                                    <form action="" method="POST">
+                                        <input type="hidden" value="' . $row["title"] . '" name="evTitle">
+                                        <input type="hidden" value="' . $row["description"] . '" name="evDesc">
                                         <button type="submit" style="background: transparent">
                                             <img src="./img/delete-button.svg">
                                         </button>
