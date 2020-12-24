@@ -20,7 +20,7 @@ if(isset($_GET["lang"])) {
 
 $ukranian = ["Головна", "Додати подію", "Вийти", "Погода"];
 $russian = ["Главная", "Добавить событие", "Выйти", "Погода"];
-$english = ["Home", "Add event", "Exit", "Login", "Weather"];
+$english = ["Home", "Add event", "Exit", "Weather"];
 
 $language = [];
 
