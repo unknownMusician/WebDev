@@ -56,20 +56,28 @@ document.querySelectorAll(".editBtn").forEach((element) => {element.addEventList
     console.log("edit")
     element.classList.add('hide')
     element.previousElementSibling.classList.remove('hide')
-    let descText = element.parentElement.parentElement.previousElementSibling
-    
-
-
+    let desc = element.parentElement.parentElement.previousElementSibling
+    let descText = desc.textContent.trim()
+    console.log(descText)
+    desc.innerHTML = `<input type="text" class="event-desc-input" value="${descText}">`
+    let title = element.parentElement.parentElement.parentElement.firstElementChild.firstElementChild.nextElementSibling
+    let titleText = title.textContent.trim()
+    title.innerHTML = `<input type="text" class="event-title-input" value="${titleText}">`
 
 })})
 
-document.querySelectorAll('.closeBtn').forEach((element)=>{
-    element.addEventListener('click',()=>{
+document.querySelectorAll(".postBtn").forEach((element) => {
+    element.addEventListener('click',(e)=> {
+        let descValue = element.parentElement.parentElement.parentElement.previousElementSibling.firstElementChild.value
+        let titleValue = element.parentElement.parentElement.parentElement.parentElement.firstElementChild.firstElementChild.nextElementSibling.firstElementChild.value
 
-        element.parentElement.classList.add('hide')
-        element.parentElement.nextElementSibling.classList.remove('hide')
+        element.parentElement.parentElement.firstElementChild.nextElementSibling.nextElementSibling.value = titleValue
+        element.parentElement.parentElement.firstElementChild.nextElementSibling.nextElementSibling.nextElementSibling.value =descValue
+
+
 
     })
+
 })
 
 setWeatherHTML()
