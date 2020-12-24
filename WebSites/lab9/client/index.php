@@ -97,7 +97,7 @@ $result = $conn->query($query);
                     <a href="html/login.php?lang='.$lang.'"style="color: whitesmoke">
                         <div class="nav__about">'.$language[2]. '</div>
                     </a>
-                    <a href="html/weather.html?lang='.$lang.'"style="color: whitesmoke">
+                    <a href="html/weather.php?lang='.$lang.'"style="color: whitesmoke">
                         <div class="nav__weather">'.$language[6]. '</div>
                     </a>
                 </nav>

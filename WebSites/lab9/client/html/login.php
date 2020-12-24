@@ -21,8 +21,6 @@ if(isset($_GET["lang"])) {
     $lang = $_GET["lang"];
 }
 
-
-
 $ukranian = ["Головна","Додати подію","Вийти","Логін","Пароль","Увійти","Погода"];
 $russian = ["Главная","Добавить событие","Выйти","Логин","Пароль","Войти","Погода"];
 $english = ["Home","Add event","Exit","Login","Password","Log in","Weather"];
@@ -44,7 +42,6 @@ switch ($lang){
         setcookie("language","eng",mktime(0,0,0,6,16,21));
         break;
 }
-
 
 if(isset($_POST) && isset($_POST['username'])) {
 
@@ -96,6 +93,7 @@ echo '
                 <a href="../index.php?lang='.$lang.'"style="color: whitesmoke" ><div class="nav__home">'.$language [0].'</div></a>
                 <a href="addEvent.php?lang='.$lang.'" style="color: whitesmoke"><div class="nav__add-event">'.$language [1].'</div></a>
                 <a href="login.php?lang='.$lang.'" style="color: whitesmoke"><div class="nav__about">'.$language [2].'</div></a>
+                <a href="weather.php?lang='.$lang.'" style="color: whitesmoke"><div class="nav__weather">'.$language [6].'</div></a>
             </nav>
               <div class="header__icons">
              <div class="header__icon"><form action="" method="get"><input name="lang" value="ua" type="hidden"><button style="background: transparent; border: none"><img src="../img/ukraine_round_icon_64.png"></button></form></div>

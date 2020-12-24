@@ -7,16 +7,16 @@ function writeLog($text) {
 }
 
 session_start();
-$lang = "";
 
+$lang = "";
 
 if(isset($_COOKIE["language"])){
     $lang = $_COOKIE["language"];
 }
+
 if(isset($_GET["lang"])) {
     $lang = $_GET["lang"];
 }
-
 
 $ukranian = ["Головна","Додати подію","Вийти","Додавання події","Назва події","Дата початку","Час початку","Дата закінчення","Час закінчення","Опис події","Підтвердити","Погода"];
 $russian = ["Главная","Добавить событие","Выйти","Добавление события","Имя события","Дата начала","Час начала","Дата окончания","Время окончания","Описание события","Подтвердить","Погода"];
@@ -104,7 +104,7 @@ if (isset($_POST) && isset($_POST["title"])) {
                 <a href="../index.php?lang='.$lang.'" style="color: whitesmoke"><div class="nav__home">'.$language[0].'</div></a>
                 <a href="./addEvent.php?lang='.$lang.'" style="color: whitesmoke"><div class="nav__add-event">'.$language[1].'</div></a>
                 <a href="./login.php?lang='.$lang.'" style="color: whitesmoke"><div class="nav__about">'.$language[2].'</div></a>
-                <a href="./weather.html?lang='.$lang.'"style="color: whitesmoke"><div class="nav__about">'.$language[11].'</div></a>
+                <a href="./weather.php?lang='.$lang.'"style="color: whitesmoke"><div class="nav__weather">'.$language[11].'</div></a>
             </nav>
              <div class="header__icons">
              <div class="header__icon"><form action="" method="get"><input name="lang" value="ua" type="hidden"><button style="background: transparent; border: none"><img src="../img/ukraine_round_icon_64.png"></button></form></div>
